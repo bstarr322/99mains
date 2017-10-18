@@ -1,0 +1,54 @@
+<!-- /templates/index.liquid -->
+{% comment %}
+
+  This is the homepage of your site.
+
+  More info on global variables (available on all templates):
+    - http://docs.shopify.com/themes/liquid-variables/global
+{% endcomment %}
+
+{% if settings.use_slider %}
+  {% include 'home-slider' %}
+{% endif %}
+
+{% if settings.use_featured_newest_products %}
+  {% include 'featured-newest-products'%}
+{% endif %}
+
+{% if settings.use_featured_collections %}
+  {% include 'featured-collections'%}
+{% endif %}
+
+{% if settings.use_featured_products %}
+  {% include 'featured-products' %}
+{% endif %}
+
+<div id="insta-feed"></div>
+
+<div class="site__service-wrapper clearfix">
+  <div class="wrapper">
+    <h2>Shop with 99 Mainstreet</h2>
+    <div class="site__service-info clearfix">
+      <div class="site__service-content">
+        <h3>Fast</h3>
+        <img src="{{ 'fast.svg' | asset_url }}" />
+        <p>Every order ships within 24 hours.</p>
+      </div>
+      <div class="site__service-content">
+        <h3>Fun</h3>
+        <img src="{{ 'heart.svg' | asset_url }}" />
+        <p>Find what you need while supporting local businesses.</p>
+      </div>
+      <div class="site__service-content">
+        <h3>Secure</h3>
+        <img src="{{ 'secure.svg' | asset_url }}" />
+        <p>100% Safe and Secure Payments. We use the best technology to protect your transactions.</p>
+      </div>
+    </div>
+    <div class="site__service-signup">
+      <a href="/collections">Browse Our Stores
+        {% include 'icon-arrow-right' %}
+      </a>
+    </div>
+  </div>
+</div>

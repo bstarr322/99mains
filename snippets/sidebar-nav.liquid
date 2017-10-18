@@ -1,0 +1,43 @@
+<div id="sidebar-nav" class="sidebar-nav">
+  <h3>Shop By categories</h3>
+  <ul>
+    {% assign linklist1 = linklists.departments.links %}
+    {% for link1 in linklist1 %}
+      {% assign link2_handle = link1.handle | handleize %}
+
+      {% if linklists[link2_handle].links.size > 0 %}
+        {% assign linklist2 = linklists[link2_handle].links %}
+        <li class="{% if link1.active %}active{% endif %}">
+          <a href="{{ link1.url }}">{{ link1.title }} <small class="count">({{ link1.object.products_count | default: 0 }})</small></a>
+          <ul>
+            {% for link2 in linklists[link2_handle].links %}
+              {% assign link3_handle = link2.handle | handleize %}
+
+              {% if linklists[link3_handle].links.size > 0 %}
+                {% assign linklist3 = linklists[link3_handle].links %}
+                <li class="{% if link2.active %}active{% endif %}">
+                  <a href="{{ link2.url }}">{{ link2.title }} <small class="count">({{ link2.object.products_count | default: 0 }})</small></a>
+                  <ul>
+                    {% for link3 in linklist3 %}
+                      <li class="{% if link3.active %}active{% endif %}">
+                        <a href="{{ link3.url }}">{{ link3.title }} <small class="count">({{ link3.object.products_count | default: 0 }})</small></a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% else %}
+                <li class="{% if link2.active %}active{% endif %}">
+                  <a href="{{ link2.url }}">{{ link2.title }} <small class="count">({{ link2.object.products_count | default: 0 }})</small></a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li class="{% if link1.active %}active{% endif %}">
+          <a href="{{ link1.url }}">{{ link1.title }} <small class="count">({{ link1.object.products_count | default: 0 }})</small></a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
