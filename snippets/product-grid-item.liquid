@@ -53,7 +53,7 @@
 
     {% endcomment %}
     <a href="{{ product.url | within: collection }}" class="grid__image">
-      <div class="product__single-grid-image" style="background-image: url({{ product.featured_image.src | img_url: 'large' }})"></div>
+      <div class="product__single-grid-image" style="background-image: url({{ product.featured_image.src | img_url: 'medium' }})"></div>
     </a>
     
     {% if template contains 'collection.deals' %}

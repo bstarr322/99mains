@@ -34,9 +34,9 @@
 
                 <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="grid__image">
                   {% if collection.image %}
-                    <div class="feature__collection-image" style="background-image: url({{ collection.image.src | img_url: 'large' }})"></div>
+                    <div class="feature__collection-image" style="background-image: url({{ collection.image.src | img_url: 'medium' }})"></div>
                   {% else %}
-                    <div class="feature__collection-image" style="background-image: url({{ collection.products.first.featured_image | img_url: 'large' }})"></div>
+                    <div class="feature__collection-image" style="background-image: url({{ collection.products.first.featured_image | img_url: 'medium' }})"></div>
                   {% endif %}
                 </a>
 

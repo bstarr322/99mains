@@ -1,5 +1,3 @@
-{{ 'flexslider-related.css' | asset_url | stylesheet_tag }}
-
 {% assign number_of_products = 1000 %}
 {% assign number_of_products_to_fetch = number_of_products | plus: 1 %}
 
@@ -31,7 +29,7 @@
             {% assign featured = product %}
             <li>
               <a href="{{ product.url | within: collection }}" class="related__grid-image">
-                <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+                <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}">
               </a>
 
               <p class="related__grid-title">

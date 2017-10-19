@@ -12,7 +12,7 @@
         {% if pdt.type == product.type and pdt.title != product.title %}
         <li>
           <a href="{{ pdt.url | within: collection }}" class="related__grid-image">
-            <img src="{{ pdt.featured_image.src | img_url: 'large' }}" alt="{{ pdt.featured_image.alt | escape }}">
+            <img src="{{ pdt.featured_image.src | img_url: 'medium' }}" alt="{{ pdt.featured_image.alt | escape }}">
           </a>
 
           <p class="related__grid-title">

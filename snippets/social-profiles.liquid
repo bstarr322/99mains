@@ -5,7 +5,7 @@
       {% capture social_icon_img %}social-icon-{{ social_icon | replace: '_', '-' }}@2x.png{% endcapture %}
       <li>
         <a href="{{ settings[social_link] }}" target="_blank" title="{{ social_icon | replace: '_', ' ' | capitalize }}">
-          <img src="{{ social_icon_img | asset_url }}" alt="{{ social_icon | replace: '_', ' ' | capitalize }}">
+          <img src="{{ social_icon_img | asset_img_url: 'icon' }}" alt="{{ social_icon | replace: '_', ' ' | capitalize }}">
           <span>{{ social_icon | replace: '_', ' ' }}</span>
         </a>
       </li>
