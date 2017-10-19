@@ -41,7 +41,7 @@
   {{ content_for_header }}
   {% include 'oldIE-js' %}
 
-  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
+  {{ 'jquery.min.js' | asset_url | script_tag }}
   {{ 'modernizr.min.js' | asset_url | script_tag }}
 
   {% comment %}
@@ -371,9 +371,6 @@
     <!-- //site-footer -->
   </div>
   
-  {{ 'jquery.magnific-popup.min.js' | asset_url | script_tag }}
-  {{ 'fastclick.min.js' | asset_url | script_tag }}
-  {{ 'swiper.min.js' | asset_url | script_tag }}
   {{ 'timber.js' | asset_url | script_tag }}
   {{ 'theme.js' | asset_url | script_tag }}
 
@@ -413,7 +410,6 @@
       - http://shopify.com/timber#ajax-cart
   {% endcomment %}
   {% if settings.ajax_cart_method == "drawer" %}
-    {{ 'handlebars.min.js' | asset_url | script_tag }}
     {% include 'ajax-cart-template' %}
     {{ 'ajax-cart.js' | asset_url | script_tag }}
     <script>

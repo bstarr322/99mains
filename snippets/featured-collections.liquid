@@ -13,59 +13,55 @@
         Use variable isEmpty to check if no collections will be shown.
         For empty store demo only.
       {% endcomment %}
+      
       {% assign index = 1 %}
       {% assign isEmpty = true %}
       
-      {% for collection in collections limit:10000 %}
-        {% unless index > 9999 %}
+      {% if linklists.list-collections.links.size > 0 %}          
+        {% assign isEmpty = false %}
+        {% assign collection_item_width = 'large--one-fifth medium--one-third' %}
+        
+        {% for link in linklists.list-collections.links %}
+          {%- assign handle = link.url | split: "collections/" | last -%}
+          {%- assign collection = collections[handle] -%}
 
-          {% unless collection.handle == 'frontpage' %}
-            {% assign isEmpty = false %}
-            {% assign collection_item_width = 'large--one-fifth medium--one-third' %}
-            {% for link in linklists.list-collections.links limit:6 %}
-              {% if link.title == collection.title %}
-                <div class="featured__single-collection">
-                  <div class="featured__single-collection-wrapper">
-                    {% comment %}
-                      Use capture to put the collection title in a variable that is used in liquid filters
-                    {% endcomment %}
-                    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+            <div class="featured__single-collection">
+              <div class="featured__single-collection-wrapper">
+                {% comment %}
+                  Use capture to put the collection title in a variable that is used in liquid filters
+                {% endcomment %}
+                {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
-                    <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="grid__image">
-                      {% if collection.image %}
-                        <div class="feature__collection-image" style="background-image: url({{ collection.image.src | img_url: 'large' }})"></div>
-                      {% else %}
-                        <div class="feature__collection-image" style="background-image: url({{ collection.products.first.featured_image | img_url: 'large' }})"></div>
-                      {% endif %}
-                    </a>
+                <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="grid__image">
+                  {% if collection.image %}
+                    <div class="feature__collection-image" style="background-image: url({{ collection.image.src | img_url: 'large' }})"></div>
+                  {% else %}
+                    <div class="feature__collection-image" style="background-image: url({{ collection.products.first.featured_image | img_url: 'large' }})"></div>
+                  {% endif %}
+                </a>
 
-                    <p class="featured__collection-title">
-                      <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
-                    </p>
-                  </div>
-                </div>
-              {% break %}
-              {% endif %}
-              {% assign index = index | plus: 1 %}
-            {% endfor %}
-          {% endunless %}
+                <p class="featured__collection-title">
+                  <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
+                </p>
+              </div>
+            </div>
+          {% assign index = index | plus: 1 %}
+        {% endfor %}
+      
+      {% else %}
+        
+        {% comment %}
+          For onboarding new users to your theme, we add some default collections and onboarding tutorials to help populate their store
+        {% endcomment %}
 
-        {% endunless %}
-      {% endfor %}
-
-      {% comment %}
-        For onboarding new users to your theme, we add some default collections and onboarding tutorials to help populate their store
-      {% endcomment %}
-
-      {% if isEmpty %}
         {% unless emptyState %}
           {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
           {% assign emptyState = true %}
         {% endunless %}
 
         {% include 'onboarding-featured-collections' %}
+      
       {% endif %}
-
     </div>
   </div>
 </div>
