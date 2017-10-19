@@ -370,6 +370,8 @@
     <!-- //site-footer -->
   </div>
   
+  {{ 'fastclick.min.js' | asset_url | script_tag }}
+  {{ 'swiper.min.js' | asset_url | script_tag }}
   {{ 'timber.js' | asset_url | script_tag }}
   {{ 'theme.js' | asset_url | script_tag }}
 
@@ -409,6 +411,7 @@
       - http://shopify.com/timber#ajax-cart
   {% endcomment %}
   {% if settings.ajax_cart_method == "drawer" %}
+    {{ 'handlebars.min.js' | asset_url | script_tag }}
     {% include 'ajax-cart-template' %}
     {{ 'ajax-cart.js' | asset_url | script_tag }}
     <script>
