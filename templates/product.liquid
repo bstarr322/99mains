@@ -35,21 +35,24 @@
       </div>
 
       <div class="grid__item large--one-half product-main__content">
-
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           <meta itemprop="priceCurrency" content="{{ shop.currency }}">
 
           <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
-
           
+          {% comment %}
+          We will use the collection's featured image as Vendor logo.
+          {% endcomment %}
+
           {% assign vendor_handle = product.vendor | handleize %}
           {% assign vendor_url = collections[vendor_handle].url %}
+          {% assign vendor_image = collections[vendor_handle].image %}
           {% capture vendor_logo %}vendor-{{ vendor_handle }}.png{% endcapture %}
           <p  class="product-single__vendor product-single__vendor--{{ product.vendor | handleize }}">
             <a href="{% if vendor_url != blank %}{{ vendor_url }}{% else %}/collections/vendors?q={{ vendor_handle | escape }}{% endif %}"
                data-toggle="tooltip" data-placement="left"
                title="View all {{ product.vendor }} products"
-               style="background-image: url({{ vendor_logo | asset_url }});">{{ product.vendor }}</a>
+               style="background-image: url({{ vendor_image | img_url }});">{{ product.vendor }}</a>
           </p>
           
           <h1 itemprop="name" class="product-single__title">{{ product.title }}</h1>
@@ -129,7 +132,6 @@
                   title="Sign up and receive an e-mail as soon as this item arrives in stock">Sold Out, Email me when available</button>
             </div>
           </form>
-
         </div>
 
 
@@ -137,6 +139,7 @@
           If the user is on a collection product page (ie with /collections/collection-handle/products/product-handle)
           in the URL, we can show next/previous links to other products in the collection.
         {% endcomment %}
+
         {% if collection %}
           {% if collection.previous_product or collection.next_product %}
             <p>
@@ -156,13 +159,15 @@
 
       </div>
     </div>
-      {% include 'related-products-by-collection' %}  
-      
-      {% include 'related-products-by-type' %}  
-      
-   
+
+    {% include 'related-products-by-collection' %}  
+    
+    {% comment %}  
+    {% include 'related-products-by-type' %}
+    {% endcomment %}
   </div>
 </div>
+
 
 {% comment %}
   To take advantage of a callback on the select dropdown, add option_selection.js
@@ -179,7 +184,9 @@
       addons can override it.
       * E.g. multiple currencies http://docs.shopify.com/manual/configuration/store-customization/currencies-and-translations/currencies/how-to-toggle-between-two-currencies
 {% endcomment %}
+
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+
 <script>
   var selectCallback = function(variant, selector) {
     
