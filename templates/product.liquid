@@ -21,6 +21,7 @@
   </div>
   
   <div class="wrapper product__single-container">
+    <input type="hidden" name="page-data" value="{{pages['howell-public-schools'].content}}">
     {% comment %}
       Get first variant, or deep linked one
     {% endcomment %}
@@ -48,11 +49,11 @@
           {% assign vendor_url = collections[vendor_handle].url %}
           {% assign vendor_image = collections[vendor_handle].image %}
           {% capture vendor_logo %}vendor-{{ vendor_handle }}.png{% endcapture %}
-          <p  class="product-single__vendor product-single__vendor--{{ product.vendor | handleize }}">
+          <p  class="product-single__vendor product-single__vendor--{{ product.vendor | handleize }}" data-vendor = {{product.vendor}}>
             <a href="{% if vendor_url != blank %}{{ vendor_url }}{% else %}/collections/vendors?q={{ vendor_handle | escape }}{% endif %}"
                data-toggle="tooltip" data-placement="left"
                title="View all {{ product.vendor }} products"
-               style="background-image: url({{ vendor_image | img_url }});">{{ product.vendor }}</a>
+               style="background-image: url({{ vendor_image | img_url:'medium' }});">{{ product.vendor }}</a>
           </p>
           
           <h1 itemprop="name" class="product-single__title">{{ product.title }}</h1>

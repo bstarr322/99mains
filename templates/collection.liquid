@@ -13,7 +13,6 @@
   {{ header_banner }}
 </div>
 
-{% unless collection.template_suffix contains 'department' or collection.template_suffix contains 'deals' %}
 <nav class="collection__nav-bar">
   <div class="wrapper">
     <ul class="collection__nav-list">
@@ -24,7 +23,6 @@
     </ul>
   </div>
 </nav>
-{% endunless %}
 
 <div class="collection-breadcrumb">
   <div class="wrapper">
@@ -68,31 +66,6 @@
 
         {% for product in collection.products %}
           {% include 'product-grid-item' %}
-
-        {% else %}
-
-          {% if collection.handle == 'all' and current_tags == '' %}
-
-            {% comment %}
-              Add default products to help with onboarding for collections/all only
-            {% endcomment %}
-            {% unless emptyState %}
-              {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
-              {% assign emptyState = true %}
-            {% endunless %}
-            {% include 'onboarding-empty-collection' %}
-
-          {% else %}
-
-            {% comment %}
-              If collection exists but is empty, display message
-            {% endcomment %}
-            <div class="grid__item">
-              <p>{{ 'collections.general.no_matches' | t }}</p>
-            </div>
-
-          {% endif %}
-
         {% endfor %}
 
       </div>
@@ -107,25 +80,23 @@
   </div>
 </div>
 
-{% endpaginate %}
 
 {% unless collection.template_suffix contains 'department' or collection.template_suffix contains 'deals' %}
-
-{% assign about_desc = collection.description | split: "<!-- About Section -->" | last | split: "<!-- /About Section -->" | first %}
-{% if about_desc != '' or about_desc %}
-<div id="collection__about">
-  <div class="wrapper">
-    <div class="collection__about-wrapper">
-      <div class="collection__about-content">
-        <h3>About</h3>
-      </div>
-      <div class="collection__about-title">
-        {{ about_desc }}
+  {% assign about_desc = collection.description | split: "<!-- About Section -->" | last | split: "<!-- /About Section -->" | first %}
+  {% if about_desc != '' or about_desc %}
+  <div id="collection__about">
+    <div class="wrapper">
+      <div class="collection__about-wrapper">
+        <div class="collection__about-content">
+          <h3>About</h3>
+        </div>
+        <div class="collection__about-title">
+          {{ about_desc }}
+        </div>
       </div>
     </div>
   </div>
-</div>
-{% endif %}
+  {% endif %}
 
 <!-- <div id="collection__reviews">
   <div class="wrapper">
@@ -174,3 +145,5 @@
   </div>
 </div>
 {% endunless %}
+
+{% endpaginate %}

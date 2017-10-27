@@ -36,7 +36,7 @@
     "cart_vendor_enable": false,
     "ajax_cart_method": "drawer",
     "show_product_zoom": true,
-    "products_per_page": "24",
+    "products_per_page": "16",
     "social_twitter_link": "",
     "social_facebook_link": "",
     "checkout_header_image": "",
