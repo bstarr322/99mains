@@ -260,6 +260,8 @@
       "logged_in_as_html": "Logged in as {{ first_name }}",
       "log_out": "Log out",
       "log_in": "Log in",
+      "sign_out": "Sign out",
+      "sign_in": "Sign in",
       "create_account": "Register"
     },
     "footer": {

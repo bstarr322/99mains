@@ -30,6 +30,7 @@
     "slideshow_2_subsubtitle": "",
     "slideshow_2_button_text": "",
     "slideshow_2_link": "\/pages\/sell-with-us",
+    "use_featured_newest_products": false,
     "use_featured_products": true,
     "featured_collection": "homepage-featured-products",
     "cart_notes_enable": true,
@@ -64,8 +65,7 @@
     "footer_2_heading": "Sell",
     "footer_linklist_2": "footer-menu",
     "footer_3_heading": "Connect",
-    "footer_linklist_3": "main-menu",
-    "use_featured_newest_products": true,
+    "footer_linklist_3": "connect",
     "use_featured_collections": true,
     "content_for_index": []
   },

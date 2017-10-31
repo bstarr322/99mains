@@ -268,6 +268,21 @@
     ]
   },
   {
+    "name": "Home page - Newest Items Section",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "[Full documentation](http:\/\/docs.milehighthemes.com\/showtime\/#page-home)"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_featured_newest_products",
+        "label": "Enable Newest products Section",
+        "default": false
+      }
+    ]
+  },
+  {
     "name": "Home page - featured products",
     "settings": [
       {
@@ -283,6 +298,28 @@
         "type": "collection",
         "id": "featured_collection",
         "label": "Choose collection"
+      }
+    ]
+  },
+  {
+    "name": "List Collection Page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_custom_list_collections",
+        "label": "Enable Custom List Collections",
+        "default": true,
+        "info": "If it's enabled it will use custom collections & products with the below settings. If Not enabled, then will choose the products automatically."
+      },
+      {
+        "type": "collection",
+        "id": "listcol_1",
+        "label": "Choose collection"
+      },
+      {
+        "type": "text",
+        "id": "listcol_product_1",
+        "label": "Product-handle, Product-handle, Product-handle"
       }
     ]
   },
