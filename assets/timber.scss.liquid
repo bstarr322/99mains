@@ -135,6 +135,7 @@ $drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
 $siteWidth: 1180px;
+$collectionWrapperWidth: 1402;
 $gutter: 30px;
 $gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
 $radius: 3px;
@@ -224,6 +225,143 @@ $socialIconFontStack: 'icons';
     clear: both; }
   *zoom: 1;
 }
+
+
+
+// Flexbox display
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+      -ms-flex: $values;
+          flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+     -moz-box-ordinal-group: $val;     
+         -ms-flex-order: $val;     
+          -webkit-order: $val;  
+            order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+     -moz-flex-grow: $grow;
+      -ms-flex-grow: $grow;
+          flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+     -moz-flex-shrink: $shrink;
+      -ms-flex-shrink: $shrink;
+          flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width> 
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+     -moz-flex-basis: $width;
+      -ms-flex-basis: $width;
+          flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+     -moz-align-content: $align;
+      -ms-align-content: $align;
+          align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+          align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+     -moz-align-self: $align;
+      -ms-align-self: $align;
+          align-self: $align;
+}
+
+
 
 /*============================================================================
   Prefixer mixin for generating vendor prefixes:
@@ -1849,7 +1987,7 @@ label.error {
   border-bottom: 1px solid #E1E3DF;
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
 
   .grid--table {
@@ -2018,7 +2156,7 @@ label.error {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
 }
 
@@ -2457,7 +2595,7 @@ label.error {
   padding: 30px 0 40px 0;
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
   
   h2 {
@@ -2528,7 +2666,7 @@ label.error {
   padding: 30px 0 30px 0;
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
   
   h2 {
@@ -2640,7 +2778,7 @@ label.error {
   padding: 30px 0;
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
   
   h2 {
@@ -2717,7 +2855,7 @@ label.error {
   padding-bottom: 30px;
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
   
   h2 {
@@ -2860,7 +2998,7 @@ label.error {
   color: $colorFooterText;
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
 }
 
@@ -2986,47 +3124,86 @@ label.error {
   }
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
   
   ul {
     list-style: none;
     margin: 0;
+    padding: $gutter/2 0;
   }
   
   li {
     position: relative;
     float: left;
-    line-height: 52px;
-    margin-left: 24px;
+    padding: 0 5px;
+    border-right: 1px solid #777;
     margin-bottom: 0;
     
+    &:last-child {
+      border-right: initial;
+    }
     a {
       display: block;
-      height: 52px;
       color: #777;
       font-size: 14px;
       padding: 0 6px;
       cursor: pointer;
+      line-height: 1;
+
+      &:hover {
+        color: #222;
+      }
     }
-    
-    a:hover {
-      color: #222;
-    }
-  }
-  
-  li:first-child {
-    margin-left: 0;
   }
 }
 
+
 #collection__items {
+  &.template-shop2 {
+    .collection__header-banner {
+      height: 320px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    .collection__nav-bar {
+      background-color: initial;
+
+      ul {
+        margin-top: $gutter;
+        @include flexbox();
+        @include justify-content(center);
+      }
+
+      li {
+        border-color: #fff;
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    .text-block {
+      padding-bottom: 30px;
+      padding-top: 30px;
+    }
+
+    .img-block img {
+      width: 100%;
+    }
+
+    .collection__items-grid {
+      margin: initial;
+    }
+  }
+
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
   
   .collection__filter-wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
     
     .collection__filter-content {
       display: block;
@@ -3066,6 +3243,7 @@ label.error {
     }
   }
 }
+
 
 .collection-lists {
   max-width: 100%;
@@ -3180,7 +3358,7 @@ label.error {
 
 #collection__about {
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
     
     .collection__about-wrapper {
       border-top: 1px solid #E1E3DF;
@@ -3232,7 +3410,7 @@ label.error {
 
 #collection__policies {
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
     
     .collection__policies-wrapper {
       border-top: 1px solid #E1E3DF;
@@ -3279,7 +3457,7 @@ label.error {
 
 #collection__reviews {
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
     
     .collection__reviews-wrapper {
       border-top: 1px solid #E1E3DF;
@@ -3316,7 +3494,7 @@ label.error {
   padding-bottom: 30px;
   
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
     
     .section-header {
       border-bottom: 1px solid #E1E3DF;
@@ -3381,7 +3559,7 @@ label.error {
 
 .collection-breadcrumb {
   .wrapper {
-    max-width: 1402px;
+    max-width: $collectionWrapperWidth;
   }
 }
 
@@ -4254,146 +4432,6 @@ label.error {
 /* #Custom Styles */
 
 $lusa-transition-base: all .1s ease-in;
-
-
-// Flexbox SASS mixins
-// The spec: http://www.w3.org/TR/css3-flexbox
-// --------------------------------------------------
-
-// Flexbox display
-@mixin flexbox() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-}
-
-// The 'flex' shorthand
-// - applies to: flex items
-// <positive-number>, initial, auto, or none
-@mixin flex($values) {
-  -webkit-box-flex: $values;
-     -moz-box-flex: $values;
-      -webkit-flex: $values;
-      -ms-flex: $values;
-          flex: $values;
-}
-
-// Flex Flow Direction
-// - applies to: flex containers
-// row | row-reverse | column | column-reverse
-@mixin flex-direction($direction) {
-  -webkit-flex-direction: $direction;
-     -moz-flex-direction: $direction;
-      -ms-flex-direction: $direction;
-          flex-direction: $direction;
-}
-
-// Flex Line Wrapping
-// - applies to: flex containers
-// nowrap | wrap | wrap-reverse
-@mixin flex-wrap($wrap) {
-  -webkit-flex-wrap: $wrap;
-     -moz-flex-wrap: $wrap;
-      -ms-flex-wrap: $wrap;
-          flex-wrap: $wrap;
-}
-
-// Flex Direction and Wrap
-// - applies to: flex containers
-// <flex-direction> || <flex-wrap>
-@mixin flex-flow($flow) {
-  -webkit-flex-flow: $flow;
-     -moz-flex-flow: $flow;
-      -ms-flex-flow: $flow;
-          flex-flow: $flow;
-}
-
-// Display Order
-// - applies to: flex items
-// <integer>
-@mixin order($val) {
-  -webkit-box-ordinal-group: $val;  
-     -moz-box-ordinal-group: $val;     
-         -ms-flex-order: $val;     
-          -webkit-order: $val;  
-            order: $val;
-}
-
-// Flex grow factor
-// - applies to: flex items
-// <number>
-@mixin flex-grow($grow) {
-  -webkit-flex-grow: $grow;
-     -moz-flex-grow: $grow;
-      -ms-flex-grow: $grow;
-          flex-grow: $grow;
-}
-
-// Flex shrink
-// - applies to: flex item shrink factor
-// <number> 
-@mixin flex-shrink($shrink) {
-  -webkit-flex-shrink: $shrink;
-     -moz-flex-shrink: $shrink;
-      -ms-flex-shrink: $shrink;
-          flex-shrink: $shrink;
-}
-
-// Flex basis
-// - the initial main size of the flex item
-// - applies to: flex itemsnitial main size of the flex item
-// <width> 
-@mixin flex-basis($width) {
-  -webkit-flex-basis: $width;
-     -moz-flex-basis: $width;
-      -ms-flex-basis: $width;
-          flex-basis: $width;
-}
-
-// Axis Alignment
-// - applies to: flex containers
-// flex-start | flex-end | center | space-between | space-around 
-@mixin justify-content($justify) {
-  -webkit-justify-content: $justify;
-     -moz-justify-content: $justify;
-      -ms-justify-content: $justify;
-          justify-content: $justify;
-            -ms-flex-pack: $justify;
-}
-
-// Packing Flex Lines
-// - applies to: multi-line flex containers
-// flex-start | flex-end | center | space-between | space-around | stretch 
-@mixin align-content($align) {
-  -webkit-align-content: $align;
-     -moz-align-content: $align;
-      -ms-align-content: $align;
-          align-content: $align;
-}
-
-// Cross-axis Alignment
-// - applies to: flex containers
-// flex-start | flex-end | center | baseline | stretch 
-@mixin align-items($align) {
-  -webkit-align-items: $align;
-     -moz-align-items: $align;
-      -ms-align-items: $align;
-          align-items: $align;
-}
-
-// Cross-axis Alignment
-// - applies to: flex items
-// auto | flex-start | flex-end | center | baseline | stretch 
-@mixin align-self($align) {
-  -webkit-align-self: $align;
-     -moz-align-self: $align;
-      -ms-align-self: $align;
-          align-self: $align;
-}
-
-
 
 
 /* Product Single Vendor Styles */

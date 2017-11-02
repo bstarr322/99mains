@@ -1,0 +1,147 @@
+<!-- /templates/collection.liquid -->
+{% comment %}
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+{% endcomment %}
+
+<div id="collection__items" class="template-shop2">
+
+{% paginate collection.products by settings.products_per_page %}
+
+{% comment %}
+<!-- Sample Description Template -->
+
+  <div class="collection__header-banner" style="background-image: url('//cdn.shopify.com/s/files/1/1629/1645/files/coffee_header_large.jpg?v=1509600833');">
+    <div class="grid">
+      <div class="grid__item one-whole">
+        <nav class="collection__nav-bar">
+          <div class="wrapper">
+            <ul class="collection__nav-list clearfix">
+              <li><a data-id="#collection__products">Shop</a></li>
+              <li><a data-id="#collection__about">Deals</a></li>
+              <li><a data-id="#collection__about">About</a></li>
+              <li><a data-id="#collection__policies">Policies</a></li>
+              <li><a data-id="#collection__reviews">Reviews</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div id="collection__about" class="wrapper">
+    <div class="grid">
+      <div class="grid__item one-half img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/dean_roasting_large.jpg?v=1509600906" alt="" /></div>
+      <div class="grid__item one-half text-block">
+        <h2>Our Story</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p>
+      </div>
+    </div>
+    <div class="grid--rev">
+      <div class="grid__item one-half img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/becharas_family_sm_large.jpg?v=1509600947" alt="" /></div>
+      <div class="grid__item one-half text-block">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p>
+      </div>
+    </div>
+  </div>
+
+{% endcomment %}
+
+{{ collection.description }}
+
+<div id="collection__products">
+  {% comment %}
+    Use .grid--rev so that the collection tags appear below the products on mobile
+  {% endcomment %}
+  <div class="wrapper collection__items-wrapper">
+
+    <div class="collection__items-grid">
+
+      {% comment %}
+        Different markup if a collection description exists
+      {% endcomment %}
+      <header class="section-header">
+        <h1 class="section-header__title section-header__left">{{ collection.title }}</h1>
+        <div class="section-header__right">
+          {% include 'collection-sorting' %}
+        </div>
+      </header>
+      
+      {% comment %}
+        Use class grid-uniform to have evenly sized columns clear
+        each other properly at each breakpoint.
+      {% endcomment %}
+      <div class="product__items-grid clearfix">
+
+        {% comment %}
+          Loop through our products in the current collection.
+          See the snippet 'product-grid-item' for the layout.
+        {% endcomment %}
+
+        {% for product in collection.products %}
+          {% include 'product-grid-item' %}
+        {% endfor %}
+
+      </div>
+
+      {% if paginate.pages > 1 %}
+        <div class="pagination">
+          {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<div id="collection__policies">
+  <div class="wrapper">
+    <div class="collection__policies-wrapper">
+      <div class="collection__policies-content">
+        <h3>Policies</h3>
+      </div>
+      <div class="collection__policies-title">
+        {% unless shop.enabled_payment_types == empty %}
+          {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
+          <strong>Accepted Payment Methods</strong>
+          <ul class="inline-list payment-icons">
+            {% for type in shop.enabled_payment_types %}
+              {% if payment_icons_available contains type %}
+                <li>
+                  <span class="icon-fallback-text">
+                    <span class="icon icon-{{type}}" aria-hidden="true"></span>
+                    <span class="fallback-text">{{ type | replace: '_',' '}}</span>
+                  </span>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endunless %}
+      <strong>Returns</strong>
+      <p>
+        You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).<br><br>
+        You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).<br><br>
+        If you need to return an item, please contact us with your order number and details about the product you would like to return. We will respond quickly with instructions for how to return items from your order.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="collection__reviews">
+  <div class="wrapper">
+    <div class="collection__reviews-wrapper">
+      <div class="collection__reviews-content">
+        <h3>Reviews</h3>
+      </div>
+      <div class="collection__reviews-title">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endpaginate %}
+
+ </div>

@@ -6,6 +6,7 @@
 
 {% endcomment %}
 
+<div id="collection__items" class="template-shop1">
 {% paginate collection.products by settings.products_per_page %}
 
 <div class="collection__header-banner">
@@ -15,7 +16,7 @@
 
 <nav class="collection__nav-bar">
   <div class="wrapper">
-    <ul class="collection__nav-list">
+    <ul class="collection__nav-list clearfix">
       <li><a data-id="#collection__items">Items<span>({{ collection.products_count }})</span></a></li>
       <li><a data-id="#collection__about">About</a></li>
 <!--       <li><a data-id="#collection__reviews">Reviews</a></li> -->
@@ -147,3 +148,4 @@
 {% endunless %}
 
 {% endpaginate %}
+</div>
