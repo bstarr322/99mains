@@ -135,7 +135,7 @@ $drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
 $siteWidth: 1180px;
-$collectionWrapperWidth: 1402;
+$collectionWrapperWidth: 1402px;
 $gutter: 30px;
 $gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
 $radius: 3px;
@@ -503,7 +503,7 @@ $responsive:         true;
 $mobile-first:       true;
 $use-silent-classes: false;
 $push:               true;
-$pull:               false;
+$pull:               true;
 
 /* Force clearfix on grids */
 .grid,
@@ -3162,16 +3162,21 @@ label.error {
 #collection__items {
   &.template-shop2 {
     .collection__header-banner {
+
       height: 320px;
       background-size: 100%;
       background-repeat: no-repeat;
+
+      @include at-query($max, $preMedium) {
+        height: initial;
+      }
     }
 
     .collection__nav-bar {
       background-color: initial;
 
       ul {
-        margin-top: $gutter;
+        margin: $gutter 0 50px;
         @include flexbox();
         @include justify-content(center);
       }
@@ -3482,8 +3487,8 @@ label.error {
         margin-left: 250px;
         
         p {
-          font-size: 14px;
-          color: #444;
+          font-size: 12px;
+          color: #777;
         }
       }
     }
