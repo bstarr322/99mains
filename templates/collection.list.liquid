@@ -182,19 +182,21 @@
 {% endpaginate %}
 
 {% unless collection.template_suffix contains 'department' or collection.template_suffix contains 'deals' %}
+
+{% unless collection.template_suffix contains 'shop2' %}
 <div id="collection__about">
   <div class="wrapper">
     <div class="collection__about-wrapper">
-      <div class="collection__about-content">
+      <div class="collection__about-title">
         <h3>About</h3>
       </div>
-      <div class="collection__about-title">
-        <p>"Shop our Marysville Michigan collection - the beautiful city of Marysville is
-located in southeastern Michigan or Michigan’s “Thumb”,situated along the St. Clair River and is 7.3 square miles in size."</p>
+      <div class="collection__about-content">
+        {{ about_desc }}
       </div>
     </div>
   </div>
 </div>
+{% endunless %}
 
 <!-- <div id="collection__reviews">
   <div class="wrapper">

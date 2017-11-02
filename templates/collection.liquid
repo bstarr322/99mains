@@ -6,8 +6,10 @@
 
 {% endcomment %}
 
-<div id="collection__items" class="template-shop1">
+<div id="collection__items" class="template-shop1 {% if collection.template_suffix contains 'shop2' %}template-shop2{% endif %}">
 {% paginate collection.products by settings.products_per_page %}
+
+{% unless collection.template_suffix contains 'shop2' %}
 
 <div class="collection__header-banner">
   {% assign header_banner = collection.description | split: "<!-- Header Image -->" | last | split: "<!-- /Header Image -->" | first %}
@@ -31,16 +33,23 @@
   </div>
 </div>
 
+{% else %}
+  {{ collection.description }}
+{% endunless %}
+
 <div id="collection__products">
   {% comment %}
     Use .grid--rev so that the collection tags appear below the products on mobile
   {% endcomment %}
   <div class="wrapper collection__items-wrapper">
+
+    {% unless collection.template_suffix contains 'shop2' %}
     <div class="collection__filter-wrapper">
       <div class="collection__filter-content">
         {% include 'filter-menu' %}
       </div>
     </div>
+    {% endunless %}
     
     <div class="collection__items-grid">
 
@@ -83,6 +92,8 @@
 
 
 {% unless collection.template_suffix contains 'department' or collection.template_suffix contains 'deals' %}
+
+ {% unless collection.template_suffix contains 'shop2' %}
   {% assign about_desc = collection.description | split: "<!-- About Section -->" | last | split: "<!-- /About Section -->" | first %}
   {% if about_desc != '' or about_desc %}
   <div id="collection__about">
@@ -98,6 +109,7 @@
     </div>
   </div>
   {% endif %}
+  {% endunless %}
 
 <!-- <div id="collection__reviews">
   <div class="wrapper">
