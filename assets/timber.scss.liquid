@@ -113,6 +113,7 @@ $colorNavText: #333;
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
 $colorFooterText: {{ settings.color_footer_text }};
+$colorFooterSocial: {{ settings.color_footer_social_link }};
 
 // Logo max width
 $logoMaxWidth: {{ settings.logo_max_width | default: '450' | remove: 'px' }}px;
@@ -921,7 +922,7 @@ body {
   margin-top: 0;
   padding-top: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #E1E3DF;
+  border-bottom: 1px solid $colorBorder;
 }
 
 /*============================================================================
@@ -1200,13 +1201,13 @@ hr {
 
   &:hover,
   &:focus {
-    color: #9e3927;
+    color: $colorPrimary;
   }
 }
 
 .change-view--active {
   cursor: default;
-  color: #9e3927;
+  color: $colorPrimary;
 }
 
 /*============================================================================
@@ -1250,14 +1251,14 @@ hr {
 ==============================================================================*/
 a,
 .text-link {
-  color: #9e3927;
+  color: $colorPrimary;
   text-decoration: none;
   background: transparent;
 }
 
 a:hover,
 a:focus {
-  color: #9e3927;
+  color: $colorPrimary;
 }
 
 button {
@@ -1289,7 +1290,7 @@ html input[disabled] {
   border-radius: $radius;
 
   /*================ Set primary button colors - can override later ================*/
-  background-color: #9e3927;
+  background-color: $colorPrimary;
   color: $colorBtnPrimaryText;
 
   &:hover {
@@ -1810,7 +1811,7 @@ label.error {
   font-size: 14px;
   padding: 11px 0 10px 0;
   color: #1c1d1d;
-  border: 1px solid #E1E3DF;
+  border: 1px solid $colorBorder;
   transition: opacity 0.15s ease-in,width 0.15s ease-in;
   z-index: 1;
   opacity: 1;
@@ -1916,7 +1917,7 @@ label.error {
 
   li {
     margin: 0 ($gutter / 4) ($gutter / 4);
-    color: {{ settings.color_footer_social_link }};
+    color: $colorFooterSocial;
     cursor: default;
   }
 
@@ -1944,10 +1945,10 @@ label.error {
   }
 
   a {
-    color: {{ settings.color_footer_social_link }};
+    color: $colorFooterSocial;
 
     &:hover {
-      color: darken({{ settings.color_footer_social_link }}, 10%);
+      color: darken($colorFooterSocial, 10%);
     }
   }
 }
@@ -1978,13 +1979,13 @@ label.error {
   #Site Header
 ==============================================================================*/
 .nav-topbar {
-  border-bottom: 1px solid #E1E3DF;
+  border-bottom: 1px solid $colorBorder;
   padding: 15px;
 }
 
 .site-header {
   padding: ($gutter / 2) 0;
-  border-bottom: 1px solid #E1E3DF;
+  border-bottom: 1px solid $colorBorder;
   
   .wrapper {
     max-width: $collectionWrapperWidth;
@@ -2043,7 +2044,7 @@ label.error {
       width: 14px;
       top: -3px;
       right: -4px;
-      background-color: #9e3927;
+      background-color: $colorPrimary;
       border-radius: 100%;
       text-align: center;
       line-height: 15px;
@@ -2147,9 +2148,8 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   position: relative;
-  min-height: 43px;
   background-color: #FFF;
-  border-bottom: 1px solid #E1E3DF;
+  border-bottom: 1px solid $colorBorder;
   border-bottom: 0 solid rgba(0, 0, 0, 0);
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
@@ -2173,7 +2173,7 @@ label.error {
     a {
       color: #777;
       font-size: 14px;
-      line-height: 38px;
+      line-height: 40px;
       text-decoration: none;
       padding: 0 3px;
     }
@@ -2266,8 +2266,6 @@ label.error {
 ==============================================================================*/
 .mobile-nav {
   // Negative of .drawer left/right padding for full-width link tap area
-  margin: (-$gutter / 2) (-$gutter / 2) 0 (-$gutter / 2);
-
   li {
     margin-bottom: 0;
   }
@@ -2288,7 +2286,7 @@ label.error {
   // Background color on top level items so there is no
   // element overlap on subnav's CSS toggle animation
   .mobile-nav > & {
-    background-color: $colorDrawers;
+    // background-color: $colorDrawers; // @Check again : Not sure why it's needed.
   }
 
   &:after {
@@ -2526,7 +2524,7 @@ label.error {
 
 .drawer__header h3, .drawer__header .h3 {
   width: 100%;
-  color: #9e3927;
+  color: $colorPrimary;
   font-size: 24px;
   font-weight: 700;
   text-align: center;
@@ -2567,7 +2565,7 @@ label.error {
   color: #fff;
   font: 500 14px/16px "futura-medium", sans-serif;
   letter-spacing: 0.04em;
-  background-color: #9e3927;
+  background-color: $colorPrimary;
   border: 0;
   border-radius: 4px;
   cursor: pointer;
@@ -2690,7 +2688,7 @@ label.error {
       background: #fff;
       border-radius: 3px;
       background-color: #FFF;
-      border: 1px solid #E1E3DF;
+      border: 1px solid $colorBorder;
       border-bottom-color: #CBCCC9;
       
       .featured__single-image-container {
@@ -2754,7 +2752,7 @@ label.error {
       height: 14px;
 
       path {
-        fill: #9e3927;
+        fill: $colorPrimary;
       }
     }
   }
@@ -2812,7 +2810,7 @@ label.error {
       display: block;
       background: #fff;
       border-radius: 3px;
-      border: 1px solid #E1E3DF;
+      border: 1px solid $colorBorder;
       border-bottom-color: #CBCCC9;
       margin-bottom: 15px;
       padding: 9px;
@@ -2879,7 +2877,7 @@ label.error {
       background: #fff;
       border-radius: 3px;
       background-color: #FFF;
-      border: 1px solid #E1E3DF;
+      border: 1px solid $colorBorder;
       border-bottom-color: #CBCCC9;
       
       .grid__image {
@@ -2993,7 +2991,7 @@ label.error {
   #Site Footer
 ==============================================================================*/
 .site-footer {
-  background-color: #FAF9F5;
+  background-color: $colorFooterBg;
   padding: 50px 0 30px 0;
   color: $colorFooterText;
   
@@ -3013,7 +3011,7 @@ label.error {
 
 .footer-block {
   h4 {
-    color: #222;
+    color: $colorFooterText;
     font-size: 14px;
     font-weight: 500;
     border-bottom: 2px solid #222;
@@ -3032,7 +3030,7 @@ label.error {
       
       a {
         display: block;
-        color: #222;
+        color: $colorFooterText;
         font-size: 12px;
         line-height: 1.2em;
         padding: 6px 0;
@@ -3050,7 +3048,7 @@ label.error {
       margin-bottom: 5px;
       
       span {
-        color: #222;
+        color: $colorFooterSocial;
         text-transform: capitalize;
       }
     }
@@ -3058,7 +3056,7 @@ label.error {
     img {
       width: 24px;
       height: 23px;
-      color: #222;
+      color: $colorFooterSocial;
       transition: all 0.2s ease-in-out;
       -webkit-filter: grayscale(100%);
       filter: grayscale(100%);
@@ -3072,7 +3070,7 @@ label.error {
 }
 
 .site__footer-bottom {
-  border-top: 1px solid #E1E3DF;
+  border-top: 1px solid $colorBorder;
   padding-top: 20px;
   
   .footer__shop-copyright {
@@ -3130,7 +3128,7 @@ label.error {
   ul {
     list-style: none;
     margin: 0;
-    padding: $gutter/2 0;
+    padding: 18px 0;
   }
   
   li {
@@ -3162,13 +3160,108 @@ label.error {
 #collection__items {
   &.template-shop2 {
     .collection__header-banner {
-
-      height: 320px;
+      position: relative;
+      height: calc(100vh - 201px);
       background-size: 100%;
       background-repeat: no-repeat;
+      z-index: 1;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.3;
+      }
+
+      .grid {
+        position: absolute;
+        width: 100%;
+        z-index: 111;
+      }
+
+      .shop-logo {
+        text-align: center;
+        color: #fff;
+      }
+
+      @include at-query('', '768px', '1040px') {
+        height: 510px;
+      }
 
       @include at-query($max, $preMedium) {
-        height: initial;
+        height: 310px;
+      }
+      
+    }
+
+    #collection__about {
+
+      .wrapper {
+        max-width: $siteWidth;
+      }
+
+      .our-story-part {
+        background-color: $colorFooterBg;
+        padding: 50px 0 180px;
+
+        .grid {
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+
+        h2, h3, h4, h5 {
+          text-align: center; 
+        }
+
+        @include at-query($max, $preMedium) {
+          padding: $gutter 0;
+        }
+      }
+
+      .overlap-part {
+        position: relative;
+        z-index: 2;
+        margin-top: -145px;
+
+        .text-block {
+          padding-bottom: 30px;
+          padding-top: 30px;
+          padding-right: 30px;
+          max-height: 400px;
+          overflow: hidden;
+
+          &.push--large--one-half {
+            padding-left: 30px;
+          }
+
+          // overflow: hidden;
+          // display: -webkit-box;
+          // -webkit-line-clamp: 3;
+          // -webkit-box-orient: vertical;
+        }
+
+        .img-block img {
+          width: 100%;
+          max-height: 400px;
+          object-fit: cover;
+        }
+
+        @include at-query($max, $preMedium) {
+          margin-top: initial;
+          padding: initial;
+
+          .text-block,
+          .text-block.push--large--one-half {
+            padding: 15px;
+          }
+        }
+
+        .grid, .grid--rev, .grid--full {
+          background-color: #fff;
+        }
       }
     }
 
@@ -3176,7 +3269,7 @@ label.error {
       background-color: initial;
 
       ul {
-        margin: $gutter 0 50px;
+        margin: $gutter 0;
         @include flexbox();
         @include justify-content(center);
       }
@@ -3189,17 +3282,21 @@ label.error {
       }
     }
 
-    .text-block {
-      padding-bottom: 30px;
-      padding-top: 30px;
-    }
-
-    .img-block img {
-      width: 100%;
-    }
-
     .collection__items-grid {
       margin: initial;
+    }
+  }
+
+  &.template-shop3 {
+    .collection__nav-bar ul {
+      @include flexbox();
+      @include justify-content(flex-end);
+    }
+    .grid, .grid--rev {
+      margin: $gutter/2 0;
+    }
+    .img-block img {
+      width: 100%;
     }
   }
 
@@ -3290,6 +3387,9 @@ label.error {
   }
 }
 
+.product__items-grid {
+  padding: $gutter/2 0 $gutter;
+}
 .product__single-grid {
   position: relative;
   float: left;
@@ -3300,7 +3400,7 @@ label.error {
     background: #fff;
     border-radius: 3px;
     background-color: #FFF;
-    border: 1px solid #E1E3DF;
+    border: 1px solid $colorBorder;
     border-bottom-color: #CBCCC9;
     
     .grid__image {
@@ -3366,12 +3466,12 @@ label.error {
     max-width: $collectionWrapperWidth;
     
     .collection__about-wrapper {
-      border-top: 1px solid #E1E3DF;
+      // border-top: 1px solid $colorBorder;
       border-color: #ccc;
       padding-top: 36px;
       padding-bottom: 36px;
       
-      .collection__about-content {
+      .collection__about-title {
         position: relative;
         width: 250px;
         float: left;
@@ -3384,7 +3484,7 @@ label.error {
         }
       }
 
-      .collection__about-title {
+      .collection__about-content {
         margin-left: 250px;
         
         p {
@@ -3414,16 +3514,18 @@ label.error {
 }
 
 #collection__policies {
+  background-color: $colorFooterBg;
+
   .wrapper {
     max-width: $collectionWrapperWidth;
     
     .collection__policies-wrapper {
-      border-top: 1px solid #E1E3DF;
+      // border-top: 1px solid $colorBorder;
       border-color: #ccc;
       padding-top: 36px;
       padding-bottom: 36px;
       
-      .collection__policies-content {
+      .collection__policies-title {
         position: relative;
         width: 250px;
         float: left;
@@ -3436,7 +3538,7 @@ label.error {
         }
       }
 
-      .collection__policies-title {
+      .collection__policies-content {
         margin-left: 250px;
         
         p {
@@ -3465,12 +3567,12 @@ label.error {
     max-width: $collectionWrapperWidth;
     
     .collection__reviews-wrapper {
-      border-top: 1px solid #E1E3DF;
+      // border-top: 1px solid $colorBorder;
       border-color: #ccc;
       padding-top: 36px;
       padding-bottom: 36px;
       
-      .collection__reviews-content {
+      .collection__reviews-title {
         position: relative;
         width: 250px;
         float: left;
@@ -3483,7 +3585,7 @@ label.error {
         }
       }
 
-      .collection__reviews-title {
+      .collection__reviews-content {
         margin-left: 250px;
         
         p {
@@ -3502,7 +3604,7 @@ label.error {
     max-width: $collectionWrapperWidth;
     
     .section-header {
-      border-bottom: 1px solid #E1E3DF;
+      border-bottom: 1px solid $colorBorder;
       padding-top: 30px;
       padding-bottom: 10px;
       margin-bottom: 30px;
@@ -3545,7 +3647,7 @@ label.error {
           height: 14px;
           
           path {
-            fill: #9e3927;
+            fill: $colorPrimary;
           }
         }
       }
@@ -3584,11 +3686,6 @@ label.error {
   .product__single-grid {
     width: 50%;
   }
-  
-  #collection__about {
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -3603,41 +3700,20 @@ label.error {
     margin-left: 0 !important;
   }
   
-  .collection__about-content {
-    width: 100% !important;
-    float: none !important;
-    text-align: center;
-    padding-right: 0 !important;
-    margin-bottom: 30px;
-  }
-  
-  .collection__about-title {
-    text-align: center;
-    margin-left: 0 !important;
-  }
-  
-  .collection__reviews-content {
-    width: 100% !important;
-    float: none !important;
-    text-align: center;
-    padding-right: 0 !important;
-    margin-bottom: 30px;
-  }
-  
+  .collection__about-title,
+  .collection__policies-title,
   .collection__reviews-title {
-    text-align: center;
-    margin-left: 0 !important;
-  }
-  
-  .collection__policies-content {
     width: 100% !important;
     float: none !important;
     text-align: center;
     padding-right: 0 !important;
     margin-bottom: 30px;
   }
+
   
-  .collection__policies-title {
+  .collection__about-content,
+  .collection__reviews-content,
+  .collection__policies-content {
     text-align: center;
     margin-left: 0 !important;
   }
@@ -3990,7 +4066,7 @@ label.error {
 #AddToCart {
   width: 100%;
   font-weight: bold;
-  background-color: #9e3927;
+  background-color: $colorPrimary;
   padding: 10px 60px;
   letter-spacing: 0.06em;
   line-height: 20px;
@@ -4198,7 +4274,7 @@ label.error {
   font-size: 17px;
   font-weight: 700;
   text-align: initial;
-  background-color: #9e3927;
+  background-color: $colorPrimary;
   border-radius: 3px;
   letter-spacing: 0.04em;
   line-height: 2.25;
@@ -4212,7 +4288,7 @@ label.error {
 }
 
 .cart__checkout:hover {
-  background-color: #9e3927;
+  background-color: $colorPrimary;
   opacity: 0.9;
 }
 
@@ -4312,7 +4388,7 @@ label.error {
   height: 52px;
   display: block;
   position: absolute;
-  background: #9e3927;
+  background: $colorPrimary;
   border: 0;
   border-radius: 3px;
   text-align: center;
@@ -4483,7 +4559,7 @@ $lusa-transition-base: all .1s ease-in;
   height: 210px;
   background-color: #fff;
   border-radius: 3px;
-  border: 1px solid #E1E3DF;
+  border: 1px solid $colorBorder;
   border-bottom-color: #CBCCC9;
   margin-right: 5px;
   margin-left: 5px;
@@ -4632,7 +4708,7 @@ $lusa-transition-base: all .1s ease-in;
 /* Tooltips */
 .swatch .tooltip {
   text-align: center;
-  background: #9e3927;
+  background: $colorPrimary;
   color:#fff;
   bottom:100%;
   padding: 10px;
@@ -4681,7 +4757,7 @@ $lusa-transition-base: all .1s ease-in;
 .swatch .tooltip:after {
   border-left:solid transparent 10px;
   border-right:solid transparent 10px;
-  border-top:solid #9e3927 10px;
+  border-top:solid $colorPrimary 10px;
   bottom:-10px;
   content:" ";
   height:0;
@@ -4758,13 +4834,13 @@ $lusa-transition-base: all .1s ease-in;
   line-height: 40px;
   white-space: nowrap;
   text-transform: uppercase;
-  color: #9e3927;
+  color: $colorPrimary;
   cursor: pointer;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   background-color: #fff;
   box-sizing: content-box;
-  border: #9e3927 1px solid;
+  border: $colorPrimary 1px solid;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -4773,14 +4849,14 @@ $lusa-transition-base: all .1s ease-in;
 }
 
 .product-size__swatch .swatch-element label:hover {
-  border-color: #9e3927;
-  background-color: #9e3927;
+  border-color: $colorPrimary;
+  background-color: $colorPrimary;
   color: #fff;
 }
 
 .product-size__swatch input[type="radio"]:checked + label {
-  border-color: #9e3927;
-  background-color: #9e3927;
+  border-color: $colorPrimary;
+  background-color: $colorPrimary;
   color: #fff;
 }
 
@@ -4801,7 +4877,7 @@ $lusa-transition-base: all .1s ease-in;
 }
 
 .product-color__swatch input[type="radio"]:checked + div {
-  border-color:#9e3927;
+  border-color:$colorPrimary;
 }
 
 .product-color__swatch .tooltip {
@@ -4818,7 +4894,7 @@ $lusa-transition-base: all .1s ease-in;
 }
 
 .product-graphic__swatch input[type="radio"]:checked + label {
-  border: 2px solid #9e3927;
+  border: 2px solid $colorPrimary;
 }
 
 .product-form__item--swatch .selected-variant__title {

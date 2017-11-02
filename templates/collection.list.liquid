@@ -15,7 +15,10 @@
 
 {% endcomment %}
 
+<div id="collection__items" class="{% if collection.template_suffix contains 'shop2' %}template-shop2{% endif %}">
 {% paginate collection.products by settings.products_per_page %}
+
+{% unless collection.template_suffix contains 'shop2' %}
 
 <div class="collection__header-banner">
    {% assign header_banner = collection.description | split: "<!-- Header Image -->" | last | split: "<!-- /Header Image -->" | first %}
@@ -26,32 +29,39 @@
 <nav class="collection__nav-bar">
   <div class="wrapper">
     <ul class="collection__nav-list">
-      <li><a data-id="#collection__items">Items<span>({{ collection.products_count }})</span></a></li>
+      <li><a data-id="#collection__products">Items<span>({{ collection.products_count }})</span></a></li>
       <li><a data-id="#collection__about">About</a></li>
 <!--       <li><a data-id="#collection__reviews">Reviews</a></li> -->
       <li><a data-id="#collection__policies">Policies</a></li>
     </ul>
   </div>
 </nav>
-{% endunless %}
 
+{% endunless %}
 <div class="collection-breadcrumb">
   <div class="wrapper">
     {% include 'breadcrumb' %}
   </div>
 </div>
 
+{% else %}
+  {{ collection.description }}
+{% endunless %}
+
+
 {% comment %}
   Use .grid--rev so that the collection tags appear below the products on mobile
 {% endcomment %}
-<div id="collection__items">
+<div id="collection__products">
   <div class="wrapper collection__items-wrapper">
     
+    {% unless collection.template_suffix contains 'shop2' %}
     <div class="collection__filter-wrapper">
       <div class="collection__filter-content">
         {% include 'filter-menu' %}
       </div>
     </div>
+    {% endunless %}
     
     <div class="collection__items-grid">
       {% comment %}
@@ -180,24 +190,7 @@
       </div>
       <div class="collection__about-title">
         <p>"Shop our Marysville Michigan collection - the beautiful city of Marysville is
-located in southeastern Michigan or Michigan’s “Thumb”,situated along the St. Clair River and is 7.3 square miles in size.  "</p>
-<!--         <ul>
-          <li>
-            <img src="{{ 'about-us.jpg' | asset_url }}" alt="about-us">
-          </li>
-          <li>
-            <img src="{{ 'about-us.jpg' | asset_url }}" alt="about-us">
-          </li>
-          <li>
-            <img src="{{ 'about-us.jpg' | asset_url }}" alt="about-us">
-          </li>
-          <li>
-            <img src="{{ 'about-us.jpg' | asset_url }}" alt="about-us">
-          </li>
-          <li>
-            <img src="{{ 'about-us.jpg' | asset_url }}" alt="about-us">
-          </li>
-        </ul> -->
+located in southeastern Michigan or Michigan’s “Thumb”,situated along the St. Clair River and is 7.3 square miles in size."</p>
       </div>
     </div>
   </div>
@@ -206,10 +199,10 @@ located in southeastern Michigan or Michigan’s “Thumb”,situated along the 
 <!-- <div id="collection__reviews">
   <div class="wrapper">
     <div class="collection__reviews-wrapper">
-      <div class="collection__reviews-content">
+      <div class="collection__reviews-title">
         <h3>Reviews</h3>
       </div>
-      <div class="collection__reviews-title">
+      <div class="collection__reviews-content">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
     </div>
@@ -219,10 +212,10 @@ located in southeastern Michigan or Michigan’s “Thumb”,situated along the 
 <div id="collection__policies">
   <div class="wrapper">
     <div class="collection__policies-wrapper">
-      <div class="collection__policies-content">
+      <div class="collection__policies-title">
         <h3>Policies</h3>
       </div>
-      <div class="collection__policies-title">
+      <div class="collection__policies-content">
         {% unless shop.enabled_payment_types == empty %}
           {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
           <strong>Accepted Payment Methods</strong>
@@ -250,3 +243,5 @@ located in southeastern Michigan or Michigan’s “Thumb”,situated along the 
   </div>
 </div>
 {% endunless %}
+
+</div>
