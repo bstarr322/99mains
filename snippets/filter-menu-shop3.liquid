@@ -10,7 +10,7 @@
 {% assign handle = collection.title | handleize %}
 
 <ul class="filter-menu">
-% for link in linklists.[handle].links %}
+{% for link in linklists.[handle].links %}
     {% assign child_list_handle = link.title | handleize %}
     {% if linklists[child_list_handle].links != blank %}
       <li class="header-collections__menu header-collections__menu--dropdown">
