@@ -1,0 +1,11 @@
+production:
+  password: d2f7523270db49c95078a81e41537249
+  theme_id: "144007809"
+  store: 99-mainstreet.myshopify.com
+
+development:
+  password: d2f7523270db49c95078a81e41537249
+  theme_id: "144008129"
+  store: 99-mainstreet.myshopify.com
+
+

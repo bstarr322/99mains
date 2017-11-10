@@ -1,0 +1,28 @@
+{% assign product_type_handlize = product.type | handleize %}
+
+{% if product.type != blank and collections[product_type_handlize].products_count > 1 %}
+<div class="related__products-by-type">
+  <div class="related__product-title">
+    <h2>Similar Products</h2>
+  </div>
+  <div class="related__product-content">
+  {% paginate collections.all.products by 10000 %}
+    <ul class="slides">
+      {% for pdt in collections.all.products %}
+        {% if pdt.type == product.type and pdt.title != product.title %}
+        <li>
+          <a href="{{ pdt.url | within: collection }}" class="related__grid-image">
+            <img src="{{ pdt.featured_image.src | img_url: 'medium' }}" alt="{{ pdt.featured_image.alt | escape }}">
+          </a>
+
+          <p class="related__grid-title">
+            <a href="{{ pdt.url | within: collection }}">{{ pdt.title }}</a>
+          </p>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    {% endpaginate %}
+  </div>
+</div>
+{% endif %}

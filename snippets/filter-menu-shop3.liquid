@@ -1,0 +1,45 @@
+
+<!-- Store Logo -->
+{% if collection.image %}
+  <div class="collection-logo-wrapper text-center">
+    <a href="{{ collection.url }}">
+      {{ collection.image | img_url: 'large' | img_tag: collection.title, 'collection-image' }}
+      <h1 class="section-header__title">Store</h1>
+    </a>
+  </div>
+{% endif %}
+
+{% assign handle = collection.handle %}
+{% capture handle-gifts %}{{ collection.handle }}-gifts{% endcapture %}
+
+<ul class="filter-menu">
+  <li>
+    <a href="{{ collection.url }}">All</a>
+  </li>
+  {% for link in linklists.[handle].links %}
+    {% assign child_list_handle = link.title | handleize %}
+
+    {% if linklists[child_list_handle].links != blank %}
+      <li class="has-sub-filter">
+        
+        {% if link.title contains 'Gift' or link.title contains 'gift' %}
+          {{ 'Gifts' | link_to_tag : 'gifts' }}
+        {% else %}
+          {{ link.title | link_to_tag : link.title }}
+        {% endif %}
+
+        <ul class="">
+          {% for childlink in linklists[child_list_handle].links %}
+            <li class="">
+              {{ childlink.title | link_to_tag: childlink.title }}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
+      <li class="">
+        {{ link.title | link_to_tag : link.title }}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

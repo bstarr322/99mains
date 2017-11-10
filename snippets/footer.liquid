@@ -1,0 +1,66 @@
+<!-- Footer -->
+<footer class="site-footer small--text-center" role="contentinfo">
+  <div class="wrapper">
+    <div class="grid footer__logo-wrapper">
+      <div class="grid__item one-whole footer_logo">
+        <a href="/" itemprop="url">
+          <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+        </a>
+      </div>
+    </div>
+    <div class="grid site__footer-nav">
+      <div class="grid__item large--one-quarter medium--one-half footer-block">
+        <h4>{{ settings.footer_1_heading }}</h4>
+        {% if settings.footer_linklist_1 != '' %}
+          <ul>
+            {% for link in linklists[settings.footer_linklist_1].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="desc">
+            {{ settings.footer_1_text }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="grid__item large--one-quarter medium--one-half footer-block">
+        <h4>{{ settings.footer_2_heading }}</h4>
+        {% if settings.footer_linklist_2 != '' %}
+          <ul>
+            {% for link in linklists[settings.footer_linklist_2].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="desc">
+            {{ settings.footer_2_text }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="grid__item large--one-quarter medium--one-half footer-block">
+        <h4>{{ settings.footer_3_heading }}</h4>
+        {% if settings.footer_linklist_3 != '' %}
+          <ul>
+            {% for link in linklists[settings.footer_linklist_3].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="desc">
+            {{ settings.footer_3_text }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="grid__item large--one-quarter medium--one-half footer-block">
+        <h4>Follow</h4>
+        {% include 'social-profiles' %}
+      </div>
+    </div>
+    <div class="grid site__footer-bottom">
+      <p class="footer__shop-copyright">
+        Copyright &copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }}
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- /Footer -->
