@@ -1,0 +1,166 @@
+<!-- /templates/collection.liquid -->
+{% comment %}
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+{% endcomment %}
+
+
+
+{% comment %}
+<!-- Sample Description Template -->
+
+  <div class="collection__header-banner" style="background-image: url('//cdn.shopify.com/s/files/1/1629/1645/files/valentin-366211.jpg?5236360739536285214');">
+    <div class="grid">
+      <div class="grid__item one-whole">
+        <nav class="collection__nav-bar">
+          <div class="wrapper">
+            <ul class="collection__nav-list clearfix">
+              <li><a data-id="#collection__products">Shop</a></li>
+              <!-- <li><a data-id="#collection__about">Deals</a></li> -->
+              <li><a data-id="#collection__about">About</a></li>
+              <li><a data-id="#collection__policies">Policies</a></li>
+              <!-- <li><a data-id="#collection__reviews">Reviews</a></li> -->
+            </ul>
+          </div>
+        </nav>
+        <a href="/collections/becharas-brothers-coffee-co">
+          <!-- <h1 class="shop-logo">Becharas Brothers Coffee Co.</h1> -->
+          <img src="//cdn.shopify.com/s/files/1/1629/1645/files/logo-Becharas_Coffee.png?v=1510131955" alt="Becharas Brothers Coffe Co." />
+        </a>
+      </div>
+    </div>
+    <a data-id="#collection__about" class="down-arrow anime infinite bounce"></a>
+  </div>
+  <div id="collection__about">
+    <div class="our-story-part">
+      <div class="grid">
+        <div class="grid__item ten-twelfths push--one-twelfth">
+          <h2>Our Story</h2>
+          <h4>Pride. Quality. Service. Trust. Respect. Knowledge. Expertise. Tradition. Family.</h4>
+          <p>These aren’t new ways of doing business. This is how it’s supposed to be done. These are the building blocks of excellence. Back in 1914 when the late George and Nicholas Becharas founded the company, these values were the foundation for the Becharas Brothers Coffee Co. and continue unchanged to this day.</p>
+        </div>
+      </div>
+    </div>
+    <div class="overlap-part wrapper">
+      <div class="grid--full">
+        <div class="grid__item large--one-half push--large--one-half text-block">
+          <p>Through hard work and determination, these two European immigrants built a thriving business. They saw the opportunity that existed in this great country and made the most of it. The fruits of their labor currently span three generations and assure that the knowledge gained through nearly 100 years of coffee roasting experience is manifested today in a superior product.</p>
+          <p>Since our humble beginning, we have gone through several incarnations. Uncle Nick oversaw the Detroit branch with the concept of “Good People, good coffee, good service.” This paradigm carried us into being one of the primary suppliers of coffee throughout the Midwest with our Royal York brand of coffee.</p>
+        </div>
+        <div class="grid__item large--one-half pull--large--one-half img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/dean_roasting_lg_large.jpg?v=1509666511" alt="" /></div>
+      </div>
+      <div class="grid--full">
+        <div class="grid__item large--one-half text-block">
+          <p>When his nephew, Dean, took over the reigns completely in the late 70’s, we saw the relationships he developed blossom. Through Dean’s efforts, we proudly became one of the primary suppliers of coffee to the United States Armed Forces throughout the world from 1954 through 2002. Additionally, under his leadership we were able to include the Elias Brother’s Big Boy Restaurants throughout the country as one of our premier accounts. Adding to the impact he has had on the company, our present facility was Dean’s brain-child. Built in 1966, this plant remains one of the most unique coffee processing plants in the nation. Our system is capable of fulfilling large volume requirements while still giving quality the number one priority. It was his vision that made it possible to fulfill the needs of high volume customers efficiently and effectively.</p>
+        </div>
+        <div class="grid__item large--one-half img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/becharas_family_lg_large.jpg?v=1509666653" alt="" /></div>
+      </div>
+    </div>
+  </div>
+
+{% endcomment %}
+
+
+<div id="collection__items" class="template-shop2">
+
+{% paginate collection.products by settings.products_per_page %}
+
+{{ collection.description }}
+
+<div id="collection__products">
+  {% comment %}
+    Use .grid--rev so that the collection tags appear below the products on mobile
+  {% endcomment %}
+  <div class="wrapper collection__items-wrapper">
+
+    <div class="collection__items-grid">
+
+      {% comment %}
+        Different markup if a collection description exists
+      {% endcomment %}
+      <header class="section-header">
+        <h1 class="section-header__title section-header__left">{{ collection.title }}</h1>
+        <div class="section-header__right">
+          {% include 'collection-sorting' %}
+        </div>
+      </header>
+      
+      {% comment %}
+        Use class grid-uniform to have evenly sized columns clear
+        each other properly at each breakpoint.
+      {% endcomment %}
+      <div class="product__items-grid clearfix">
+
+        {% comment %}
+          Loop through our products in the current collection.
+          See the snippet 'product-grid-item' for the layout.
+        {% endcomment %}
+
+        {% for product in collection.products %}
+          {% include 'product-grid-item' %}
+        {% endfor %}
+
+      </div>
+
+      {% if paginate.pages > 1 %}
+        <div class="pagination">
+          {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<div id="collection__policies">
+  <div class="wrapper">
+    <div class="collection__policies-wrapper">
+      <div class="collection__policies-title">
+        <h3>Policies</h3>
+      </div>
+      <div class="collection__policies-content">
+        {% unless shop.enabled_payment_types == empty %}
+          {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
+          <strong>Accepted Payment Methods</strong>
+          <ul class="inline-list payment-icons">
+            {% for type in shop.enabled_payment_types %}
+              {% if payment_icons_available contains type %}
+                <li>
+                  <span class="icon-fallback-text">
+                    <span class="icon icon-{{type}}" aria-hidden="true"></span>
+                    <span class="fallback-text">{{ type | replace: '_',' '}}</span>
+                  </span>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endunless %}
+      <strong>Returns</strong>
+      <p>
+        You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).<br><br>
+        You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).<br><br>
+        If you need to return an item, please contact us with your order number and details about the product you would like to return. We will respond quickly with instructions for how to return items from your order.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+<div id="collection__reviews">
+  <div class="wrapper">
+    <div class="collection__reviews-wrapper">
+      <div class="collection__reviews-title">
+        <h3>Reviews</h3>
+      </div>
+      <div class="collection__reviews-content">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+{% endpaginate %}
+
+ </div>

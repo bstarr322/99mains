@@ -5,7 +5,7 @@ production:
 
 development:
   password: d2f7523270db49c95078a81e41537249
-  theme_id: "144008129"
+  theme_id: "190709761"
   store: 99-mainstreet.myshopify.com
 
 

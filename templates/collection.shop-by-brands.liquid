@@ -1,0 +1,17 @@
+{% assign excluded_vendors = '|' | split: '|' %}
+
+<h1 class="small--text-center">{{ page.title }}</h1>
+
+<div class="grid vendor-logos">
+  {% for vendor in shop.vendors %}
+    {% assign vendor_handle = vendor | handleize %}
+    {% unless excluded_vendors contains vendor_handle %}
+      {% capture vendor_logo %}vendor-{{ vendor_handle }}.png{% endcapture %}
+      <div class="grid__item one-half large--one-fifth vendor-logos__logo">
+        <a href="/collections/{{ vendor_handle }}" class="vendor-logos__link">
+          <img src="{{ vendor_logo | asset_url }}" alt="" width="100" height="68" class="vendor-logos__image">
+        </a>
+      </div>
+    {% endunless %}
+  {% endfor %}
+</div>
