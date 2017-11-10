@@ -135,6 +135,404 @@
     ]
   },
   {
+    "name": "Mega Menu",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "main_menu_selected",
+        "label": "Menu Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "header",
+        "content": "Mega Menus Options"
+      },
+      {
+        "type": "header",
+        "content": "Type 1"
+      },
+      {
+        "type": "paragraph",
+        "content": "Example: menu item name, page handle; menu item name, page handle"
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_type3",
+        "label": "Separate Menu Items"
+      },
+      {
+        "type": "header",
+        "content": "Type 2, Item 1"
+      },
+      {
+        "type": "link_list",
+        "id": "submenu_type_and_list_1",
+        "label": "Select Menu Item"
+      },
+      {
+        "type": "radio",
+        "id": "submenu_type_and_list_grid_1",
+        "label": "Items In Row",
+        "options": [
+          {
+            "value": "2",
+            "label": "6"
+          },
+          {
+            "value": "3",
+            "label": "4"
+          },
+          {
+            "value": "4",
+            "label": "3"
+          }
+        ],
+        "default": "4"
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_images_1",
+        "label": "Categorie Images",
+        "info": "link1, link2, ..."
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_customhtml_1",
+        "label": "Bottom Custom Html"
+      },
+      {
+        "type": "paragraph",
+        "content": "Gallery"
+      },
+      {
+        "type": "checkbox",
+        "id": "submenu_showcollection_1",
+        "label": "Show Simple Slider",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitle_1",
+        "label": "Title",
+        "default": "FEATURED"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitlelink_1",
+        "label": "Title Link",
+        "default": "#"
+      },
+      {
+        "type": "collection",
+        "id": "submenu_collection_1",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectionlength_1",
+        "label": "Items Length",
+        "default": "4",
+        "info": "Integer"
+      },
+      {
+        "type": "header",
+        "content": "Type 2, Item 2"
+      },
+      {
+        "type": "link_list",
+        "id": "submenu_type_and_list_2",
+        "label": "Select Menu Item"
+      },
+      {
+        "type": "radio",
+        "id": "submenu_type_and_list_grid_2",
+        "label": "Items In Row",
+        "options": [
+          {
+            "value": "2",
+            "label": "6"
+          },
+          {
+            "value": "3",
+            "label": "4"
+          },
+          {
+            "value": "4",
+            "label": "3"
+          }
+        ],
+        "default": "4"
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_images_2",
+        "label": "Categorie Images",
+        "info": "link1, link2, ..."
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_customhtml_2",
+        "label": "Bottom Custom Html"
+      },
+      {
+        "type": "paragraph",
+        "content": "Gallery"
+      },
+      {
+        "type": "checkbox",
+        "id": "submenu_showcollection_2",
+        "label": "Show Simple Slider",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitle_2",
+        "label": "Title",
+        "default": "FEATURED"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitlelink_2",
+        "label": "Title Link",
+        "default": "#"
+      },
+      {
+        "type": "collection",
+        "id": "submenu_collection_2",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectionlength_2",
+        "label": "Items Length",
+        "default": "4",
+        "info": "Integer"
+      },
+      {
+        "type": "header",
+        "content": "Type 2, Item 3"
+      },
+      {
+        "type": "link_list",
+        "id": "submenu_type_and_list_3",
+        "label": "Select Menu Item"
+      },
+      {
+        "type": "radio",
+        "id": "submenu_type_and_list_grid_3",
+        "label": "Items In Row",
+        "options": [
+          {
+            "value": "2",
+            "label": "6"
+          },
+          {
+            "value": "3",
+            "label": "4"
+          },
+          {
+            "value": "4",
+            "label": "3"
+          }
+        ],
+        "default": "4"
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_images_3",
+        "label": "Categorie Images",
+        "info": "link1, link2, ..."
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_customhtml_3",
+        "label": "Bottom Custom Html"
+      },
+      {
+        "type": "paragraph",
+        "content": "Gallery"
+      },
+      {
+        "type": "checkbox",
+        "id": "submenu_showcollection_3",
+        "label": "Show Simple Slider",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitle_3",
+        "label": "Title",
+        "default": "FEATURED"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitlelink_3",
+        "label": "Title Link",
+        "default": "#"
+      },
+      {
+        "type": "collection",
+        "id": "submenu_collection_3",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectionlength_3",
+        "label": "Items Length",
+        "default": "4",
+        "info": "Integer"
+      },
+      {
+        "type": "header",
+        "content": "Type 2, Item 4"
+      },
+      {
+        "type": "link_list",
+        "id": "submenu_type_and_list_4",
+        "label": "Select Menu Item"
+      },
+      {
+        "type": "radio",
+        "id": "submenu_type_and_list_grid_4",
+        "label": "Items In Row",
+        "options": [
+          {
+            "value": "2",
+            "label": "6"
+          },
+          {
+            "value": "3",
+            "label": "4"
+          },
+          {
+            "value": "4",
+            "label": "3"
+          }
+        ],
+        "default": "4"
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_images_4",
+        "label": "Categorie Images",
+        "info": "link1, link2, ..."
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_customhtml_4",
+        "label": "Bottom Custom Html"
+      },
+      {
+        "type": "paragraph",
+        "content": "Gallery"
+      },
+      {
+        "type": "checkbox",
+        "id": "submenu_showcollection_4",
+        "label": "Show Simple Slider",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitle_4",
+        "label": "Title",
+        "default": "FEATURED"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitlelink_4",
+        "label": "Title Link",
+        "default": "#"
+      },
+      {
+        "type": "collection",
+        "id": "submenu_collection_4",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectionlength_4",
+        "label": "Items Length",
+        "default": "4",
+        "info": "Integer"
+      },
+      {
+        "type": "header",
+        "content": "Type 2, Item 5"
+      },
+      {
+        "type": "link_list",
+        "id": "submenu_type_and_list_5",
+        "label": "Select Menu Item"
+      },
+      {
+        "type": "radio",
+        "id": "submenu_type_and_list_grid_5",
+        "label": "Items In Row",
+        "options": [
+          {
+            "value": "2",
+            "label": "6"
+          },
+          {
+            "value": "3",
+            "label": "4"
+          },
+          {
+            "value": "4",
+            "label": "3"
+          }
+        ],
+        "default": "4"
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_images_5",
+        "label": "Categorie Images",
+        "info": "link1, link2, ..."
+      },
+      {
+        "type": "textarea",
+        "id": "submenu_customhtml_5",
+        "label": "Bottom Custom Html"
+      },
+      {
+        "type": "paragraph",
+        "content": "Gallery"
+      },
+      {
+        "type": "checkbox",
+        "id": "submenu_showcollection_5",
+        "label": "Show Simple Slider",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitle_5",
+        "label": "Title",
+        "default": "FEATURED"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectiontitlelink_5",
+        "label": "Title Link",
+        "default": "#"
+      },
+      {
+        "type": "collection",
+        "id": "submenu_collection_5",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "submenu_collectionlength_5",
+        "label": "Items Length",
+        "default": "4",
+        "info": "Integer"
+      }
+    ]
+  },
+  {
     "name": "Footer",
     "settings": [
       {

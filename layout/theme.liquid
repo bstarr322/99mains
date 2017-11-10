@@ -28,6 +28,7 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
   <!-- CSS ================================================== -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
   {{ 'hover.css' | asset_url | stylesheet_tag }}
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'apps.css' | asset_url | stylesheet_tag }}
@@ -58,6 +59,8 @@
     {% include 'drawer-cart' %}
   {% endif %}
 
+  {% include "main-menu-mobile" %}
+
   <div id="PageContainer" class="drawer-page-content">  
     {% include 'header' %}
 
@@ -81,6 +84,8 @@
   {{ 'timber.js' | asset_url | script_tag }}
   {{ 'theme.js' | asset_url | script_tag }}
 
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
+    
   {% include 'shopstorm-scripttags' %}
   
   {% comment %}

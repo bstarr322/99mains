@@ -100,6 +100,7 @@ timber.init = function () {
   timber.responsiveVideos();
   timber.collectionViews();
   timber.loginForms();
+  timber.megaMenu();
 };
 
 timber.accessibleNav = function () {
@@ -179,6 +180,135 @@ timber.accessibleNav = function () {
   function removeFocus ($el) {
     $el.removeClass(focusClass);
   }
+};
+
+timber.megaMenu = function() {
+
+  // productCarousel($('.megaMenuCarousel_js'),1,1,1,1,1);
+
+  /* Multi menu position */
+  var $mainMenu = $(".mainMenu");
+  if($mainMenu.find('.dropdown-mega-menu').length) {
+    $mainMenu.find('.dropdown-mega-menu > ul:not(.image-links-layout)').each(function(){
+      $(this).find('a').each(function(){
+        $(this).hover(
+          function(){
+            var $this = $(this);
+            if($this.parent().find('ul').length) {
+              var $ul = $this.parent().find('ul').first();
+              var ow = $ul.innerWidth();
+              var ox = $ul.offset().left;
+              var s = ow + ox;
+              
+              var oh = $ul.innerHeight();
+              var oy = $ul.offset().top;
+              var sh = oh + oy;
+              
+              var w = window.innerWidth;
+              var h = 0;
+              var _par = null;
+              
+              if($ul.hasClass('megamenu__submenu')) {
+                var _parent = false;
+                if($ul.parent().parent().hasClass('megamenu')) {
+                  return false;
+                }
+                else if($ul.parent().parent().parent().parent().hasClass('megamenu')) {
+                  _par = $ul.parent().parent().parent().parent();
+                  w = _par.offset().left + _par.innerWidth();
+                  h = _par.offset().top + _par.innerHeight();
+                  h -= sh;
+                  if(h < 0) $ul.css('top', h-5);
+                }
+                else if($ul.parent().parent().parent().parent().parent().parent().hasClass('megamenu')) {
+                  _par = $ul.parent().parent().parent().parent().parent().parent();
+                  w = _par.offset().left + _par.innerWidth();
+                  h = _par.offset().top + _par.innerHeight();
+                  h -= sh;
+                  if(h < 0) $ul.css('top', h-5);
+                }
+              }
+              if(w < s) $ul.addClass('popup-left');
+            }
+          },
+          function(){
+          }
+        )
+      })
+    })
+  }
+
+  var timerVar;
+  $("nav").each(function(){
+    if(!$( this ).hasClass("navbar-vertical")) {
+      $( this ).find(".dropdown").each(function(){
+        $( this ).hover(
+          function() {
+            var $this = $( this );
+            var $obj = $this.find(".dropdown-menu");
+            if($obj.length) {
+              $obj.fadeOut(0);
+              timerVar = setTimeout(function(){ 
+                $this.addClass("active"); 
+                $obj.fadeIn(200);
+                submenuXposition($obj);
+                submenuYposition($obj);
+                $( window ).bind( "scroll", { obj: $obj }, menuScroll);
+              }, 300);
+            }
+          }, function() {
+            var $this = $( this );
+            var $obj = $this.find(".dropdown-menu");
+            clearTimeout(timerVar);
+            $( window ).unbind( "scroll", menuScroll);
+            if($this.hasClass("active")){
+              $obj.fadeOut(300);
+              setTimeout(removeActiveItem, 300, $this);
+              $( "body" ).hasClass("hidden-menu") && $( "body" ).removeClass("hidden-menu");
+            }
+          }
+        );
+      });
+    }
+  });
+
+
+  function submenuXposition($obj){
+    var w_width = window.innerWidth;
+    var o_position = $obj.offset().left;
+    var o_width = $obj.outerWidth();
+    var delta = parseInt(w_width - o_position - o_width - 25);
+    
+    if(delta < 0) {
+        $obj.css("left", delta);
+    }
+  }
+  function submenuYposition($obj){
+    var w_height = window.innerHeight;
+    var o_position = $(".stuck-nav").hasClass("fixedbar") ? $obj.position().top : $obj.offset().top;
+    var o_height = $obj.outerHeight();
+    var delta = parseInt(w_height - o_position - o_height);
+    if(delta < 0) {
+        $obj.css({"max-height": o_height + delta - 25, "overflow": "auto"});
+        $( "body" ).addClass("hidden-menu");
+    }
+  }
+  function menuScroll(event) {
+    event.data.obj.removeAttr("style");
+    submenuXposition(event.data.obj);
+    submenuYposition(event.data.obj)
+  }
+
+  function removeActiveItem(item){
+    item.removeClass("active");
+    item.removeAttr("style");
+    item.find("ul").first().removeAttr("style");
+  }
+
+  if($( "nav .dropdown-toggle[href='" + window.location.pathname + "']" ).length) {
+    $( "nav .dropdown-toggle[href='" + window.location.pathname + "']" ).parent().addClass("selected");
+  }
+
 };
 
 timber.drawersInit = function () {
@@ -491,6 +621,96 @@ timber.Drawers = (function () {
 
   return Drawer;
 })();
+
+// Product Carousel
+  
+  function productCarousel(carousel,numberXl,numberLg,numberMd,numberSm,numberXs, autoplay) {
+     
+      var windowW = window.innerWidth || $(window).width();
+
+      var slidesToShowXl = (numberXl > 0) ? numberXl : 6;
+      var slidesToShowLg = (numberLg > 0) ? numberLg : 4;
+      var slidesToShowMd = (numberMd > 0) ? numberMd : numberLg;
+      var slidesToShowSm = (numberSm > 0) ? numberSm : numberMd;
+      var slidesToShowXs = (numberXs > 0) ? numberXs : 1;
+
+      autoplay = autoplay || {autoplay: false, speed: 5000, slidesToScroll: slidesToShowXl};
+
+      if (carousel.parent().find('.carousel-products__button').length > 0) {
+
+        carousel.slick({
+          prevArrow: carousel.parent().find('.carousel-products__button .btn-prev'),
+          nextArrow: carousel.parent().find('.carousel-products__button .btn-next'),
+          autoplay: autoplay.autoplay,
+          autoplaySpeed: autoplay.speed,
+          dots: true,
+          slidesToShow: slidesToShowXl,
+          slidesToScroll: autoplay.slidesToScroll,
+          responsive: [{
+            breakpoint: 1770,
+            settings: {
+              slidesToShow: slidesToShowLg,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowLg)
+            }
+          },{
+            breakpoint: 992,
+            settings: {
+              slidesToShow: slidesToShowMd,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowMd)
+            }
+          }, {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: slidesToShowSm,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowSm)
+            }
+          }, {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: slidesToShowXs,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowXs)
+            }
+          }]
+        });
+      }
+      else {
+        carousel.slick({
+          slidesToShow: slidesToShowXl,
+          autoplay: autoplay.autoplay,
+          slidesToScroll: autoplay.slidesToScroll,
+          autoplaySpeed: autoplay.speed,
+          speed: 500,
+          responsive: [{
+            breakpoint: 1770,
+            settings: {
+              slidesToShow: slidesToShowLg,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowLg)
+            }
+          },{
+            breakpoint: 992,
+            settings: {
+              slidesToShow: slidesToShowMd,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowMd)
+            }
+          }, {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: slidesToShowSm,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowSm)
+            }
+          }, {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: slidesToShowXs,
+              slidesToScroll: Math.min(autoplay.slidesToScroll, slidesToShowXs)
+            }
+          }]
+        });
+      }
+
+      fixCarouselHover(carousel);
+
+  };
 
 // Initialize Timber's JS on docready
 $(timber.init);
