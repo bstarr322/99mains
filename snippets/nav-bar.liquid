@@ -4,24 +4,7 @@
     <div class="medium-down--hide">
 
       <!-- begin site-nav -->
-      <ul class="site-nav" id="AccessibleNav">
-        {% for link in linklists[settings.main_menu_selected].links %}
-          {% assign child_list_handle = link.title | handleize %}
-
-          {% if linklists[child_list_handle].links != blank %}
-            <li class="site-nav--has-dropdown" aria-haspopup="true">
-              <a href="{{ link.url }}" class="site-nav__link">
-                {{ link.title }}
-                <span class="icon icon-arrow-down hide" aria-hidden="true"></span>
-              </a>
-            </li>
-          {% else %}
-            <li {% if link.active %}class="site-nav--active"{% endif %}>
-              <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+      {% include 'main-menu' %}
       <!-- //site-nav -->
     </div>
     <div class="large--hide medium-down--show">
