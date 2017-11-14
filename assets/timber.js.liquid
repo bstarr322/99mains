@@ -101,6 +101,7 @@ timber.init = function () {
   timber.collectionViews();
   timber.loginForms();
   timber.megaMenu();
+  timber.mobileMenu();
 };
 
 timber.accessibleNav = function () {
@@ -184,7 +185,7 @@ timber.accessibleNav = function () {
 
 timber.megaMenu = function() {
 
-  // productCarousel($('.megaMenuCarousel_js'),1,1,1,1,1);
+  productCarousel($('.megaMenuCarousel_js'),1,1,1,1,1);
 
   /* Multi menu position */
   var $mainMenu = $(".mainMenu");
@@ -305,11 +306,48 @@ timber.megaMenu = function() {
     item.find("ul").first().removeAttr("style");
   }
 
-  if($( "nav .dropdown-toggle[href='" + window.location.pathname + "']" ).length) {
-    $( "nav .dropdown-toggle[href='" + window.location.pathname + "']" ).parent().addClass("selected");
+};
+
+timber.mobileMenu = function() {
+  if ($(".navbar-toggle").length > 0) {
+    $('.navbar-toggle').click(function () {
+      $(".mobile-menu-wrapper").addClass('open');
+      $("body").addClass('no-scroll');       
+    });  
+    $('#cboxClose').click(function () {
+      $('.mobile-menu-wrapper, .mobile-menu-popup').removeClass('open');
+      $("body").removeClass('no-scroll')
+    });
+    $('.mobile-menu-popup').click(function () {
+      $('.mobile-menu-wrapper').removeClass('open');
+      $("body").removeClass('no-scroll')
+    });         
   }
 
-};
+  $("#off-canvas-menu .expander-list").find("ul").hide().end().find(" .expander").text("+").end().find(".active").each(function() {
+    $(this).parents("li ").each(function() {
+      var $this = $(this),
+          $ul = $this.find("> ul"),
+
+          $expander = $this.find("> .name .expander");
+      $ul.show();
+
+      $expander.html("&minus;")
+    })
+  }).end().find(" .expander").each(function() {
+    var $this = $(this),
+        hide = $this.text() === "+",
+        $ul = $this.parent(".name").next("ul"),
+        $name = $this.next("a");
+    $this.click(function() {
+      if ($ul.css("display") ==
+          "block") $ul.slideUp("slow");
+      else $ul.slideDown("slow");
+      $(this).html(hide ? "&minus;" : "+");              
+      hide = !hide
+    })
+  })
+}
 
 timber.drawersInit = function () {
   timber.LeftDrawer = new timber.Drawers('NavDrawer', 'left');
@@ -710,6 +748,16 @@ timber.Drawers = (function () {
 
       fixCarouselHover(carousel);
 
+  };
+
+  // Fix z-index problem on carousel hover
+  
+  function fixCarouselHover(carousel) {
+    carousel.find('.slick-slide').bind( "mouseenter mouseleave",
+                function( event ){
+                    $(this).closest('.slick-slider').toggleClass('hover');
+                }
+        );      
   };
 
 // Initialize Timber's JS on docready
