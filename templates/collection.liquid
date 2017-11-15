@@ -27,7 +27,7 @@
   </div>
 </nav>
 
-<div class="collection-breadcrumb">
+<div class="collection-breadcrumb hide">
   <div class="wrapper">
     {% include 'breadcrumb' %}
   </div>
@@ -46,7 +46,7 @@
     {% unless collection.template_suffix contains 'shop2' %}
     <div class="collection__filter-wrapper">
       <div class="collection__filter-content">
-        {% include 'filter-menu' %}
+        {% include 'filter-menu-shop1' %}
       </div>
     </div>
     {% endunless %}
