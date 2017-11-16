@@ -5176,9 +5176,6 @@ $lusa-transition-base: all .1s ease-in;
     -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   }
-  .navbar .navbar-nav>li.dropdown>.dropdown-menu {
-    padding: 10px 15px;
-  }
 
   .dropdown .dropdown-menu__close {
     display: none;
@@ -5188,9 +5185,8 @@ $lusa-transition-base: all .1s ease-in;
     color: $colorTextBody;
     font-size: 14px;
     line-height: 1em;
-    padding: 16px 7px 17px;
+    padding: 15px 20px !important;
     text-decoration: none;
-    border-bottom: 1px solid $colorTextBody;
     font-weight: 300;
   }
   .dropdown .dropdown-menu > li > a:hover {
@@ -5448,6 +5444,8 @@ $lusa-transition-base: all .1s ease-in;
 }
 
 .navbar .dropdown-menu li > a {
+  line-height: 1;
+  padding: 15px;
   color: $colorNavText;
 
   &:hover,
@@ -5538,5 +5536,106 @@ $lusa-transition-base: all .1s ease-in;
   .dl-close,
   .dl-back {
     display: none !important;
+  }
+}
+
+
+.flex {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.flex-hvc {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.flex-hc {
+  @include flexbox();
+  @include justify-content(center);
+}
+.flex-vc {
+  @include flexbox();
+  @include align-items(center);
+}
+
+// @TODO, Should sanitize style with above megamenu styles.
+.navbar .navbar-nav .dropdown-menu li {
+  margin: initial;
+}
+.megamenu {
+  > li.megamenu__main_cat {
+    // position: relative;
+    // width: 25%;
+
+
+    &:hover,
+    &.tab-opened {
+      .megamenu__subheader {
+        background-color: #f9f9f9;
+      }
+      .megamenu__submenu {
+        display: block;
+      }
+    }
+
+    .megamenu__subheader {
+      position: relative;
+      width: 25%;
+
+      .fa {
+        position: absolute;
+        right: 10px;
+      }
+    }
+
+    .mega__cat_splitbar {
+      position: absolute;
+      height: 100%;
+      left: 25%;
+      width: 1px;
+      background-color: $colorBorder;
+      top: 0;
+    }
+
+    .megamenu__submenu {
+      display: none;
+      position: absolute;
+      // left: 100%;
+      // width: 300%;
+      top: 0;
+      left: calc(25%);
+      width: calc(75%);
+      // height: 100%;
+      margin: initial;
+      border-left: 1px solid $colorBorder;
+      padding-bottom: 20px;
+
+      .col {
+        padding: initial;
+
+        >a {
+          border-bottom: 1px solid $colorBorder;
+          text-align: center;
+        }
+        
+      }
+    }
+  }
+}
+
+.megamenu__subtitle {
+  &:hover {
+    letter-spacing: 1px;
+  }
+
+  span {
+    -webkit-transition:  all 300ms linear 0s;
+    -moz-transition:  all 300ms linear 0s;
+    -ms-transition:  all 300ms linear 0s;
+    -o-transition:  all 300ms linear 0s;
+    transition:  all 300ms linear 0s;
   }
 }

@@ -1,17 +1,13 @@
 {% assign array_key = "|$big_array$|" | downcase %}
-{% assign menu_data = settings.submenu_type_and_list_1 | downcase | handle %}
-{% assign value = settings.submenu_type_and_list_2 | downcase | handle %}
+{% assign menu_data = settings.megamenu_list_1 | downcase | handle %}
+{% assign value = settings.megamenu_list_2 | downcase | handle %}
 {% assign menu_data = menu_data | append: array_key | append: value %}
-{% assign value = settings.submenu_type_and_list_3 | downcase | handle %}
+{% assign value = settings.megamenu_list_3 | downcase | handle %}
 {% assign menu_data = menu_data | append: array_key | append: value %}
-{% assign value = settings.submenu_type_and_list_4 | downcase | handle %}
+{% assign value = settings.megamenu_list_4 | downcase | handle %}
 {% assign menu_data = menu_data | append: array_key | append: value %}
-{% assign value = settings.submenu_type_and_list_5 | downcase | handle %}
+{% assign value = settings.megamenu_list_5 | downcase | handle %}
 {% assign menu_data = menu_data | append: array_key | append: value %}
-{% assign sub_type3 = settings.submenu_type3 | downcase %}
-{{sub_type3}}
-{% if settings.menu_icon_hot != '' %}{% assign hotArray = settings.menu_icon_hot | split: ',' %}{% assign newa = '' %}{% for a in hotArray %}{% assign a1 = a | strip | downcase %}{% assign newa = newa | append: '__' | append: a1 | append: ',' %}{% endfor %}{% assign hotArray = newa %}{% else %}{% assign hotArray = '' %}{% endif %}
-{% if settings.menu_icon_new != '' %}{% assign newArray = settings.menu_icon_new | split: ',' %}{% assign newa = '' %}{% for a in newArray %}{% assign a1 = a | strip | downcase %}{% assign newa = newa | append: '__' | append: a1 | append: ',' %}{% endfor %}{% assign newArray = newa %}{% else %}{% assign newArray = '' %}{% endif %}
 
 <nav class="navbar {{ class }}">
   <div class="responsive-menu mainMenu clearfix">
@@ -28,12 +24,10 @@
         {% assign return = return | split: "%%" %}
         {% assign has_drop_down = return | first | strip %}
         {% assign child_list_handle = return | last | strip %}
-    
 
         {% comment %} Check submenu type {% endcomment %}
-        
         {% assign title = child_list_handle %}
-       
+
         {% if menu_data contains title %}
           {% assign current_menu_data = menu_data | split: array_key %}
           
@@ -47,25 +41,6 @@
             
             {% endif %}
           {% endfor %}
-        {% else %}
-          {% assign check = 'item' | append: forloop.index %}
-          {% capture cur_item %}{% if sub_type3 contains check %}{{ check }}{% else %}{{ link.title | downcase }}{% endif %}{% endcapture %}
-         
-          {% if sub_type3 contains cur_item %}
-            {% assign current_menu_data = sub_type3 | split: ";" %}
-           
-            {% for data in current_menu_data %}
-              {% if data contains cur_item %}
-                {% assign temp = data | split: ',' %}
-                {% assign page_handle = temp[1] | strip %}
-                {% assign temp = temp[0] | strip %}
-                {% if temp == cur_item %}
-                  {% assign submenu_type = "type3" %}
-                  {% break %}
-                {% endif %}
-              {% endif %}
-            {% endfor %}
-          {% endif %}
         {% endif %}
         
 
@@ -106,14 +81,10 @@
         
         <li class="dropdown dropdown-mega-menu{% if submenu_type != "type2" and submenu_type != "type3" %}{% if level_2.links[0].handle contains "two_column" or level_2.links[0].handle contains "three_column" %} dropdown-two-col{% else %} dropdown-one-col{% endif %}{% endif %} {% if select_item %}selected{% endif %}">
           <a href="{{ link.url }}" class="dropdown-toggle" data-toggle="dropdown"><span class="act-underline">
-            {% assign check_title = link.title | strip | downcase %}
-            {% assign check_title = '__' | append: check_title %}
-            {% if newArray contains check_title %}<span class="badge badge--menu">{{ "general.menu_icons.new" | t }}</span>{% endif %}
-            {% if hotArray contains check_title %}<span class="badge badge--menu badge--color">{{ "general.menu_icons.sale" | t }}</span>{% endif %}
             {{ link.title }}</span>
           </a>
           
-          {% if submenu_type != "type2" and submenu_type != "type3" %}
+          {% if submenu_type != "type2" %}
             {% unless level_2.empty? %}
               <ul class="dropdown-menu multicolumn {% if level_2.links[0].handle contains "two_column" %}two-col{% elsif level_2.links[0].handle contains "three_column" %}three-col{% endif %}" role="menu">
                 <li class="dl-back"><a href="#"><span class="icon icon-chevron_left"></span>{{ "general.menu.button_back" | t }}</a></li>
@@ -144,9 +115,8 @@
             {% endunless %}
           {% endif %}
         
-        
           {% if submenu_type == "type2" %}{% unless level_2.empty? %}{% if has_drop_down == "true" %}
-          <ul class="dropdown-menu megamenu" role="menu">
+          <ul class="dropdown-menu megamenu tabbed" role="menu">
             {% assign imgs_key = "submenu_images_" | append: count_type2 %}
             {% assign imgs = settings[imgs_key] %}
             {% if imgs != "" %}{% assign imgs = imgs | split: ',' %}{% endif %}
@@ -155,25 +125,107 @@
             {% assign grid = settings[grid] %}
             
             {% for child_level_2 in level_2.links %}
-            <li>
-              <a href="{{ child_level_2.url | downcase }}" class="megamenu__subtitle">
-                <span>{{ child_level_2.title }}</span>
-              </a>
+            <!-- Megamenu Tab list -->
 
-              {% if linklists[child_level_2.handle].links != blank %}
+              {% comment %} Get Tab items' order with count_sub_type2 {% endcomment %}
+
+              {% assign count_sub_type2 = '' %}
+              {% for i in (0..8) %}
+                {% capture key_tab %}megamenu_list_{{ count_type2 }}_childmenu_{{ forloop.index }}{% endcapture %}
+                {% assign tab_handle = child_level_2.title | handle %}
+                
+                {% if tab_handle == settings[key_tab] %}
+                  {% assign count_sub_type2 = forloop.index %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+
+            {% capture key_grid %}megamenu_list_{{ count_type2 }}_childmenu_{{ count_sub_type2 }}_grid{% endcapture %}
+            {% capture key_imgs %}megamenu_list_{{ count_type2 }}_childmenu_{{ count_sub_type2 }}_images{% endcapture %}
+            {% capture key_SFC %}megamenu_list_{{ count_type2 }}_childmenu_{{ count_sub_type2 }}_SFC{% endcapture %}
+            {% capture key_FCT %}megamenu_list_{{ count_type2 }}_childmenu_{{ count_sub_type2 }}_FCT{% endcapture %}
+            {% capture key_FC %}megamenu_list_{{ count_type2 }}_childmenu_{{ count_sub_type2 }}_FC{% endcapture %}
+            {% capture key_FCL %}megamenu_list_{{ count_type2 }}_childmenu_{{ count_sub_type2 }}_FCL{% endcapture %}
+
+            <li class="megamenu__main_cat {% if forloop.index == 1 %}tab-opened{% endif %}">
+              <a href="javascript:void(0)" class="megamenu__subheader">
+              <!-- <a href="{{ child_level_2.url | downcase }}" class="megamenu__subheader"> -->
+                <span>{{ child_level_2.title }}</span>
+                <i class="fa fa-angle-right"></i>
+              </a>
+              <div class="mega__cat_splitbar"></div>
+              <!-- Should always show the wrapper in order to show the border-left of the tab panel  -->
               <ul class="megamenu__submenu">
+              {% if linklists[child_level_2.handle].links != blank %}
                 {% for child_level_3 in linklists[child_level_2.handle].links %}
-                  <li class="col-sm-{{ grid }}">
+                <!-- Todo -->
+                  <li class="col col-sm-{{ settings[key_grid] }}">
                     <a href="{{ child_level_3.url | downcase }}" class="megamenu__subtitle">
                       <span>{{ child_level_3.title }}</span>
                       {% if imgs != "" %}{% if imgs[forloop.index0] != "" %}
                       <span class="megamenu__category-image hidden-xs"><img class="img-responsive" src="{{ imgs[forloop.index0] | strip }}" alt=""/></span>
                       {% endif %}{% endif %}
                     </a>
+
+                    {% if linklists[child_level_3.handle].links != blank %}
+                      <ul>
+                      {% for child_level_4 in linklists[child_level_3.handle].links %}
+                        <li>
+                          <a href="{{ child_level_4.url | downcase }}" class="megamenu__subsubtitle">
+                            <span>{{ child_level_4.title }}</span>
+                            {% if imgs != "" %}{% if imgs[forloop.index0] != "" %}
+                            <span class="megamenu__category-image hidden-xs"><img class="img-responsive" src="{{ imgs[forloop.index0] | strip }}" alt=""/></span>
+                            {% endif %}{% endif %}
+                          </a>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    {% endif %}
                   </li>
                 {% endfor %}
-              </ul>
+
+                {% if settings[key_SFC] %}
+                  {% assign titleLink = "submenu_collectiontitlelink_" | append: count_type2 %}
+                  <li class="col-sm-{{ settings[key_grid] }} hidden-xs">
+                    <a href="#" class="megamenu__subtitle"><span>{{ settings[key_FCT] }}</span></a>
+                    
+                    {% assign key = settings[key_FC] %}
+                    {% if key == blank %}{% assign key = "all" %}{% endif %}
+                    {% assign selected_collection = collections[key].products %}
+
+                    {% assign _lenght = settings[key_FCL] | plus: 0 %}
+
+                    <div class="carousel-products megaMenuCarousel_js">
+                      {% for product in selected_collection limit: _lenght %}
+                      <div>
+                        <!-- product -->
+                        <div class="product">
+                          <div class="product__inside">
+                            <!-- product image -->
+                            <div class="product__inside__image">
+                              <a href="{{ product.url | within: collection }}"> <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"> </a>
+                            </div>
+                            <!-- /product image --> 
+                            <!-- product name -->
+                            <div class="product__inside__name">
+                              <h2><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h2>
+                            </div>
+                            <!-- /product name --> 
+                            <!-- product price -->
+                            <div class="product__inside__price price-box">{{ product.selected_or_first_available_variant.price | money }}</div>
+                            <!-- /product price --> 
+                          </div>
+                        </div>
+                        <!-- /product -->
+                      </div>
+                      {% endfor %}
+                    </div>
+                    <!-- /carousel -->
+                    
+                  </li>
+                {% endif %}
               {% endif %}
+              </ul>
             </li>
             
             <li class="col-sm-{{ grid }} hide">
@@ -236,61 +288,8 @@
             </li>
             {% endfor %}
             
-            {% assign key = "submenu_showcollection_" | append: count_type2 %}
-            {% if settings[key] %}
-              {% assign key = "submenu_collectiontitle_" | append: count_type2 %}
-              {% assign titleLink = "submenu_collectiontitlelink_" | append: count_type2 %}
-              <li class="col-sm-{{ grid }} hidden-xs">
-                <a href="{{ settings[titleLink] }}" class="megamenu__subtitle"><span>{{ settings[key] }}</span></a>
-                
-                {% assign key = "submenu_collection_" | append: count_type2 %}
-                {% assign key = settings[key] %}
-                {% if key == blank %}{% assign key = "all" %}{% endif %}
-                {% assign selected_collection = collections[key].products %}
-                {% assign key = "submenu_collectionlength_" | append: count_type2 %}
-                {% assign _lenght = settings[key] | plus: 0 %}
-
-                <div class="carousel-products megaMenuCarousel_js">
-                  {% for product in selected_collection limit: _lenght %}
-                  <div>
-                    <!-- product -->
-                    <div class="product">
-                      <div class="product__inside">
-                        <!-- product image -->
-                        <div class="product__inside__image">
-                          <a href="{{ product.url | within: collection }}"> <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"> </a>
-                        </div>
-                        <!-- /product image --> 
-                        <!-- product name -->
-                        <div class="product__inside__name">
-                          <h2><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h2>
-                        </div>
-                        <!-- /product name --> 
-                        <!-- product price -->
-                        <div class="product__inside__price price-box">{{ product.selected_or_first_available_variant.price | money }}</div>
-                        <!-- /product price --> 
-                      </div>
-                    </div>
-                    <!-- /product -->
-                  </div>
-                  {% endfor %}
-                </div>
-                <!-- /carousel -->
-                
-              </li>
-            {% endif %}
-            
-            {% assign key = 'submenu_customhtml_' | append: count_type2 %}{% if settings[key] != "" %}<li class="col-sm-12 hidden-xs">{{ settings[key] }}</li>{% endif %}
-            
           </ul>
           {% endif %}{% endunless %}{% endif %}
-          
-
-          {% if submenu_type == "type3" %}
-            <ul class="dropdown-menu megamenu image-links-layout" role="menu">
-              {% include "get-page-content" name: page_handle access: "true" %}
-            </ul>
-          {% endif %}
 
         </li>
       {% endfor %}

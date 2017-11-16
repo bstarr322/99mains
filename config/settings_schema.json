@@ -149,29 +149,25 @@
       },
       {
         "type": "header",
-        "content": "Type 1"
-      },
-      {
-        "type": "paragraph",
-        "content": "Example: menu item name, page handle; menu item name, page handle"
-      },
-      {
-        "type": "textarea",
-        "id": "submenu_type3",
-        "label": "Separate Menu Items"
-      },
-      {
-        "type": "header",
         "content": "Type 2, Item 1"
       },
       {
         "type": "link_list",
-        "id": "submenu_type_and_list_1",
-        "label": "Select Menu Item"
+        "id": "megamenu_list_1",
+        "label": "Select Main Menu Item"
+      },
+      {
+        "type": "paragraph",
+        "content": "Sub Menu Settings"
+      },
+      {
+        "type": "link_list",
+        "id": "megamenu_list_1_childmenu_1",
+        "label": "Select Sub Menu Item"
       },
       {
         "type": "radio",
-        "id": "submenu_type_and_list_grid_1",
+        "id": "megamenu_list_1_childmenu_1_grid",
         "label": "Items In Row",
         "options": [
           {
@@ -191,14 +187,9 @@
       },
       {
         "type": "textarea",
-        "id": "submenu_images_1",
+        "id": "megamenu_list_1_childmenu_1_images",
         "label": "Categorie Images",
         "info": "link1, link2, ..."
-      },
-      {
-        "type": "textarea",
-        "id": "submenu_customhtml_1",
-        "label": "Bottom Custom Html"
       },
       {
         "type": "paragraph",
@@ -206,46 +197,36 @@
       },
       {
         "type": "checkbox",
-        "id": "submenu_showcollection_1",
+        "id": "megamenu_list_1_childmenu_1_SFC",
         "label": "Show Simple Slider",
         "default": true
       },
       {
         "type": "text",
-        "id": "submenu_collectiontitle_1",
+        "id": "megamenu_list_1_childmenu_1_FCT",
         "label": "Title",
         "default": "FEATURED"
       },
       {
-        "type": "text",
-        "id": "submenu_collectiontitlelink_1",
-        "label": "Title Link",
-        "default": "#"
-      },
-      {
         "type": "collection",
-        "id": "submenu_collection_1",
+        "id": "megamenu_list_1_childmenu_1_FC",
         "label": "Collection"
       },
       {
         "type": "text",
-        "id": "submenu_collectionlength_1",
+        "id": "megamenu_list_1_childmenu_1_FCL",
         "label": "Items Length",
         "default": "4",
         "info": "Integer"
       },
       {
-        "type": "header",
-        "content": "Type 2, Item 2"
-      },
-      {
         "type": "link_list",
-        "id": "submenu_type_and_list_2",
-        "label": "Select Menu Item"
+        "id": "megamenu_list_1_childmenu_2",
+        "label": "Select Sub Menu Item"
       },
       {
         "type": "radio",
-        "id": "submenu_type_and_list_grid_2",
+        "id": "megamenu_list_1_childmenu_2_grid",
         "label": "Items In Row",
         "options": [
           {
@@ -265,14 +246,9 @@
       },
       {
         "type": "textarea",
-        "id": "submenu_images_2",
+        "id": "megamenu_list_1_childmenu_2_images",
         "label": "Categorie Images",
         "info": "link1, link2, ..."
-      },
-      {
-        "type": "textarea",
-        "id": "submenu_customhtml_2",
-        "label": "Bottom Custom Html"
       },
       {
         "type": "paragraph",
@@ -280,46 +256,36 @@
       },
       {
         "type": "checkbox",
-        "id": "submenu_showcollection_2",
+        "id": "megamenu_list_1_childmenu_2_SFC",
         "label": "Show Simple Slider",
         "default": true
       },
       {
         "type": "text",
-        "id": "submenu_collectiontitle_2",
+        "id": "megamenu_list_1_childmenu_2_FCT",
         "label": "Title",
         "default": "FEATURED"
       },
       {
-        "type": "text",
-        "id": "submenu_collectiontitlelink_2",
-        "label": "Title Link",
-        "default": "#"
-      },
-      {
         "type": "collection",
-        "id": "submenu_collection_2",
+        "id": "megamenu_list_1_childmenu_2_FC",
         "label": "Collection"
       },
       {
         "type": "text",
-        "id": "submenu_collectionlength_2",
+        "id": "megamenu_list_1_childmenu_2_FCL",
         "label": "Items Length",
         "default": "4",
         "info": "Integer"
       },
       {
-        "type": "header",
-        "content": "Type 2, Item 3"
-      },
-      {
         "type": "link_list",
-        "id": "submenu_type_and_list_3",
-        "label": "Select Menu Item"
+        "id": "megamenu_list_1_childmenu_3",
+        "label": "Select Sub Menu Item"
       },
       {
         "type": "radio",
-        "id": "submenu_type_and_list_grid_3",
+        "id": "megamenu_list_1_childmenu_3_grid",
         "label": "Items In Row",
         "options": [
           {
@@ -339,14 +305,9 @@
       },
       {
         "type": "textarea",
-        "id": "submenu_images_3",
+        "id": "megamenu_list_1_childmenu_3_images",
         "label": "Categorie Images",
         "info": "link1, link2, ..."
-      },
-      {
-        "type": "textarea",
-        "id": "submenu_customhtml_3",
-        "label": "Bottom Custom Html"
       },
       {
         "type": "paragraph",
@@ -354,46 +315,36 @@
       },
       {
         "type": "checkbox",
-        "id": "submenu_showcollection_3",
+        "id": "megamenu_list_1_childmenu_3_SFC",
         "label": "Show Simple Slider",
         "default": true
       },
       {
         "type": "text",
-        "id": "submenu_collectiontitle_3",
+        "id": "megamenu_list_1_childmenu_3_FCT",
         "label": "Title",
         "default": "FEATURED"
       },
       {
-        "type": "text",
-        "id": "submenu_collectiontitlelink_3",
-        "label": "Title Link",
-        "default": "#"
-      },
-      {
         "type": "collection",
-        "id": "submenu_collection_3",
+        "id": "megamenu_list_1_childmenu_3_FC",
         "label": "Collection"
       },
       {
         "type": "text",
-        "id": "submenu_collectionlength_3",
+        "id": "megamenu_list_1_childmenu_3_FCL",
         "label": "Items Length",
         "default": "4",
         "info": "Integer"
       },
       {
-        "type": "header",
-        "content": "Type 2, Item 4"
-      },
-      {
         "type": "link_list",
-        "id": "submenu_type_and_list_4",
-        "label": "Select Menu Item"
+        "id": "megamenu_list_1_childmenu_4",
+        "label": "Select Sub Menu Item"
       },
       {
         "type": "radio",
-        "id": "submenu_type_and_list_grid_4",
+        "id": "megamenu_list_1_childmenu_4_grid",
         "label": "Items In Row",
         "options": [
           {
@@ -413,14 +364,9 @@
       },
       {
         "type": "textarea",
-        "id": "submenu_images_4",
+        "id": "megamenu_list_1_childmenu_4_images",
         "label": "Categorie Images",
         "info": "link1, link2, ..."
-      },
-      {
-        "type": "textarea",
-        "id": "submenu_customhtml_4",
-        "label": "Bottom Custom Html"
       },
       {
         "type": "paragraph",
@@ -428,46 +374,36 @@
       },
       {
         "type": "checkbox",
-        "id": "submenu_showcollection_4",
+        "id": "megamenu_list_1_childmenu_4_SFC",
         "label": "Show Simple Slider",
         "default": true
       },
       {
         "type": "text",
-        "id": "submenu_collectiontitle_4",
+        "id": "megamenu_list_1_childmenu_4_FCT",
         "label": "Title",
         "default": "FEATURED"
       },
       {
-        "type": "text",
-        "id": "submenu_collectiontitlelink_4",
-        "label": "Title Link",
-        "default": "#"
-      },
-      {
         "type": "collection",
-        "id": "submenu_collection_4",
+        "id": "megamenu_list_1_childmenu_4_FC",
         "label": "Collection"
       },
       {
         "type": "text",
-        "id": "submenu_collectionlength_4",
+        "id": "megamenu_list_1_childmenu_4_FCL",
         "label": "Items Length",
         "default": "4",
         "info": "Integer"
       },
       {
-        "type": "header",
-        "content": "Type 2, Item 5"
-      },
-      {
         "type": "link_list",
-        "id": "submenu_type_and_list_5",
-        "label": "Select Menu Item"
+        "id": "megamenu_list_1_childmenu_5",
+        "label": "Select Sub Menu Item"
       },
       {
         "type": "radio",
-        "id": "submenu_type_and_list_grid_5",
+        "id": "megamenu_list_1_childmenu_5_grid",
         "label": "Items In Row",
         "options": [
           {
@@ -487,14 +423,9 @@
       },
       {
         "type": "textarea",
-        "id": "submenu_images_5",
+        "id": "megamenu_list_1_childmenu_5_images",
         "label": "Categorie Images",
         "info": "link1, link2, ..."
-      },
-      {
-        "type": "textarea",
-        "id": "submenu_customhtml_5",
-        "label": "Bottom Custom Html"
       },
       {
         "type": "paragraph",
@@ -502,30 +433,24 @@
       },
       {
         "type": "checkbox",
-        "id": "submenu_showcollection_5",
+        "id": "megamenu_list_1_childmenu_5_SFC",
         "label": "Show Simple Slider",
         "default": true
       },
       {
         "type": "text",
-        "id": "submenu_collectiontitle_5",
+        "id": "megamenu_list_1_childmenu_5_FCT",
         "label": "Title",
         "default": "FEATURED"
       },
       {
-        "type": "text",
-        "id": "submenu_collectiontitlelink_5",
-        "label": "Title Link",
-        "default": "#"
-      },
-      {
         "type": "collection",
-        "id": "submenu_collection_5",
+        "id": "megamenu_list_1_childmenu_5_FC",
         "label": "Collection"
       },
       {
         "type": "text",
-        "id": "submenu_collectionlength_5",
+        "id": "megamenu_list_1_childmenu_5_FCL",
         "label": "Items Length",
         "default": "4",
         "info": "Integer"

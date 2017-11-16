@@ -93,6 +93,7 @@ timber.cacheSelectors = function () {
 timber.init = function () {
   FastClick.attach(document.body);
   timber.cacheSelectors();
+  timber.globalEvents();
   timber.accessibleNav();
   timber.drawersInit();
   timber.mobileNavToggle();
@@ -102,6 +103,7 @@ timber.init = function () {
   timber.loginForms();
   timber.megaMenu();
   timber.mobileMenu();
+  timber.productPage();
 };
 
 timber.accessibleNav = function () {
@@ -183,6 +185,64 @@ timber.accessibleNav = function () {
   }
 };
 
+timber.globalEvents = function() {
+
+  $(".product_images img").unveil(200);
+
+  "use strict";
+
+  /////////////////////////////////////
+  //  animate elements when they are in viewport
+  /////////////////////////////////////
+
+  $('.noIE .animated').waypoint(function () {
+    var animation = $(this).data('animation');
+    $(this).addClass('animation-done').addClass(animation);
+  }, {
+    triggerOnce: true,
+    offset: '70%'
+  });
+
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+
+  // Add smooth scrolling to all links
+  $("a[data-id]").on('click', function(event) {
+    event.preventDefault();
+    var hash = $(this).data("id");
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 700, function(){
+    });
+  });
+
+
+  var searchWatchTimer = setInterval(checkSearchResult, 100);
+  function checkSearchResult() {
+    if ($('.snize-ac-results').length < 1) return;
+    if ($('.snize-ac-results').is(':visible')) {
+      if ($('.snize-nothing-found',$('.snize-ac-results')).length < 1) {
+        $('.search-module-content').hide();
+      } else {
+        $('.search-module-content').show();
+      }
+    } else {
+      $('.search-module-content').show();
+    }
+  }
+
+  // Initialize Swiper slider
+  var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: 5000,
+    autoplayDisableOnInteraction: false
+  });
+  
+}
 timber.megaMenu = function() {
 
   productCarousel($('.megaMenuCarousel_js'),1,1,1,1,1);
@@ -236,7 +296,26 @@ timber.megaMenu = function() {
           }
         )
       })
-    })
+    });
+
+    // Calc MegaMenu tab panel height
+    var megamenuCatTotalHeight = 0;
+    $('.megamenu__main_cat').each(function(){
+      megamenuCatTotalHeight += $(this).outerHeight();
+    });
+    $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 'px');
+
+    $mainMenu.find('.megamenu__main_cat > a').on('mouseenter', function() {
+      $(this).parent().addClass('tab-opened');
+      var height = $('.megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
+      if (megamenuCatTotalHeight > height) {
+        $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 'px');
+      } else {
+        $('.dropdown-mega-menu.active .megamenu').css('height', height + 'px');
+      }
+    }).on('mouseleave', function() {
+      $(this).parent().removeClass('tab-opened');
+    });
   }
 
   var timerVar;
@@ -255,7 +334,17 @@ timber.megaMenu = function() {
                 submenuXposition($obj);
                 submenuYposition($obj);
                 $( window ).bind( "scroll", { obj: $obj }, menuScroll);
+
+                window.megamenuOpenedCatHeight = window.megamenuOpenedCatHeight || $('.dropdown-mega-menu .megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
+                if (megamenuCatTotalHeight > window.megamenuOpenedCatHeight) {
+                  $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 'px');
+                } else {
+                  $('.dropdown-mega-menu.active .megamenu').css('height',  window.megamenuOpenedCatHeight + 'px');
+                }
+
               }, 300);
+
+              
             }
           }, function() {
             var $this = $( this );
@@ -264,9 +353,15 @@ timber.megaMenu = function() {
             $( window ).unbind( "scroll", menuScroll);
             if($this.hasClass("active")){
               $obj.fadeOut(300);
+              
+              $('.megamenu__main_cat').removeClass('tab-opened');
+              $('.megamenu__main_cat').first().addClass('tab-opened');
+              window.megamenuOpenedCatHeight = $('.dropdown-mega-menu.active .megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
+
               setTimeout(removeActiveItem, 300, $this);
               $( "body" ).hasClass("hidden-menu") && $( "body" ).removeClass("hidden-menu");
             }
+
           }
         );
       });
@@ -349,6 +444,96 @@ timber.mobileMenu = function() {
   })
 }
 
+timber.productPage = function() {
+
+  $('.swatch-element > input[type=radio][data-title]').on('change', function () {
+    $(this).parents('.product-form__item--swatch').find('>label p').html($(this).data('title'));
+  });
+
+  if ($(window).width() < 1025) {
+    $('input[type="radio"]').on('change', function(){
+      $('[data-toggle="tooltip"]').tooltip('hide');
+      $('label[for="' + $(this).attr('id') + '"][data-toggle="tooltip"]').tooltip('show');
+    });
+  }
+  
+  $('.product-single__thumbnails li:first-child').addClass('is_active');
+  $('.product-single__thumbnails li').click(function() {
+    $('.product-single__thumbnails li').removeClass('is_active');
+    $(this).addClass('is_active');
+  });
+
+  /*PRODUCT FLEXSLIDER*/
+  $('#carousel').flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 80,
+    itemMargin: 5,
+    asNavFor: '.product_images'
+  });
+ 
+  $('.product_images').flexslider({
+    touch: false,
+    pauseOnHover: true,
+    directionNav: true,
+    animation: "fade",
+    slideshow: false,
+    slideshowSpeed: 10*1000
+  });
+   
+  $('.related__product-content').flexslider({
+    animation: "slide",
+    animationLoop: false,
+    itemWidth: 175,
+    slideshow: false,
+    itemMargin: 10
+  });
+   
+    // Initialize popup as usual
+  $('#image-block .slides').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    closeOnContentClick: false,
+    closeBtnInside: false,
+    mainClass: 'mfp-with-zoom mfp-img-mobile',
+    image: {
+      verticalFit: true
+    },
+    gallery: {
+      enabled: true
+    },
+    zoom: {
+      enabled: true,
+      duration: 300, // don't foget to change the duration also in CSS
+      opener: function(element) {
+        return element.find('img');
+      }
+    }
+  });
+
+
+  {% if settings.show_product_zoom %}
+  /////////////////////////////////////
+  //  Product Image Zoom
+  /////////////////////////////////////
+  if(typeof $.zoom === 'function'){
+    var imageBlock = $('#image-block');
+    if(imageBlock.length){
+      var imageSlideLinks = imageBlock.find('a.image-slide-link');
+      if(imageSlideLinks.length){
+        imageSlideLinks.each(function(){
+          var t = $(this);
+          var url = t[0].href;
+          t.zoom({ url:url,touch:false });
+        });
+      }
+    }
+  }
+  {% endif %}
+};
+
 timber.drawersInit = function () {
   timber.LeftDrawer = new timber.Drawers('NavDrawer', 'left');
   {% if settings.ajax_cart_method == "drawer" %}
@@ -366,64 +551,6 @@ timber.mobileNavToggle = function () {
 
 timber.getHash = function () {
   return window.location.hash;
-};
-
-timber.productPage = function (options) {
-  var moneyFormat = options.money_format,
-      variant = options.variant,
-      selector = options.selector;
-
-  // Selectors
-  var $productImage = $('#ProductPhotoImg'),
-      $addToCart = $('#AddToCart'),
-      $productPrice = $('#ProductPrice'),
-      $comparePrice = $('#ComparePrice'),
-      $quantityElements = $('.quantity-selector, label + .js-qty'),
-      $addToCartText = $('#AddToCartText');
-
-  if (variant) {
-
-    // Update variant image, if one is set
-    if (variant.featured_image) {
-      var newImg = variant.featured_image,
-          el = $productImage[0];
-      Shopify.Image.switchImage(newImg, el, timber.switchImage);
-    }
-
-    // Select a valid variant if available
-    if (variant.available) {
-      // Available, enable the submit button, change text, show quantity elements
-      $addToCart.removeClass('disabled').prop('disabled', false);
-      $addToCartText.html({{ 'products.product.add_to_cart' | t | json }});
-      $quantityElements.show();
-    } else {
-      // Sold out, disable the submit button, change text, hide quantity elements
-      $addToCart.addClass('disabled').prop('disabled', true);
-      $addToCartText.html({{ 'products.product.sold_out' | t | json }});
-      $quantityElements.hide();
-    }
-
-    // Regardless of stock, update the product price
-    $productPrice.html( Shopify.formatMoney(variant.price, moneyFormat) );
-
-    // Also update and show the product's compare price if necessary
-    if (variant.compare_at_price > variant.price) {
-      $comparePrice
-        .html({{ 'products.product.compare_at' | t | json }} + ' ' + Shopify.formatMoney(variant.compare_at_price, moneyFormat))
-        .show();
-    } else {
-      $comparePrice.hide();
-    }
-
-  } else {
-    // The variant doesn't exist, disable submit button.
-    // This may be an error or notice that a specific variant is not available.
-    // To only show available variants, implement linked product options:
-    //   - http://docs.shopify.com/manual/configuration/store-customization/advanced-navigation/linked-product-options
-    $addToCart.addClass('disabled').prop('disabled', true);
-    $addToCartText.html({{ 'products.product.unavailable' | t | json }});
-    $quantityElements.hide();
-  }
 };
 
 timber.productImageSwitch = function () {
