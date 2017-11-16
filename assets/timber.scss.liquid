@@ -5185,7 +5185,7 @@ $lusa-transition-base: all .1s ease-in;
     color: $colorTextBody;
     font-size: 14px;
     line-height: 1em;
-    padding: 15px 20px !important;
+    padding: 25px 20px !important;
     text-decoration: none;
     font-weight: 300;
   }
@@ -5637,5 +5637,68 @@ $lusa-transition-base: all .1s ease-in;
     -ms-transition:  all 300ms linear 0s;
     -o-transition:  all 300ms linear 0s;
     transition:  all 300ms linear 0s;
+  }
+}
+
+
+// Megamenu featured slick slider 
+.megaMenuCarousel_js .slick-dots li button:before,
+.megaMenuCarousel_js .slick-next:before,
+.megaMenuCarousel_js .slick-prev:before {
+  font-family: inherit;
+} 
+.megaMenuCarousel_js .slick-prev {
+  left: -15px;
+}
+.megaMenuCarousel_js .slick-next {
+  right: -15px;
+}
+
+// Custom Slick Styles
+.slick-prev,
+.slick-next {
+  display: block;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  /*background-color: {{ settings.color_sliderbutton }};*/
+  background-color: rgba(245, 245, 245, 0.5);
+  color: $colorTextBody;
+  padding: 0;
+  border: none;
+  outline: none;
+  -webkit-transition:  all 300ms linear 0s;
+  -moz-transition:  all 300ms linear 0s;
+  -ms-transition:  all 300ms linear 0s;
+  -o-transition:  all 300ms linear 0s;
+  transition:  all 300ms linear 0s;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  margin-top: -22.5px;
+  text-align: center;
+
+  &:hover {
+    outline: none;
+    background: $colorPrimary;
+
+    &:before {
+      color: #fff;
+      
+    }
+  }
+
+  &.slick-disabled:before {
+    opacity: 1;
+  }
+
+  &:before {
+    display: block;
+    font-size: 35px;
+    line-height: 45px;
+    color: $colorBorder;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
