@@ -5185,7 +5185,7 @@ $lusa-transition-base: all .1s ease-in;
     color: $colorTextBody;
     font-size: 14px;
     line-height: 1em;
-    padding: 25px 20px !important;
+    padding: 27px 20px !important;
     text-decoration: none;
     font-weight: 300;
   }
@@ -5340,6 +5340,11 @@ $lusa-transition-base: all .1s ease-in;
     width: 1200px;
   }
 }
+@media (min-width: 1400px) {
+  .nav .dropdown .dropdown-menu {
+    width: 1342px;
+  }
+}
 @media (min-width: 1770px) {
   .nav .dropdown .dropdown-menu {
     // width: 1770px;
@@ -5444,8 +5449,8 @@ $lusa-transition-base: all .1s ease-in;
 }
 
 .navbar .dropdown-menu li > a {
-  line-height: 1;
-  padding: 15px;
+  line-height: 1.6;
+  padding: 6px 0;
   color: $colorNavText;
 
   &:hover,
@@ -5605,22 +5610,39 @@ $lusa-transition-base: all .1s ease-in;
       position: absolute;
       // left: 100%;
       // width: 300%;
-      top: 0;
+      top: 20px;
       left: calc(25%);
       width: calc(75%);
       // height: 100%;
       margin: initial;
       border-left: 1px solid $colorBorder;
-      padding-bottom: 20px;
+      padding-bottom: 30px;
 
+      > ul {
+        margin: initial;
+        padding-left:15px;
+        padding-right:15px; 
+      }
       .col {
-        padding: initial;
+        // padding: initial;
 
         >a {
-          border-bottom: 1px solid $colorBorder;
-          text-align: center;
+          // border-bottom: 2px solid $colorPrimary;
+          // text-transform: uppercase;
+          // font-weight: bold;
+          // display: inline-block;
+
         }
         
+        ul {
+          margin: initial;
+
+          a.megamenu__subsubtitle {
+            padding: 6px 12px;
+            color: #777;
+            line-height: 1.6;
+          }
+        }
       }
     }
   }
@@ -5642,16 +5664,23 @@ $lusa-transition-base: all .1s ease-in;
 
 
 // Megamenu featured slick slider 
+.megaMenuCarousel_js {
+  .slick-slide img {
+    max-height: 120px;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+}
 .megaMenuCarousel_js .slick-dots li button:before,
 .megaMenuCarousel_js .slick-next:before,
 .megaMenuCarousel_js .slick-prev:before {
   font-family: inherit;
 } 
 .megaMenuCarousel_js .slick-prev {
-  left: -15px;
+  left: 0;
 }
 .megaMenuCarousel_js .slick-next {
-  right: -15px;
+  right: 0;
 }
 
 // Custom Slick Styles

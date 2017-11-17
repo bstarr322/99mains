@@ -155,137 +155,96 @@
               </a>
               <div class="mega__cat_splitbar"></div>
               <!-- Should always show the wrapper in order to show the border-left of the tab panel  -->
-              <ul class="megamenu__submenu">
-              {% if linklists[child_level_2.handle].links != blank %}
-                {% for child_level_3 in linklists[child_level_2.handle].links %}
-                <!-- Todo -->
-                  <li class="col col-sm-{{ settings[key_grid] }}">
-                    <a href="{{ child_level_3.url | downcase }}" class="megamenu__subtitle">
-                      <span>{{ child_level_3.title }}</span>
-                      {% if imgs != "" %}{% if imgs[forloop.index0] != "" %}
-                      <span class="megamenu__category-image hidden-xs"><img class="img-responsive" src="{{ imgs[forloop.index0] | strip }}" alt=""/></span>
-                      {% endif %}{% endif %}
-                    </a>
+              <div class="megamenu__submenu">
+                <ul class="col-sm-{{ settings[key_grid] | default: '4'}} ">
+                {% if linklists[child_level_2.handle].links != blank %}
+                  {% for child_level_3 in linklists[child_level_2.handle].links %}
+                  <!-- Todo -->
+                    <li class="col">
+                      <a href="{{ child_level_3.url | downcase }}" class="megamenu__subtitle">
+                        <span>{{ child_level_3.title }}</span>
+                        {% if imgs != "" %}{% if imgs[forloop.index0] != "" %}
+                        <span class="megamenu__category-image hidden-xs"><img class="img-responsive" src="{{ imgs[forloop.index0] | strip }}" alt=""/></span>
+                        {% endif %}{% endif %}
+                      </a>
 
-                    {% if linklists[child_level_3.handle].links != blank %}
-                      <ul>
-                      {% for child_level_4 in linklists[child_level_3.handle].links %}
-                        <li>
-                          <a href="{{ child_level_4.url | downcase }}" class="megamenu__subsubtitle">
-                            <span>{{ child_level_4.title }}</span>
-                            {% if imgs != "" %}{% if imgs[forloop.index0] != "" %}
-                            <span class="megamenu__category-image hidden-xs"><img class="img-responsive" src="{{ imgs[forloop.index0] | strip }}" alt=""/></span>
-                            {% endif %}{% endif %}
-                          </a>
-                        </li>
-                      {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-
-                {% if settings[key_SFC] %}
-                  {% assign titleLink = "submenu_collectiontitlelink_" | append: count_type2 %}
-                  <li class="col-sm-{{ settings[key_grid] }} hidden-xs">
-                    <a href="#" class="megamenu__subtitle"><span>{{ settings[key_FCT] }}</span></a>
-                    
-                    {% assign key = settings[key_FC] %}
-                    {% if key == blank %}{% assign key = "all" %}{% endif %}
-                    {% assign selected_collection = collections[key].products %}
-
-                    {% assign _lenght = settings[key_FCL] | plus: 0 %}
-
-                    <div class="carousel-products megaMenuCarousel_js">
-                      {% for product in selected_collection limit: _lenght %}
-                      <div>
-                        <!-- product -->
-                        <div class="product">
-                          <div class="product__inside">
-                            <!-- product image -->
-                            <div class="product__inside__image">
-                              <a href="{{ product.url | within: collection }}"> <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"> </a>
-                            </div>
-                            <!-- /product image --> 
-                            <!-- product name -->
-                            <div class="product__inside__name">
-                              <h2><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h2>
-                            </div>
-                            <!-- /product name --> 
-                            <!-- product price -->
-                            <div class="product__inside__price price-box">{{ product.selected_or_first_available_variant.price | money }}</div>
-                            <!-- /product price --> 
-                          </div>
-                        </div>
-                        <!-- /product -->
-                      </div>
-                      {% endfor %}
-                    </div>
-                    <!-- /carousel -->
-                    
-                  </li>
-                {% endif %}
-              {% endif %}
-              </ul>
-            </li>
-            
-            <li class="col-sm-{{ grid }} hide">
-              <a href="{{ child_level_2.url | downcase }}" class="megamenu__subtitle">
-                <span>{{ child_level_2.title }}</span>
-                {% if imgs != "" %}{% if imgs[forloop.index0] != "" %}
-                <span class="megamenu__category-image hidden-xs"><img class="img-responsive" src="{{ imgs[forloop.index0] | strip }}" alt=""/></span>
-                {% endif %}{% endif %}
-              </a>
-              
-              {% capture return %}{% include "get_linklist_dropdown", link: child_level_2 %}{% endcapture %}
-              {% assign return = return | split: "%%" %}
-              {% assign has_drop_down2 = return | first | strip %}
-              {% assign child_list_handle2 = return | last | strip %}
-
-              {% if has_drop_down2 == "true" %}
-                {% assign level_3 = linklists[child_list_handle2] %}
-                {% unless level_3.empty? %}
-                <ul class="megamenu__submenu">
-                  {% for child_level_3 in level_3.links %}
-                  <li class="level2"><a href="{{ child_level_3.url | downcase }}">{{ child_level_3.title }}</a>
-                    
-                    {% capture return %}{% include "get_linklist_dropdown", link: child_level_3 %}{% endcapture %}
-                    {% assign return = return | split: "%%" %}
-                    {% assign has_drop_down3 = return | first | strip %}
-                    {% assign child_list_handle3 = return | last | strip %}
-
-                    {% if has_drop_down3 == "true" %}
-                      {% assign level_4 = linklists[child_list_handle3] %}
-                      {% unless level_4.empty? %}
-                      <ul class="megamenu__submenu">
-                        {% for child_level_4 in level_4.links %}
-                        <li class="level3"><a href="{{ child_level_4.url | downcase }}">{{ child_level_4.title }}</a>
-                          
-                          {% capture return %}{% include "get_linklist_dropdown", link: child_level_4 %}{% endcapture %}
-                          {% assign return = return | split: "%%" %}
-                          {% assign has_drop_down4 = return | first | strip %}
-                          {% assign child_list_handle4 = return | last | strip %}
-                          
-                          {% if has_drop_down4 == "true" %}
-                            {% assign level_5 = linklists[child_list_handle4] %}
-                            {% unless level_5.empty? %}
-                            <ul class="megamenu__submenu">
-                              {% for child_level_5 in level_5.links %}
-                              <li class="level4"><a href="{{ child_level_5.url | downcase }}">{{ child_level_5.title }}</a></li>
-                              {% endfor %}
-                            </ul>
-                            {% endunless %}
-                          {% endif %}
-                        </li>
+                      {% if linklists[child_level_3.handle].links != blank %}
+                        <ul class="">
+                        {% for child_level_4 in linklists[child_level_3.handle].links %}
+                          <li>
+                            <a href="{{ child_level_4.url | downcase }}" class="megamenu__subsubtitle">
+                              <span>{{ child_level_4.title }}</span>
+                              {% if imgs != "" %}{% if imgs[forloop.index0] != "" %}
+                              <span class="megamenu__category-image hidden-xs"><img class="img-responsive" src="{{ imgs[forloop.index0] | strip }}" alt=""/></span>
+                              {% endif %}{% endif %}
+                            </a>
+                          </li>
                         {% endfor %}
-                      </ul>
-                      {% endunless %}
-                    {% endif %}
-                  </li>
+                        </ul>
+                      {% endif %}
+                    </li>
                   {% endfor %}
+
+                  
+                {% endif %}
                 </ul>
-                {% endunless %}
-              {% endif %}
+
+                <ul class="col-sm-{{ settings[key_grid] | default: '4'}} ">
+                  {% if settings[key_imgs] != blank %}
+                    <li class="col hidden-xs">
+                      <a href="#" class="megamenu__subtitle hide">
+                      </a>
+                      <img src="{{ settings[key_imgs] }}" alt="Custom Image for Category">
+                    </li>
+                  {% else %}
+
+                    {% if settings[key_SFC] %}
+                      {% assign titleLink = "submenu_collectiontitlelink_" | append: count_type2 %}
+                      <li class="col hidden-xs">
+                        <a href="#" class="megamenu__subtitle"><span>{{ settings[key_FCT] }}</span></a>
+                        
+                        {% assign key = settings[key_FC] %}
+                        {% if key == blank %}{% assign key = "all" %}{% endif %}
+                        {% assign selected_collection = collections[key].products %}
+
+                        {% assign _lenght = settings[key_FCL] | plus: 0 %}
+
+                        <div class="carousel-products megaMenuCarousel_js">
+                          {% for product in selected_collection limit: _lenght %}
+                          <div>
+                            <!-- product -->
+                            <div class="product">
+                              <div class="product__inside">
+                                <!-- product image -->
+                                <div class="product__inside__image">
+                                  <a href="{{ product.url | within: collection }}"> <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}"> </a>
+                                </div>
+                                <!-- /product image --> 
+                                <!-- product name -->
+                                <div class="product__inside__name">
+                                  <h2><a href="{{ product.url | within: collection }}">{{ product.title }}</a></h2>
+                                </div>
+                                <!-- /product name --> 
+                                <!-- product price -->
+                                <div class="product__inside__price price-box">{{ product.selected_or_first_available_variant.price | money }}</div>
+                                <!-- /product price --> 
+                              </div>
+                            </div>
+                            <!-- /product -->
+                          </div>
+                          {% endfor %}
+                        </div>
+                        <!-- /carousel -->
+                        
+                      </li>
+                    {% endif %}
+                  {% endif %}
+                </ul>
+
+              </div>
+
             </li>
+
             {% endfor %}
             
           </ul>

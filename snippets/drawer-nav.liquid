@@ -28,11 +28,9 @@
             <div class="mobile-nav__toggle">
               <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
                 <span class="icon icon-plus" aria-hidden="true"></span>
-                <span class="fallback-text">See More</span>
               </button>
               <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
                 <span class="icon icon-minus" aria-hidden="true"></span>
-                <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
               </button>
             </div>
           </div>
@@ -46,19 +44,41 @@
                     <div class="mobile-nav__toggle">
                       <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
                         <span class="icon icon-plus" aria-hidden="true"></span>
-                        <span class="fallback-text">See More</span>
                       </button>
                       <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
                         <span class="icon icon-minus" aria-hidden="true"></span>
-                        <span class="fallback-text">{{ 'cart.general.close_cart' | t | json }}</span>
                       </button>
                     </div>
                   </div>
                   <ul class="mobile-nav__sublist">
                     {% for sub_childlink in linklists[sub_child_list_handle].links %}
+                      {% assign sub_sub_child_list_handle = sub_childlink.title | handleize %}
+                      {% if linklists[sub_sub_child_list_handle].links != blank %}
                       <li class="mobile-nav__item {% if sub_childlink.active %} mobile-nav__item--active{% endif %}">
-                        <a href="{{ sub_childlink.url }}" class="mobile-nav__link">{{ sub_childlink.title | escape }}</a>
+                        <div class="mobile-nav__has-sublist">
+                          <a href="{{ sub_childlink.url }}" class="mobile-nav__link">{{ sub_childlink.title | escape }}</a>
+                          <div class="mobile-nav__toggle">
+                            <button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+                              <span class="icon icon-plus" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+                              <span class="icon icon-minus" aria-hidden="true"></span>
+                            </button>
+                          </div>
+                        </div>
+                        <ul class="mobile-nav__sublist">
+                          {% for sub_sub_childlink in linklists[sub_sub_child_list_handle].links %}
+                          <li class="mobile-nav__item {% if sub_sub_childlink.active %} mobile-nav__item--active{% endif %}">
+                            <a href="{{ sub_sub_childlink.url }}" class="mobile-nav__link">{{ sub_sub_childlink.title | escape }}</a>
+                          </li>
+                          {% endfor %}
+                        </ul>
                       </li>
+                      {% else %}
+                        <li class="mobile-nav__item {% if sub_childlink.active %} mobile-nav__item--active{% endif %}">
+                          <a href="{{ sub_childlink.url }}" class="mobile-nav__link">{{ sub_childlink.title | escape }}</a>
+                        </li>
+                      {% endif %}
                     {% endfor %}
                   </ul>
                 </li>

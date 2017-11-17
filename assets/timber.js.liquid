@@ -245,8 +245,8 @@ timber.globalEvents = function() {
 }
 timber.megaMenu = function() {
 
+  // productCarousel($('.megaMenuCarousel_js'),1,1,1,1,1, {autoplay: true, speed: 3000 });
   productCarousel($('.megaMenuCarousel_js'),1,1,1,1,1);
-
   /* Multi menu position */
   var $mainMenu = $(".mainMenu");
   if($mainMenu.find('.dropdown-mega-menu').length) {
@@ -303,15 +303,20 @@ timber.megaMenu = function() {
     $('.megamenu__main_cat').each(function(){
       megamenuCatTotalHeight += $(this).outerHeight();
     });
-    $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 'px');
+    $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
 
     $mainMenu.find('.megamenu__main_cat > a').on('mouseenter', function() {
+
+      // To prevent Slick slider's width became 0, 
+      $(window).trigger('resize');
+      $(".megaMenuCarousel_js").slick("refresh");
+
       $(this).parent().addClass('tab-opened');
       var height = $('.megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
       if (megamenuCatTotalHeight > height) {
-        $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 'px');
+        $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
       } else {
-        $('.dropdown-mega-menu.active .megamenu').css('height', height + 'px');
+        $('.dropdown-mega-menu.active .megamenu').css('height', height + 20 + 'px');
       }
     }).on('mouseleave', function() {
       $(this).parent().removeClass('tab-opened');
@@ -337,9 +342,9 @@ timber.megaMenu = function() {
 
                 window.megamenuOpenedCatHeight = window.megamenuOpenedCatHeight || $('.dropdown-mega-menu .megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
                 if (megamenuCatTotalHeight > window.megamenuOpenedCatHeight) {
-                  $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 'px');
+                  $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
                 } else {
-                  $('.dropdown-mega-menu.active .megamenu').css('height',  window.megamenuOpenedCatHeight + 'px');
+                  $('.dropdown-mega-menu.active .megamenu').css('height',  window.megamenuOpenedCatHeight + 20 + 'px');
                 }
 
               }, 300);

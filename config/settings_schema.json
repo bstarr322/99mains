@@ -170,26 +170,29 @@
         "id": "megamenu_list_1_childmenu_1_grid",
         "label": "Items In Row",
         "options": [
-          {
-            "value": "2",
-            "label": "6"
-          },
-          {
-            "value": "3",
-            "label": "4"
-          },
+          // {
+          //   "value": "2",
+          //   "label": "6"
+          // },
+          // {
+          //   "value": "3",
+          //   "label": "4"
+          // },
           {
             "value": "4",
             "label": "3"
+          },{
+            "value": "6",
+            "label": "2"
           }
         ],
-        "default": "4"
+        "default": "6"
       },
       {
-        "type": "textarea",
+        "type": "url",
         "id": "megamenu_list_1_childmenu_1_images",
-        "label": "Categorie Images",
-        "info": "link1, link2, ..."
+        "label": "Category Image",
+        "info": "It will be used instead of slider."
       },
       {
         "type": "paragraph",
@@ -216,7 +219,7 @@
         "type": "text",
         "id": "megamenu_list_1_childmenu_1_FCL",
         "label": "Items Length",
-        "default": "4",
+        "default": "6",
         "info": "Integer"
       },
       {
@@ -229,26 +232,29 @@
         "id": "megamenu_list_1_childmenu_2_grid",
         "label": "Items In Row",
         "options": [
-          {
-            "value": "2",
-            "label": "6"
-          },
-          {
-            "value": "3",
-            "label": "4"
-          },
+          // {
+          //   "value": "2",
+          //   "label": "6"
+          // },
+          // {
+          //   "value": "3",
+          //   "label": "4"
+          // },
           {
             "value": "4",
             "label": "3"
+          },{
+            "value": "6",
+            "label": "2"
           }
         ],
-        "default": "4"
+        "default": "6"
       },
       {
-        "type": "textarea",
+        "type": "url",
         "id": "megamenu_list_1_childmenu_2_images",
-        "label": "Categorie Images",
-        "info": "link1, link2, ..."
+        "label": "Category Image",
+        "info": "It will be used instead of slider."
       },
       {
         "type": "paragraph",
@@ -275,7 +281,7 @@
         "type": "text",
         "id": "megamenu_list_1_childmenu_2_FCL",
         "label": "Items Length",
-        "default": "4",
+        "default": "6",
         "info": "Integer"
       },
       {
@@ -288,26 +294,29 @@
         "id": "megamenu_list_1_childmenu_3_grid",
         "label": "Items In Row",
         "options": [
-          {
-            "value": "2",
-            "label": "6"
-          },
-          {
-            "value": "3",
-            "label": "4"
-          },
+          // {
+          //   "value": "2",
+          //   "label": "6"
+          // },
+          // {
+          //   "value": "3",
+          //   "label": "4"
+          // },
           {
             "value": "4",
             "label": "3"
+          },{
+            "value": "6",
+            "label": "2"
           }
         ],
-        "default": "4"
+        "default": "6"
       },
       {
-        "type": "textarea",
+        "type": "url",
         "id": "megamenu_list_1_childmenu_3_images",
-        "label": "Categorie Images",
-        "info": "link1, link2, ..."
+        "label": "Category Image",
+        "info": "It will be used instead of slider."
       },
       {
         "type": "paragraph",
@@ -334,7 +343,7 @@
         "type": "text",
         "id": "megamenu_list_1_childmenu_3_FCL",
         "label": "Items Length",
-        "default": "4",
+        "default": "6",
         "info": "Integer"
       },
       {
@@ -347,26 +356,29 @@
         "id": "megamenu_list_1_childmenu_4_grid",
         "label": "Items In Row",
         "options": [
-          {
-            "value": "2",
-            "label": "6"
-          },
-          {
-            "value": "3",
-            "label": "4"
-          },
+          // {
+          //   "value": "2",
+          //   "label": "6"
+          // },
+          // {
+          //   "value": "3",
+          //   "label": "4"
+          // },
           {
             "value": "4",
             "label": "3"
+          },{
+            "value": "6",
+            "label": "2"
           }
         ],
-        "default": "4"
+        "default": "6"
       },
       {
-        "type": "textarea",
+        "type": "url",
         "id": "megamenu_list_1_childmenu_4_images",
-        "label": "Categorie Images",
-        "info": "link1, link2, ..."
+        "label": "Category Image",
+        "info": "It will be used instead of slider."
       },
       {
         "type": "paragraph",
@@ -393,7 +405,7 @@
         "type": "text",
         "id": "megamenu_list_1_childmenu_4_FCL",
         "label": "Items Length",
-        "default": "4",
+        "default": "6",
         "info": "Integer"
       },
       {
@@ -406,26 +418,29 @@
         "id": "megamenu_list_1_childmenu_5_grid",
         "label": "Items In Row",
         "options": [
-          {
-            "value": "2",
-            "label": "6"
-          },
-          {
-            "value": "3",
-            "label": "4"
-          },
+          // {
+          //   "value": "2",
+          //   "label": "6"
+          // },
+          // {
+          //   "value": "3",
+          //   "label": "4"
+          // },
           {
             "value": "4",
             "label": "3"
+          },{
+            "value": "6",
+            "label": "2"
           }
         ],
-        "default": "4"
+        "default": "6"
       },
       {
-        "type": "textarea",
+        "type": "url",
         "id": "megamenu_list_1_childmenu_5_images",
-        "label": "Categorie Images",
-        "info": "link1, link2, ..."
+        "label": "Category Image",
+        "info": "It will be used instead of slider."
       },
       {
         "type": "paragraph",
@@ -452,7 +467,7 @@
         "type": "text",
         "id": "megamenu_list_1_childmenu_5_FCL",
         "label": "Items Length",
-        "default": "4",
+        "default": "6",
         "info": "Integer"
       }
     ]
