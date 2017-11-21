@@ -5777,7 +5777,7 @@ $lusa-transition-base: all .1s ease-in;
         @include flexbox();
         @include align-items(center);
         @include justify-content(center);
-        margin-bottom: $gutter/2;
+        @include flex-flow(column);
       }
 
       h4 {
