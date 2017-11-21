@@ -104,6 +104,7 @@ timber.init = function () {
   timber.megaMenu();
   timber.mobileMenu();
   timber.productPage();
+  timber.salesModelsPage();
 };
 
 timber.accessibleNav = function () {
@@ -241,6 +242,10 @@ timber.globalEvents = function() {
     autoplay: 5000,
     autoplayDisableOnInteraction: false
   });
+
+  $( window ).resize(function() {
+    $(".megaMenuCarousel_js").slick("refresh");
+  });
   
 }
 timber.megaMenu = function() {
@@ -339,6 +344,8 @@ timber.megaMenu = function() {
                 submenuXposition($obj);
                 submenuYposition($obj);
                 $( window ).bind( "scroll", { obj: $obj }, menuScroll);
+
+                $(".megaMenuCarousel_js").slick("refresh");
 
                 window.megamenuOpenedCatHeight = window.megamenuOpenedCatHeight || $('.dropdown-mega-menu .megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
                 if (megamenuCatTotalHeight > window.megamenuOpenedCatHeight) {
@@ -538,6 +545,19 @@ timber.productPage = function() {
   }
   {% endif %}
 };
+
+timber.salesModelsPage = function() {
+  var $box = $(".sales-box");
+  var $boxHeader = $('.sales-box .box-header');
+
+  if ($boxHeader.length) {
+    $boxHeader.matchHeight();
+  }
+  
+  if ($box.length) {
+    $box.matchHeight();
+  }
+}
 
 timber.drawersInit = function () {
   timber.LeftDrawer = new timber.Drawers('NavDrawer', 'left');

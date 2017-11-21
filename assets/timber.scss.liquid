@@ -49,6 +49,7 @@
   #Ajax Cart Styles
   #Custom Styles
   #Megamenu Styles
+  #Page Sales Models
 ==============================================================================*/
 
 /*============================================================================
@@ -72,7 +73,7 @@ $breakpoints: (
   'large' '(min-width: #{$large})'
 );
 $breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
-$breakpoint-has-push:  ('medium', 'medium-down', 'large');
+$breakpoint-has-push:  ('small', 'medium', 'medium-down', 'large');
 $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 
 /*============================================================================
@@ -5666,7 +5667,7 @@ $lusa-transition-base: all .1s ease-in;
 // Megamenu featured slick slider 
 .megaMenuCarousel_js {
   .slick-slide img {
-    max-height: 120px;
+    max-height: 300px;
     object-fit: contain;
     margin: 0 auto;
   }
@@ -5729,5 +5730,101 @@ $lusa-transition-base: all .1s ease-in;
     opacity: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+
+// #Page Sales Models
+.page-sales-models {
+  background: #fff;
+
+  .banner {
+    @include flexbox();
+    @include align-items(center);
+
+    background-color: #3b7edb;
+    color: #fff;
+    height: 355px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#76a5e6+1,3a7ddb+55,3a7ddb+100 */
+    background: rgb(118,165,230); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(118,165,230,1) 1%, rgba(58,125,219,1) 55%, rgba(58,125,219,1) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(118,165,230,1) 1%,rgba(58,125,219,1) 55%,rgba(58,125,219,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(118,165,230,1) 1%,rgba(58,125,219,1) 55%,rgba(58,125,219,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76a5e6', endColorstr='#3a7ddb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+
+  .sales-box-wrapper {
+    margin-top: -($gutter*3);
+
+    .sales-box {
+      -webkit-box-shadow: 3px 3px 25px 0px rgba(93, 149, 226, 0.5);
+      -moz-box-shadow: 3px 3px 25px 0px rgba(93, 149, 226, 0.5);
+      box-shadow: 3px 3px 25px 0px rgba(93, 149, 226, 0.5);
+      padding: 40px 20px 30px;
+      border-radius: 30px;
+      background: #fff;
+      text-align: center;
+
+      @include at-query($max, $medium) { 
+        margin-bottom: $gutter;
+      }
+
+      .box-header, h4 {
+        color: #3a7ddb;
+      }
+
+      .box-header {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        margin-bottom: $gutter/2;
+      }
+
+      h4 {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .btn-contact-us {
+    background-color: #ff5a00;
+    padding: 12px 10px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    max-width: 100px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+
+  .desc-part {
+    line-height: 2;
+    font-weight: initial;
+    text-align: center;
+    margin: $gutter*3 0 $gutter*2;
+
+    @include at-query($max, $medium) {
+      margin: 40px 0 20px;
+    }
+  }
+  
+  .footer-banner {
+    padding: $gutter 20px;
+    background-color: #ffc5a6;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    color: #3a7ddb;
+    margin-bottom: $gutter*2;
+
+    a.call-us {
+      color: #3a7ddb;
+    }
+
+    .btn-contact-us {
+      margin: 0 0 $gutter/2 0;
+    }
   }
 }
