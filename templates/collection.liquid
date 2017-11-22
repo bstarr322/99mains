@@ -20,9 +20,9 @@
   <div class="wrapper">
     <ul class="collection__nav-list clearfix">
       <li><a data-id="#collection__products">Items<span>({{ collection.products_count }})</span></a></li>
-      <li><a data-id="#collection__about">About</a></li>
-<!--       <li><a data-id="#collection__reviews">Reviews</a></li> -->
-      <li><a data-id="#collection__policies">Policies</a></li>
+      <li><a data-id="#section_about">About</a></li>
+<!--       <li><a data-id="#section_reviews">Reviews</a></li> -->
+      <li><a data-id="#section_polices">Policies</a></li>
     </ul>
   </div>
 </nav>
@@ -96,13 +96,13 @@
  {% unless collection.template_suffix contains 'shop2' %}
   {% assign about_desc = collection.description | split: "<!-- About Section -->" | last | split: "<!-- /About Section -->" | first %}
   {% if about_desc != '' or about_desc %}
-  <div id="collection__about">
+  <div id="section_about">
     <div class="wrapper">
-      <div class="collection__about-wrapper">
-        <div class="collection__about-title">
+      <div class="section_about-wrapper">
+        <div class="section_about-title">
           <h3>About</h3>
         </div>
-        <div class="collection__about-content">
+        <div class="section_about-content">
           {{ about_desc }}
         </div>
       </div>
@@ -111,26 +111,26 @@
   {% endif %}
   {% endunless %}
 
-<!-- <div id="collection__reviews">
+<!-- <div id="section_reviews">
   <div class="wrapper">
-    <div class="collection__reviews-wrapper">
-      <div class="collection__reviews-title">
+    <div class="section_reviews-wrapper">
+      <div class="section_reviews-title">
         <h3>Reviews</h3>
       </div>
-      <div class="collection__reviews-content">
+      <div class="section_reviews-content">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
     </div>
   </div>
 </div> -->
 
-<div id="collection__policies">
+<div id="section_polices">
   <div class="wrapper">
-    <div class="collection__policies-wrapper">
-      <div class="collection__policies-title">
+    <div class="section_polices-wrapper">
+      <div class="section_polices-title">
         <h3>Policies</h3>
       </div>
-      <div class="collection__policies-content">
+      <div class="section_polices-content">
         {% unless shop.enabled_payment_types == empty %}
           {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
           <strong>Accepted Payment Methods</strong>

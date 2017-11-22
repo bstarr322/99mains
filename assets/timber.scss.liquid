@@ -3125,7 +3125,8 @@ label.error {
   object-fit: contain;
 }
 
-.collection__nav-bar {
+.collection__nav-bar,
+.page__nav-bar {
   font-size: 16px;
   background: #FAF9F5;
   
@@ -3166,6 +3167,11 @@ label.error {
       }
     }
   }
+}
+
+.page__nav-list {
+  @include flexbox();
+  @include justify-content(flex-end);
 }
 
 
@@ -3229,7 +3235,7 @@ label.error {
       
     }
 
-    #collection__about {
+    #section_about {
 
       .wrapper {
         max-width: $siteWidth;
@@ -3551,17 +3557,17 @@ label.error {
   }
 }
 
-#collection__about {
+#section_about {
   .wrapper {
     max-width: $collectionWrapperWidth;
     
-    .collection__about-wrapper {
+    .section_about-wrapper {
       // border-top: 1px solid $colorBorder;
       border-color: #ccc;
       padding-top: 36px;
       padding-bottom: 36px;
       
-      .collection__about-title {
+      .section_about-title {
         position: relative;
         width: 200px;
         float: left;
@@ -3574,7 +3580,7 @@ label.error {
         }
       }
 
-      .collection__about-content {
+      .section_about-content {
         margin-left: 200px;
         
         p {
@@ -3603,19 +3609,19 @@ label.error {
   }
 }
 
-#collection__policies {
+#section_polices {
   background-color: $colorFooterBg;
 
   .wrapper {
     max-width: $collectionWrapperWidth;
     
-    .collection__policies-wrapper {
+    .section_polices-wrapper {
       // border-top: 1px solid $colorBorder;
       border-color: #ccc;
       padding-top: 36px;
       padding-bottom: 36px;
       
-      .collection__policies-title {
+      .section_polices-title {
         position: relative;
         width: 200px;
         float: left;
@@ -3628,7 +3634,7 @@ label.error {
         }
       }
 
-      .collection__policies-content {
+      .section_polices-content {
         margin-left: 200px;
         
         p {
@@ -3652,17 +3658,17 @@ label.error {
   }
 }
 
-#collection__reviews {
+#section_reviews {
   .wrapper {
     max-width: $collectionWrapperWidth;
     
-    .collection__reviews-wrapper {
+    .section_reviews-wrapper {
       // border-top: 1px solid $colorBorder;
       border-color: #ccc;
       padding-top: 36px;
       padding-bottom: 36px;
       
-      .collection__reviews-title {
+      .section_reviews-title {
         position: relative;
         width: 200px;
         float: left;
@@ -3675,7 +3681,7 @@ label.error {
         }
       }
 
-      .collection__reviews-content {
+      .section_reviews-content {
         margin-left: 200px;
         
         p {
@@ -3790,9 +3796,9 @@ label.error {
     margin-left: 0 !important;
   }
   
-  .collection__about-title,
-  .collection__policies-title,
-  .collection__reviews-title {
+  .section_about-title,
+  .section_polices-title,
+  .section_reviews-title {
     width: 100% !important;
     float: none !important;
     text-align: center;
@@ -3801,9 +3807,9 @@ label.error {
   }
 
   
-  .collection__about-content,
-  .collection__reviews-content,
-  .collection__policies-content {
+  .section_about-content,
+  .section_reviews-content,
+  .section_polices-content {
     text-align: center;
     margin-left: 0 !important;
   }
@@ -5812,6 +5818,7 @@ $lusa-transition-base: all .1s ease-in;
   }
   
   .footer-banner {
+    position: relative;
     padding: $gutter 20px;
     background-color: #ffc5a6;
     border-top-left-radius: 30px;
@@ -5825,6 +5832,17 @@ $lusa-transition-base: all .1s ease-in;
 
     .btn-contact-us {
       margin: 0 0 $gutter/2 0;
+    }
+
+    img {
+      position: absolute;
+      top: -18px;
+      right: 0px;
+      height: 117%;
+    }
+
+    p {
+      max-width: 515px;
     }
   }
 }
