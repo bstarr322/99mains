@@ -1,0 +1,64 @@
+<!-- /templates/page.brochure1.liquid -->
+<div class="page-brochure1">
+
+  <nav class="page__nav-bar">
+    <div class="wrapper">
+      <ul class="page__nav-list">
+        <li><a data-id="#collection__products">Shop</a></li>
+        <li><a data-id="#section_polices">Policies</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="grid">
+
+    <div class="grid__item large--two-thirds push--large--one-sixth">
+
+      <h1>{{ page.title }}</h1>
+
+      {% comment %}
+        Regular page content goes here.
+      {% endcomment %}
+      <div class="rte">
+        {{ page.content }}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="section_polices">
+    <div class="wrapper">
+      <div class="section_polices-wrapper">
+        <div class="section_polices-title">
+          <h3>Policies</h3>
+        </div>
+        <div class="section_polices-content">
+          {% unless shop.enabled_payment_types == empty %}
+            {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
+            <strong>Accepted Payment Methods</strong>
+            <ul class="inline-list payment-icons">
+              {% for type in shop.enabled_payment_types %}
+                {% if payment_icons_available contains type %}
+                  <li>
+                    <span class="icon-fallback-text">
+                      <span class="icon icon-{{type}}" aria-hidden="true"></span>
+                      <span class="fallback-text">{{ type | replace: '_',' '}}</span>
+                    </span>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endunless %}
+        <strong>Returns</strong>
+        <p>
+          You may return most new, unopened items within 30 days of delivery for a full refund. We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or defective item, etc.).<br><br>
+          You should expect to receive your refund within four weeks of giving your package to the return shipper, however, in many cases you will receive a refund more quickly. This time period includes the transit time for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (5 to 10 business days).<br><br>
+          If you need to return an item, please contact us with your order number and details about the product you would like to return. We will respond quickly with instructions for how to return items from your order.
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

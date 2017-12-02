@@ -39,8 +39,8 @@
   <div class="wrapper">
     <ul class="collection__nav-list clearfix">
       <li><a data-id="#collection__products">Shop</a></li>
-      <li><a data-id="#collection__about">About</a></li>
-      <li><a data-id="#collection__policies">Policies</a></li>
+      <li><a data-id="#section_about">About</a></li>
+      <li><a data-id="#section_polices">Policies</a></li>
     </ul>
   </div>
 </nav>
@@ -94,26 +94,26 @@
   </div>
 </div>
 
-<div id="collection__about">
+<div id="section_about">
   <div class="wrapper">
-    <div class="collection__about-wrapper">
-      <div class="collection__about-title">
+    <div class="section_about-wrapper">
+      <div class="section_about-title">
         <h3>About</h3>
       </div>
-      <div class="collection__about-content">
+      <div class="section_about-content">
         {{ collection.description }}
       </div>
     </div>
   </div>
 </div>
 
-<div id="collection__policies">
+<div id="section_polices">
   <div class="wrapper">
-    <div class="collection__policies-wrapper">
-      <div class="collection__policies-title">
+    <div class="section_polices-wrapper">
+      <div class="section_polices-title">
         <h3>Policies</h3>
       </div>
-      <div class="collection__policies-content">
+      <div class="section_polices-content">
         {% unless shop.enabled_payment_types == empty %}
           {% assign payment_icons_available = 'amazon_payments,american_express,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,visa' | split: ',' %}
           <strong>Accepted Payment Methods</strong>

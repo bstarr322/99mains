@@ -28,10 +28,12 @@
   <meta name="theme-color" content="{{ settings.color_primary }}">
 
   <!-- CSS ================================================== -->
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
+  <!-- Libraries -->
   {{ 'hover.css' | asset_url | stylesheet_tag }}
-  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'apps.css' | asset_url | stylesheet_tag }}
+
+  <!-- Theme Styles -->
+  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
@@ -64,8 +66,6 @@
   <div id="PageContainer" class="drawer-page-content">  
     {% include 'header' %}
 
-    {% include 'nav-bar' %}
-    
     <main class="main-wrapper {% if template contains 'index'%}main-content{% endif %}{% if template contains 'collection' %}collection-lists{% endif %}{% if template contains 'product' %}product-main-content{% endif %}" role="main">
 
       {{ content_for_layout }}
@@ -81,11 +81,9 @@
   
   {{ 'fastclick.min.js' | asset_url | script_tag }}
   {{ 'swiper.min.js' | asset_url | script_tag }}
+  {{ 'vendors.js' | asset_url | script_tag }}
   {{ 'timber.js' | asset_url | script_tag }}
-  {{ 'theme.js' | asset_url | script_tag }}
 
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
-    
   {% include 'shopstorm-scripttags' %}
   
   {% comment %}
