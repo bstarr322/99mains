@@ -5753,9 +5753,9 @@ $lusa-transition-base: all .1s ease-in;
     height: 355px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#76a5e6+1,3a7ddb+55,3a7ddb+100 */
     background: rgb(118,165,230); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover, rgba(118,165,230,1) 1%, rgba(58,125,219,1) 55%, rgba(58,125,219,1) 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(118,165,230,1) 1%,rgba(58,125,219,1) 55%,rgba(58,125,219,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center, rgba(118,165,230,1) 1%,rgba(58,125,219,1) 55%,rgba(58,125,219,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(118,165,230,1) 1%, #5e9bcb 55%, #5e9bcb 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(118,165,230,1) 1%,#5e9bcb 55%, #5e9bcb 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(118,165,230,1) 1%, #5e9bcb 55%, #5e9bcb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76a5e6', endColorstr='#3a7ddb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   }
 
@@ -5793,7 +5793,7 @@ $lusa-transition-base: all .1s ease-in;
   }
 
   .btn-contact-us {
-    background-color: #ff5a00;
+    background-color: #990000;
     padding: 12px 10px;
     border-radius: 7px;
     color: #fff;
@@ -5801,7 +5801,8 @@ $lusa-transition-base: all .1s ease-in;
     text-transform: uppercase;
     font-weight: bold;
     display: block;
-    max-width: 100px;
+    max-width: 120px;
+    text-align: center;
     margin: 0 auto;
     margin-bottom: 15px;
   }
@@ -5820,18 +5821,20 @@ $lusa-transition-base: all .1s ease-in;
   .footer-banner {
     position: relative;
     padding: $gutter 20px;
-    background-color: #ffc5a6;
+    background-color: #b74a4a;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    color: #3a7ddb;
+    color: #ffffff;
     margin-bottom: $gutter*2;
 
     a.call-us {
-      color: #3a7ddb;
+      color: #ffffff;
     }
 
     .btn-contact-us {
       margin: 0 0 $gutter/2 0;
+      border: 2px solid #fff;
+      background-color: initial;
     }
 
     img {
