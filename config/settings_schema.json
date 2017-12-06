@@ -170,18 +170,11 @@
         "id": "megamenu_list_1_childmenu_1_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -232,18 +225,11 @@
         "id": "megamenu_list_1_childmenu_2_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -294,18 +280,11 @@
         "id": "megamenu_list_1_childmenu_3_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -356,18 +335,11 @@
         "id": "megamenu_list_1_childmenu_4_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -418,18 +390,11 @@
         "id": "megamenu_list_1_childmenu_5_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
