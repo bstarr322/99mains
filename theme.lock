@@ -5,6 +5,9 @@ assets/14oz-pint-glass.png:
 assets/810.png:
   development: 2017-09-14T12:36:39-04:00
   production: 2017-09-21T04:25:22-04:00   47d1f069fabe40202344a679f4081222
+assets/FontAwesome.otf:
+  development: 2017-11-15T21:54:44-05:00   0d2717cd5d853e5c765ca032dfd41a4d
+  production: 2017-12-02T09:54:29-05:00
 assets/Graphik-Medium-Web.eot:
   development: 2017-09-14T12:36:45-04:00
   production: 2017-09-14T12:09:00-04:00   768652b2a5be312177bc4368e8aff0ed
@@ -57,6 +60,7 @@ assets/Guardian-EgypTT-Medium.woff2:
   development: 2017-09-14T12:36:51-04:00
   production: 2017-09-14T12:09:05-04:00   9df12770cecc76cb654a6f41cd5885bc
 assets/Mission_Point_IconicDesignGraphic_Navy.png:
+  development: 2017-11-10T12:39:12-05:00
   production: 2017-10-18T14:09:36-04:00   e96f7aa3cb712d814b9bb8b42f2d584a
 assets/about-us.jpg:
   development: 2017-09-14T12:36:39-04:00
@@ -71,6 +75,7 @@ assets/athletic-heather.png:
   development: 2017-09-14T12:36:40-04:00
   production: 2017-09-14T12:08:53-04:00   338db6faea99f6aa541798f7631e47c3
 assets/bacon-menu.css:
+  development: 2017-11-10T12:39:12-05:00
   production: 2017-11-10T02:15:46-05:00   4119eb1754c708d1833ab53bd488d90e
 assets/black-charcoal.png:
   development: 2017-09-14T12:36:41-04:00
@@ -79,13 +84,19 @@ assets/black.png:
   development: 2017-09-14T12:36:41-04:00
   production: 2017-09-21T04:30:15-04:00   f0134b1bdafda330d85aa9c8aaf2830f
 assets/block-h.png:
+  development: 2017-11-10T12:39:13-05:00
   production: 2017-10-26T11:56:59-04:00   e14db54f4cc92463b11896129d6457d4
 assets/buddha-megamenu.js.liquid:
   development: 2017-09-14T12:36:41-04:00
   production: 2017-09-14T12:36:05-04:00   05c1d4bc2d4e56daacfbedb765e77638
+assets/cabin-creek.jpg:
+  development: 2017-11-10T12:39:13-05:00   da19004f65b3f55869f1fa60038cd3cf
+  production: 2017-11-03T11:39:43-04:00
 assets/cabin-creek.png:
+  development: 2017-11-10T12:39:13-05:00
   production: 2017-11-03T11:31:42-04:00   63129c2ca15aa79b67357d15fbae3f16
 assets/cabin_creek.png:
+  development: 2017-11-10T12:39:13-05:00
   production: 2017-11-03T11:28:35-04:00   63129c2ca15aa79b67357d15fbae3f16
 assets/carolina-blue.png:
   development: 2017-09-14T12:36:41-04:00
@@ -106,14 +117,19 @@ assets/close-cart.svg:
   development: 2017-09-14T12:36:42-04:00
   production: 2017-09-14T12:08:56-04:00   d0d9b59b6cd4a380e9457fd630e432cf
 assets/concrete-canoe-logo.png:
+  development: 2017-11-10T12:39:14-05:00
   production: 2017-10-17T14:19:25-04:00   3e02541ee21841323d96f0c55bbd67ec
 assets/coyote-silhouette.png:
+  development: 2017-11-10T12:39:14-05:00
   production: 2017-10-25T15:32:06-04:00   e48dff5251e3969908d757178d8f27d2
 assets/crest-_-helmet.png:
+  development: 2017-11-10T12:39:14-05:00
   production: 2017-11-02T14:26:33-04:00   8f12f74d4f113910f107304c7de91ef6
 assets/crest-and-helmet.png:
+  development: 2017-11-10T12:39:14-05:00
   production: 2017-11-02T14:26:58-04:00   8f12f74d4f113910f107304c7de91ef6
 assets/dd-946.png:
+  development: 2017-11-10T12:39:14-05:00
   production: 2017-11-02T14:14:40-04:00   b6e974cc9fb83094c922e0dd31ef27d8
 assets/deep-navy.png:
   development: 2017-09-14T12:36:43-04:00
@@ -128,6 +144,7 @@ assets/denim-blue.png:
   development: 2017-09-14T12:36:43-04:00
   production: 2017-09-14T12:08:57-04:00   d95f2bf93a845b429d47640e2cc56734
 assets/do-you-euchre.png:
+  development: 2017-11-10T12:39:15-05:00
   production: 2017-10-23T14:16:20-04:00   bd54323a3793eb223f87f91e99a7e4b5
 assets/established-black.png:
   development: 2017-09-14T12:36:43-04:00
@@ -136,6 +153,7 @@ assets/established.png:
   development: 2017-09-14T12:36:44-04:00
   production: 2017-09-21T04:41:05-04:00   7e8f9ad884e257fc6442870cdf3635bf
 assets/explore-mi.png:
+  development: 2017-11-10T12:39:18-05:00
   production: 2017-10-25T16:53:35-04:00   13ca8bad58e02bc63dd6700b987309d3
 assets/fast.svg:
   development: 2017-09-14T12:36:44-04:00
@@ -143,6 +161,9 @@ assets/fast.svg:
 assets/fastclick.min.js:
   development: 2017-09-14T12:36:44-04:00
   production: 2017-09-14T12:08:58-04:00   4c68290ccc4d503561895dff0821621f
+assets/favicon.png:
+  development: 2017-11-12T22:04:22-05:00   387bd12774e921c456d3ed86d1e976f4
+  production: 2017-12-02T09:54:35-05:00
 assets/flexslider-icon.svg:
   development: 2017-09-14T12:36:44-04:00
   production: 2017-09-14T12:08:59-04:00   10e8a5455c4522c48aa975eacd4f0023
@@ -152,14 +173,35 @@ assets/flexslider-icon.ttf:
 assets/flexslider-product.css.liquid:
   development: 2017-09-14T12:36:45-04:00
   production: 2017-10-19T14:56:58-04:00   f0d8f2950b4a7ec4750c6671657552b9
+assets/fontawesome-webfont.eot:
+  development: 2017-11-15T21:54:43-05:00   674f50d287a8c48dc19ba404d20fe713
+  production: 2017-12-02T09:54:33-05:00
+assets/fontawesome-webfont.svg:
+  development: 2017-11-15T21:54:46-05:00   912ec66d7572ff821749319396470bde
+  production: 2017-12-02T09:54:34-05:00
+assets/fontawesome-webfont.ttf:
+  development: 2017-11-15T21:54:45-05:00   b06871f281fee6b241d60582ae9369b9
+  production: 2017-12-02T09:54:34-05:00
+assets/fontawesome-webfont.woff:
+  development: 2017-11-15T21:54:46-05:00   fee66e712a8a08eef5805a46892932ad
+  production: 2017-12-02T09:54:35-05:00
+assets/fontawesome-webfont.woff2:
+  development: 2017-11-15T21:54:46-05:00   af7ae505a9eed503f8b8e6982036873e
+  production: 2017-12-02T09:54:35-05:00
 assets/front-coyote.png:
+  development: 2017-11-10T12:39:20-05:00
   production: 2017-10-26T09:18:54-04:00   e81d1bbf0911b60b903079b3d5efd469
 assets/girl-dealer.png:
+  development: 2017-11-10T12:39:20-05:00
   production: 2017-11-07T14:22:14-05:00   f410e270f2b9494e4cecbbbef626af62
 assets/gold.png:
   development: 2017-09-14T12:36:45-04:00
   production: 2017-09-21T04:42:49-04:00   3687a385fe75d93a20c6b7535b0e6b31
+assets/great-dog-design-shop.jpg:
+  development: 2017-11-10T12:39:20-05:00   c3f664600e7c4cd67f5d6ea875691ce4
+  production: 2017-11-06T15:52:20-05:00
 assets/guy-dealer.png:
+  development: 2017-11-10T12:39:20-05:00
   production: 2017-11-07T14:22:23-05:00   00856066d2f8cc422d695caf6af6c83d
 assets/handlebars.min.js:
   development: 2017-09-14T12:36:51-04:00
@@ -177,12 +219,19 @@ assets/home-grown.png:
   development: 2017-09-14T12:36:52-04:00
   production: 2017-09-21T04:45:17-04:00   722d65a21ac8e4a079b592188f8fe510
 assets/howell-block.png:
+  development: 2017-11-10T12:39:21-05:00
   production: 2017-10-26T12:01:12-04:00   e14db54f4cc92463b11896129d6457d4
+assets/i-heart-euchre.png:
+  development: 2017-11-10T12:39:21-05:00   4683940a19c259c83e85aa79df2d838c
+  production: 2017-11-07T13:21:10-05:00
 assets/i-love-euchre.png:
+  development: 2017-11-10T12:39:21-05:00
   production: 2017-11-07T14:41:30-05:00   3cf0fbb875935b5c1fd249e2627bb8f6
 assets/i-must-go.png:
+  development: 2017-11-10T12:39:21-05:00
   production: 2017-11-02T14:20:27-04:00   9efe2ef5a525549f7b91c27d415e7efa
 assets/i_m-going-alone.png:
+  development: 2017-11-10T12:39:21-05:00
   production: 2017-10-27T15:19:49-04:00   a72019cf5793631477c7295f319a5f28
 assets/ico-select.svg.liquid:
   development: 2017-09-14T12:36:52-04:00
@@ -203,6 +252,7 @@ assets/jquery.magnific-popup.min.js:
   development: 2017-09-14T12:36:53-04:00
   production: 2017-09-14T12:09:08-04:00   f7501bc9635986cd6e48f19c989276be
 assets/jquery.min.js:
+  development: 2017-11-10T12:39:22-05:00
   production: 2017-10-19T10:21:22-04:00   618538b4ab9639d444e962729a927f15
 assets/kelly-green.png:
   development: 2017-09-14T12:36:53-04:00
@@ -223,6 +273,7 @@ assets/kids-royal-hoodie-99mainstreet.png:
   development: 2017-09-14T12:37:00-04:00
   production: 2017-09-21T04:51:26-04:00   bb057a8015780ffdc3188167043b13df
 assets/ladies-explore.png:
+  development: 2017-11-10T12:39:24-05:00
   production: 2017-10-27T14:22:01-04:00   d60a758598e1bbd1d5793413e536bb51
 assets/light-blue.png:
   development: 2017-09-14T12:37:01-04:00
@@ -240,6 +291,7 @@ assets/lock.svg:
   development: 2017-09-14T12:37:02-04:00
   production: 2017-09-14T12:09:15-04:00   4bbfce6e2c129ed2450b2b0ffc190403
 assets/logo-Becharas Coffee.png:
+  development: 2017-11-10T12:39:25-05:00
   production: 2017-11-08T04:05:17-05:00   0054cb8374bf2bf6d864a895ba5d66f7
 assets/logo.png:
   development: 2017-10-13T14:54:11-04:00
@@ -248,6 +300,7 @@ assets/logo.svg:
   development: 2017-10-13T13:33:07-04:00
   production: 2017-10-13T16:18:24-04:00   42be5b9b7a116c1beac0d00d7dae040b
 assets/logo_v2.png:
+  development: 2017-11-10T12:39:25-05:00
   production: 2017-10-13T18:32:05-04:00   85404419ecd9603ea7c139f87a3da7ac
 assets/made-in-marysville-black.png:
   development: 2017-09-14T12:37:02-04:00
@@ -334,12 +387,12 @@ assets/mens-smoke-grey-tshirt-99mainstreet.png:
   development: 2017-09-14T12:37:36-04:00
   production: 2017-09-21T05:29:44-04:00   20261539a877b761506c38210e8a0f4e
 assets/mm-init.js:
-  development: 2017-09-14T12:37:39-04:00
   production: 2017-09-14T12:09:52-04:00   489c00e1c529a36360a509a3a30c4f14
 assets/modernizr.min.js:
   development: 2017-09-14T12:37:39-04:00
   production: 2017-09-14T12:09:52-04:00   dc21cffad945a84cbbe770d52b1a0ded
 assets/moss-green.png:
+  development: 2017-11-10T12:39:34-05:00
   production: 2017-10-17T14:20:22-04:00   40a05f067c5c7f2fad26eb8a3a015d02
 assets/navy.png:
   development: 2017-09-14T12:37:39-04:00
@@ -369,8 +422,10 @@ assets/pearl-grey.png:
   development: 2017-09-14T12:37:41-04:00
   production: 2017-09-14T12:09:54-04:00   73fd5392b52b490316d789a1948b6e63
 assets/picturedrocks-explore.png:
+  development: 2017-11-10T12:39:35-05:00
   production: 2017-10-27T11:38:41-04:00   cd223110ddeaac877358017088cc8c2b
 assets/picturedrocks-letsventure.png:
+  development: 2017-11-10T12:39:35-05:00
   production: 2017-10-27T13:22:45-04:00   76c77d1c711d3b1b23b6b7136c187364
 assets/pink-raspberry.png:
   development: 2017-09-14T12:37:42-04:00
@@ -381,6 +436,9 @@ assets/property-of-athletic-department-black.png:
 assets/purple.png:
   development: 2017-09-14T12:37:42-04:00
   production: 2017-09-21T05:43:44-04:00   6bb89649c198d1b6be442bf30a2e02bc
+assets/question_mark-min.png:
+  development: 2017-11-21T14:38:17-05:00   9d96a03993456add7d64e2e035d11bc6
+  production: 2017-12-02T09:54:38-05:00
 assets/respond-proxy.html:
   development: 2017-09-14T12:37:42-04:00
   production: 2017-09-14T12:09:55-04:00   75002d74a330bff6bf069284da503b4c
@@ -439,6 +497,7 @@ assets/social-icon-twitter_2x.png:
   development: 2017-09-14T12:37:48-04:00
   production: 2017-09-21T05:56:14-04:00   41232162de0c04158103fe9467b2d4f9
 assets/southwest-coyotes.png:
+  development: 2017-11-10T12:39:38-05:00
   production: 2017-10-25T15:35:20-04:00   debd13bcba198bbc1967b1986fd45b14
 assets/stemless-red-wine-glass.png:
   development: 2017-09-14T12:37:49-04:00
@@ -453,7 +512,6 @@ assets/swiper.min.js:
   development: 2017-09-14T12:37:51-04:00
   production: 2017-09-14T12:12:20-04:00   1c59c2b171d7a162d30fc83ce4ac7fa4
 assets/theme.js.liquid:
-  development: 2017-09-14T12:37:51-04:00
   production: 2017-11-03T08:38:52-04:00   ee70e48086093a84662e5748a7551874
 assets/timber.js.liquid:
   development: 2017-09-14T12:37:51-04:00
@@ -461,6 +519,9 @@ assets/timber.js.liquid:
 assets/timber.scss.liquid:
   development: 2017-11-09T17:41:40-05:00
   production: 2017-11-09T18:04:54-05:00   f85be2a8228492d01e710863d2a7e6e0
+assets/timber_bkup.scss.liquid:
+  development: 2017-12-06T06:17:00-05:00   5b61055142807684af865597fd274e5e
+  production: 2017-12-04T17:42:59-05:00
 assets/true-navy.png:
   development: 2017-09-14T12:37:51-04:00
   production: 2017-09-14T12:10:02-04:00   9dee13917087ff61aec44adc440bb359
@@ -533,13 +594,10 @@ snippets/blog-sidebar.liquid:
   development: 2017-09-14T12:38:19-04:00
   production: 2017-09-14T12:10:39-04:00   ae3891e372509ded7074e50b2a97f438
 snippets/buddha-megamenu-before.liquid:
-  development: 2017-09-14T12:38:19-04:00
   production: '2017-09-14T12:10:39-04:00   '
 snippets/buddha-megamenu-wireframe.liquid:
-  development: 2017-09-14T12:38:19-04:00
   production: 2017-09-14T12:36:02-04:00   97a6fb8110b539f474546fa53f066b0d
 snippets/buddha-megamenu.liquid:
-  development: 2017-09-14T12:38:19-04:00
   production: 2017-10-19T14:56:46-04:00   7acd4da4256f1ecce15a2809d343820c
 snippets/collection-sidebar.liquid:
   development: 2017-09-14T12:38:19-04:00
@@ -551,8 +609,10 @@ snippets/comment.liquid:
   development: 2017-09-14T12:38:19-04:00
   production: 2017-09-14T12:10:39-04:00   c766e42be8a74e05533d0e5a0e3a9ce3
 snippets/drawer-cart.liquid:
+  development: 2017-11-10T12:39:45-05:00
   production: 2017-10-30T16:23:36-04:00   35a0f9c15d92a239094b8aba6338ddcb
 snippets/drawer-nav.liquid:
+  development: 2017-11-16T10:55:41-05:00   5b478dadc616a77e3d1c67275a477d39
   production: 2017-10-30T16:23:36-04:00   3a62c95647fcfd8500827ef9da4d2594
 snippets/featured-collections.liquid:
   development: 2017-10-18T05:27:10-04:00
@@ -561,19 +621,31 @@ snippets/featured-products.liquid:
   development: 2017-09-14T12:38:20-04:00
   production: 2017-09-14T12:10:39-04:00   99e7c8ff62f827200c56bb9770442fa2
 snippets/filter-menu-oldbackup.liquid:
+  development: 2017-11-10T12:39:45-05:00
   production: 2017-10-24T13:19:43-04:00   55fcab1131d838c0823474933abd4481
+snippets/filter-menu-shop1.liquid:
+  development: 2017-11-15T12:17:14-05:00   7aa59d3d6b69484543f8a5149554b925
+  production: 2017-12-02T09:54:42-05:00
 snippets/filter-menu-shop3.liquid:
+  development: 2017-11-15T12:17:36-05:00   ea0b617de24c02c82137b58fccb70d7a
   production: 2017-11-08T23:51:24-05:00   dab4dff9264d1b98dc6973395d496fd8
 snippets/filter-menu-test.liquid:
+  development: 2017-11-10T12:39:45-05:00
   production: 2017-10-25T05:37:11-04:00   52ed5cf9ddd61802e4e3d9a32ab6c8fb
 snippets/findify-tagging.liquid:
   development: 2017-09-15T17:10:01-04:00
   production: 2017-09-15T17:10:01-04:00   4ab29904b064b2e4795761c69efd8c2a
 snippets/footer.liquid:
+  development: 2017-11-10T12:39:45-05:00
   production: 2017-10-30T16:23:37-04:00   aad2bf5a3c71ce4c7f406ddccb4370e1
+snippets/get-page-content.liquid:
+  development: 2017-11-14T09:37:51-05:00   b9ef046b79c29ed7d0e95272ad7d19af
+  production: 2017-12-02T09:54:43-05:00
 snippets/get_linklist_dropdown.liquid:
+  development: 2017-11-15T22:53:07-05:00   cb7bdd9e8f5dc5cf8bd7521cb68980bd
   production: 2017-11-10T02:34:38-05:00   9c09c7150a4e778ef7ab9a67c16f709c
 snippets/header.liquid:
+  development: 2017-11-13T10:16:02-05:00   e18593e74fe02c7ee60ac595241aeae9
   production: 2017-10-30T16:38:31-04:00   d90e26efd3a636786d4fc10c805d1615
 snippets/home-slider.liquid:
   development: 2017-09-14T12:38:20-04:00
@@ -585,15 +657,23 @@ snippets/icon-cart.liquid:
   development: 2017-09-14T12:38:20-04:00
   production: 2017-09-14T12:10:39-04:00   bbbd24a37560ca31fea5b11c114f2604
 snippets/icon-fast-shipping.liquid:
+  development: 2017-11-10T12:39:45-05:00
   production: 2017-11-08T03:23:43-05:00   d42def859797cf7311e8a3161705004a
 snippets/icon-heart.liquid:
+  development: 2017-11-10T12:39:45-05:00
   production: 2017-11-08T03:16:12-05:00   28d7334c04dc38dbf4ddce26f8b5ab33
 snippets/icon-secure.liquid:
+  development: 2017-11-10T12:39:46-05:00
   production: 2017-11-08T03:16:29-05:00   6f8eeec2cd289f547c292a59d4758938
 snippets/main-menu-mobile.liquid:
+  development: 2017-11-10T12:39:46-05:00
   production: 2017-11-09T06:08:43-05:00   fc973f7ab790dc10960cfe4ca31524a2
 snippets/main-menu.liquid:
+  development: 2017-11-17T05:22:28-05:00   154c36c8b69ca9535ff27e8c00295fcb
   production: 2017-11-10T02:34:59-05:00   1585c2f085999dc970abc33a29fbfd58
+snippets/nav-bar.liquid:
+  development: 2017-11-14T05:52:54-05:00   efe323fc29d6494496f69bbb08551dda
+  production: 2017-12-02T09:54:45-05:00
 snippets/oldIE-js.liquid:
   development: 2017-09-14T12:38:20-04:00
   production: 2017-09-14T12:10:39-04:00   1197cc7109944206a600ed5caaef6a6f
@@ -657,8 +737,15 @@ templates/collection.liquid:
 templates/collection.list.liquid:
   development: 2017-09-14T12:38:21-04:00
   production: 2017-11-02T18:12:15-04:00   8564b6da70d6e1af2f3d837b8b933ba3
+templates/collection.shop2.liquid:
+  development: 2017-11-21T10:19:50-05:00   5948fe3f8321e61f581480f4c8246829
+  production: 2017-12-02T09:54:47-05:00
 templates/collection.shop3.liquid:
+  development: 2017-11-21T10:18:27-05:00   2d332f547ac7b11977aeae45a9fb574f
   production: 2017-11-02T17:55:33-04:00   af0498a6e0f09b8ec823c8cfde22ccdd
+templates/collection.speed-test.liquid:
+  development: 2017-11-21T10:19:01-05:00   bf07655047800c69d0a3654296634ebe
+  production: 2017-12-02T09:54:48-05:00
 templates/customers/account.liquid:
   development: 2017-09-14T12:38:21-04:00
   production: 2017-09-14T12:10:40-04:00   da9e3584ef6699ac5c811b73b42c58db
@@ -677,7 +764,14 @@ templates/gift_card.liquid:
 templates/index.liquid:
   development: 2017-09-14T12:38:21-04:00
   production: 2017-11-08T03:36:46-05:00   5a2f3983ee30d3def4b6ee9b474902a8
+templates/page.brochure1.liquid:
+  development: 2017-11-21T10:35:06-05:00   64b9855f9355f31aff53265aca3aeaf3
+  production: 2017-12-02T09:54:49-05:00
+templates/page.sales-models.liquid:
+  development: 2017-11-27T13:42:03-05:00   82428207f21b10847e2899003e3ab550
+  production: 2017-12-04T17:59:03-05:00
 templates/page.shop-by-brands.liquid:
+  development: 2017-11-10T12:39:46-05:00
   production: 2017-10-18T04:57:59-04:00   8a574ab3cede129f7f6e1ab59c01559f
 templates/product.liquid:
   development: 2017-10-18T05:09:41-04:00
