@@ -304,11 +304,11 @@ timber.megaMenu = function() {
     });
 
     // Calc MegaMenu tab panel height
-    var megamenuCatTotalHeight = 0;
+    window.megamenuCatTotalHeight = 0;
     $('.megamenu__main_cat').each(function(){
       megamenuCatTotalHeight += $(this).outerHeight();
     });
-    $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
+    // $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
 
     $mainMenu.find('.megamenu__main_cat > a').on('mouseenter', function() {
 
@@ -319,9 +319,9 @@ timber.megaMenu = function() {
       $(this).parent().addClass('tab-opened');
       var height = $('.megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
       if (megamenuCatTotalHeight > height) {
-        $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
+        // $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
       } else {
-        $('.dropdown-mega-menu.active .megamenu').css('height', height + 20 + 'px');
+        // $('.dropdown-mega-menu.active .megamenu').css('height', height + 20 + 'px');
       }
     }).on('mouseleave', function() {
       $(this).parent().removeClass('tab-opened');
@@ -349,9 +349,9 @@ timber.megaMenu = function() {
 
                 window.megamenuOpenedCatHeight = window.megamenuOpenedCatHeight || $('.dropdown-mega-menu .megamenu__main_cat.tab-opened .megamenu__submenu').outerHeight();
                 if (megamenuCatTotalHeight > window.megamenuOpenedCatHeight) {
-                  $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
+                  // $('.dropdown-mega-menu.active .megamenu').css('height', megamenuCatTotalHeight + 20 + 'px');
                 } else {
-                  $('.dropdown-mega-menu.active .megamenu').css('height',  window.megamenuOpenedCatHeight + 20 + 'px');
+                  // $('.dropdown-mega-menu.active .megamenu').css('height',  window.megamenuOpenedCatHeight + 20 + 'px');
                 }
 
               }, 300);
