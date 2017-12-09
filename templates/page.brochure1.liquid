@@ -1,5 +1,5 @@
 <!-- /templates/page.brochure1.liquid -->
-<div class="page-brochure1 wrapper">
+<div class="page-brochure1">
 
   <nav class="page__nav-bar">
     <div class="wrapper">
@@ -12,39 +12,9 @@
 
   <div class="grid">
 
-    <div class="grid__item large--one-third">
+    <div class="grid__item large--two-thirds push--large--one-sixth">
 
-      <div class="community-form form-vertical">
-        <h1>Join our expanding community.</h1>
-        {% form 'contact' %}
-
-          {% comment %}
-            Successful message
-          {% endcomment %}
-          {% if form.posted_successfully? %}
-            <p class="note form-success">
-              {{ 'contact.form.post_success' | t }}
-            </p>
-          {% endif %}
-
-          {{ form.errors | default_errors }}
-
-          {% assign name_attr = 'contact.form.name' | t | handle %}
-          <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
-          <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
-
-          <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
-          <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
-
-          {% assign name_attr = 'contact.form.phone' | t | handle %}
-          <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
-          <input type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
-
-          <input type="submit" class="btn right" value="Start Today">
-
-        {% endform %}
-
-      </div>
+      <h1>{{ page.title }}</h1>
 
       {% comment %}
         Regular page content goes here.
@@ -56,61 +26,6 @@
     </div>
 
   </div>
-
-  <section class="all-in-one-solution">
-    <h2>The all&minus;in&minus;one&minus;solution for your business</h2>
-    <p class="sub-header">Realize your potential</p>
-    
-    <div class="grid">
-      <div class="grid__item prelarge--one-third">
-        <i class="fa fa-square-o" style="font-size: 70px"></i>
-        <p class="title">Service 1</p>
-        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-      </div>
-      <div class="grid__item prelarge--one-third">
-        <i class="fa fa-square-o" style="font-size: 70px"></i>
-        <p class="title">Service 2</p>
-        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-      </div>
-      <div class="grid__item prelarge--one-third">
-        <i class="fa fa-square-o" style="font-size: 70px"></i>
-        <p class="title">Service 3</p>
-        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="grid">
-      <div class="grid__item small--one-whole prelarge--two-fifths">
-        {{ 'brochure-img.jpg' | asset_url | img_tag }}
-      </div>
-      <div class="grid__item small--one-whole prelarge--three-fifths">
-        <h2>We provide services so you can succeed</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit,
-        vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo
-        lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend
-        tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.
-        Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
-        Aenean velit odio,</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="text-center">
-    <div class="social-connects">
-      <h2>Lets connect</h2>
-      <div class="social-icon-wrapper">
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-pinterest-p"></i>
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-youtube-play"></i>
-      </div>
-    </div>
-  </section>
-    
-  <!--  -->
 
   <div id="section_polices">
     <div class="wrapper">

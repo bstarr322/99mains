@@ -70,12 +70,11 @@ $breakpoints: (
   'small' '(max-width: #{$small})',
   'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
   'medium-down' '(max-width: #{$medium})',
-  'large' '(min-width: #{$large})',
-  'prelarge' '(min-width: #{$preLarge})'
+  'large' '(min-width: #{$large})'
 );
-$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'prelarge');
-$breakpoint-has-push:  ('small', 'medium', 'medium-down', 'large', 'prelarge');
-$breakpoint-has-pull:  ('medium', 'medium-down', 'large', 'prelarge');
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large');
+$breakpoint-has-push:  ('small', 'medium', 'medium-down', 'large');
+$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 
 /*============================================================================
   #General Variables
@@ -138,7 +137,8 @@ $colorDrawerText: #333;
 $drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
 
 // Sizing variables
-$siteWidth: 1402px;
+$siteWidth: 1180px;
+$collectionWrapperWidth: 1402px;
 $gutter: 30px;
 $gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
 $radius: 3px;
@@ -1033,7 +1033,6 @@ h6 {
 .h6 { @extend h6; }
 
 p {
-  font-size: 18px;
   margin: 0 0 ($gutter / 2) 0;
 
   img {
@@ -1990,6 +1989,9 @@ label.error {
   padding: ($gutter / 2) 0 0;
   border-bottom: 1px solid $colorBorder;
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
 
   .grid--table {
     display: table;
@@ -2155,6 +2157,9 @@ label.error {
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
 }
 
 .site-nav {
@@ -2593,6 +2598,9 @@ label.error {
   border-color: rgba(0, 0, 0, 0.1);
   padding: 30px 0 40px 0;
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
   
   h2 {
     position: relative;
@@ -2667,6 +2675,9 @@ label.error {
 .homepage__featured-wrapper {
   padding: 30px 0 30px 0;
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
   
   h2 {
     position: relative;
@@ -2776,6 +2787,9 @@ label.error {
 .homepage__newest-wrapper {
   padding: 30px 0;
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
   
   h2 {
     position: relative;
@@ -2850,6 +2864,9 @@ label.error {
   padding-top: 30px;
   padding-bottom: 30px;
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
   
   h2 {
     position: relative;
@@ -2990,6 +3007,9 @@ label.error {
   padding: 50px 0 30px 0;
   color: $colorFooterText;
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
 }
 
 .footer__logo-wrapper {
@@ -3114,6 +3134,9 @@ label.error {
     margin-left: 3px;
   }
   
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
   
   ul {
     list-style: none;
@@ -3363,8 +3386,13 @@ label.error {
     }
   }
 
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
   
   .collection__filter-wrapper {
+    max-width: $collectionWrapperWidth;
+    
     .collection__filter-content {
       display: block;
       float: left;
@@ -3531,6 +3559,8 @@ label.error {
 
 #section_about {
   .wrapper {
+    max-width: $collectionWrapperWidth;
+    
     .section_about-wrapper {
       // border-top: 1px solid $colorBorder;
       border-color: #ccc;
@@ -3583,6 +3613,8 @@ label.error {
   background-color: $colorFooterBg;
 
   .wrapper {
+    max-width: $collectionWrapperWidth;
+    
     .section_polices-wrapper {
       // border-top: 1px solid $colorBorder;
       border-color: #ccc;
@@ -3628,6 +3660,8 @@ label.error {
 
 #section_reviews {
   .wrapper {
+    max-width: $collectionWrapperWidth;
+    
     .section_reviews-wrapper {
       // border-top: 1px solid $colorBorder;
       border-color: #ccc;
@@ -3663,6 +3697,8 @@ label.error {
   padding-bottom: 30px;
   
   .wrapper {
+    max-width: $collectionWrapperWidth;
+    
     .section-header {
       border-bottom: 1px solid $colorBorder;
       padding-top: 30px;
@@ -3725,6 +3761,9 @@ label.error {
 }
 
 .collection-breadcrumb {
+  .wrapper {
+    max-width: $collectionWrapperWidth;
+  }
 }
 
 @media (min-width: 1221px) {
@@ -5180,7 +5219,6 @@ $lusa-transition-base: all .1s ease-in;
     display: block;
     top: -10000px;
     overflow: hidden;
-    height: 500px;
   }
   .dropdown.dropdown-mega-menu:hover .dropdown-menu {
     display: block;
@@ -5535,12 +5573,6 @@ $lusa-transition-base: all .1s ease-in;
   @include align-items(center);
 }
 
-.flex-vc-hsb {
-  @include flexbox();
-  @include align-items(center);
-  @include justify-content(space-between);
-}
-
 // @TODO, Should sanitize style with above megamenu styles.
 .navbar .navbar-nav .dropdown-menu li {
   margin: initial;
@@ -5812,67 +5844,6 @@ $lusa-transition-base: all .1s ease-in;
 
     p {
       max-width: 515px;
-    }
-  }
-}
-
-// Page Brochure Template
-.page-brochure1 {
-  h1 {
-    font-size: 40px;
-    line-height: 1.3;
-  }
-  .community-form {
-    background-color: #fff;
-    padding: 35px 30px;
-    
-    @include at-query ($min, $postSmall) {
-      width: 400px;
-    }
-
-    input {
-      border: 1px solid #000;
-      border-radius: initial;
-    }
-
-    .btn {
-      width: 100%;
-      border: initial;
-    }
-  }
-  .all-in-one-solution {
-    margin-top: 80px;
-    margin-bottom: 120px;
-    text-align: center;
-  }
-  .social-connects {
-    background-color: #f2f2f2;
-    text-transform: uppercase;
-    text-align: center;
-    display: inline-block;
-    padding: 30px 60px;
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    
-    display: inline-flex;
-    @include align-items(center);
-    @include justify-content(center);
-    @include flex-flow(column);
-
-    -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);
-    box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);
-
-    .social-icon-wrapper {
-      width: 100%;
-      @include flexbox();
-      @include align-items(center);
-      @include justify-content(space-between);
-
-      .fa {
-        font-size: 26px;
-      }
     }
   }
 }

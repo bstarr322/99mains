@@ -57,9 +57,6 @@
   </span><p class="selected-variant__title"></p></label>
   {% assign values = '' %}
   {% for variant in product.variants %}
-  
-    {% assign use_custom_color = false %}
-
     {% assign value = variant.options[option_index] %}
     {% unless values contains value %}
       {% assign values = values | join: ',' %}
@@ -71,39 +68,16 @@
         {% endif %}
         <input id="swatch-{{ option_index }}-{{ value | handle }}" type="radio" name="option-{{ option_index }}" value="{{ value | escape }}" data-title="{{ value | escape }}"{% if forloop.first %} checked{% endif %} {% unless variant.available %}disabled{% endunless %} />
         {% if swatch == 'Color' %}<div>{% endif %}
-
-        {% for i in (1..15) %}
-          {% capture custom_color_name %}custom_color_name_{{i}}{% endcapture %}
-          {% capture custom_color %}custom_color_{{i}}{% endcapture %}
-
-          {% assign downcase_1 = value | downcase %}
-          {% assign downcase_2 = settings[custom_color_name] | downcase %}
-
-          {% if downcase_1 == downcase_2 %}
-            {% assign use_custom_color = true %}
-            {% break %}
-          {% endif %}
-
-        {% endfor %}
-
         {% if is_color or is_graphic %}
-
-          {% if use_custom_color %}
-            <label for="swatch-{{ option_index }}-{{ value | handle }}" style="background-color: {{ settings[custom_color] }}">
-              <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" />
-            </label>
-          {% else %}
-            <label for="swatch-{{ option_index }}-{{ value | handle }}" style="{% if is_color %}background-color: {{ value | split: ' ' | last | handle }};{% endif %} background-image: url({{ value | handle | append: '.' | append: file_extension | asset_url }})">
-              <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" />
-            </label>
-          {% endif %}
+        <label for="swatch-{{ option_index }}-{{ value | handle }}" style="{% if is_color %}background-color: {{ value | split: ' ' | last | handle }};{% endif %} background-image: url({{ value | handle | append: '.' | append: file_extension | asset_url }})">
+          <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" />
+        </label>
         {% else %}
         <label for="swatch-{{ option_index }}-{{ value | handle }}">
           {{ value }}
           <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" />
         </label>
         {% endif %}
-
         {% if swatch == 'Color' %}</div>{% endif %}
       </div>
     {% endunless %}
