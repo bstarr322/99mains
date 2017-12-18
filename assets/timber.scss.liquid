@@ -210,6 +210,73 @@ $socialIconFontStack: 'icons';
 }
 
 
+@font-face {
+  font-family: "Roboto Light";
+  src: url("roboto-light.eot");
+  src:
+  url("roboto-light.eot") format("embedded-opentype"),
+  url("roboto-light.woff") format("woff"),
+  url("roboto-light.svg") format("svg"),
+  url("roboto-light.ttf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Roboto Thin";
+  src: url("roboto-thin.eot");
+  src:
+  url("roboto-thin.eot") format("embedded-opentype"),
+  url("roboto-thin.woff") format("woff"),
+  url("roboto-thin.svg") format("svg"),
+  url("roboto-thin.ttf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("roboto-regular.eot");
+  src:
+  url("roboto-regular.eot") format("embedded-opentype"),
+  url("roboto-regular.woff") format("woff"),
+  url("roboto-regular.svg") format("svg"),
+  url("roboto-regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("roboto-medium.eot");
+  src:
+  url("roboto-medium.eot") format("embedded-opentype"),
+  url("roboto-medium.woff") format("woff"),
+  url("roboto-medium.svg") format("svg"),
+  url("roboto-medium.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("roboto-bold.eot");
+  src:
+  url("roboto-bold.eot") format("embedded-opentype"),
+  url("roboto-bold.woff") format("woff"),
+  url("roboto-bold.svg") format("svg"),
+  url("roboto-bold.ttf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+
+
 /*============================================================================
   #Sass Mixins
 ==============================================================================*/
@@ -2762,6 +2829,37 @@ label.error {
         fill: $colorPrimary;
       }
     }
+  }
+}
+
+.contact-us-banner {
+  background: url( "{{ 'contact-us-banner.png' | asset_url }}" ) no-repeat center center;
+  background-size: 100%;
+
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  text-align: center;
+
+  height: calc(100vw * 0.25);
+
+  h2 {
+    font-family: 'Roboto Light';
+    font-size: 38px;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  .btn {
+    font-family: 'Roboto Medium'; 
+    font-weight: 400;
+    font-size: 24px;
+    background-color: #64706c;
+    color: #fff;
+    width: 350px;
+    height: 55px;
+    line-height: 55px;
+    padding: initial;
   }
 }
 
