@@ -50,6 +50,23 @@
       },
       {
         "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "color",
+        "id": "color_header_link",
+        "label": "Header Link",
+        "default": "#935347",
+        "info": "Used for header links & hover status"
+      },
+      {
+        "type": "color",
+        "id": "color_header_text",
+        "label": "Header Text",
+        "default": "#212b31"
+      },
+      {
+        "type": "header",
         "content": "Body"
       },
       {
@@ -767,6 +784,11 @@
         "content": "[Full documentation](http:\/\/docs.milehighthemes.com\/showtime\/#page-home)"
       },
       {
+        "type": "text",
+        "id": "section_featured_products_header",
+        "default": "Shop Popular Products"
+      },
+      {
         "type": "checkbox",
         "id": "use_featured_products",
         "label": "Enable featured products"
@@ -775,6 +797,78 @@
         "type": "collection",
         "id": "featured_collection",
         "label": "Choose collection"
+      }
+    ]
+  },
+  {
+    "name": "Home page - Favorite New Stores",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "section_new_stores_header",
+        "default": "Our Favorite New Stores"
+      },
+      {
+         "type":      "header",
+         "content":   "Store 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_new_stores_img_1",
+        "label": "Store Image"
+      },
+      {
+        "type": "text",
+        "id": "section_new_stores_title_1",
+        "label": "Store Title"
+      },
+      {
+        "type": "textarea",
+        "id": "section_new_stores_desc_1",
+        "label": "Store Description"
+      },
+      {
+        "type": "url",
+        "id": "section_new_stores_link_1",
+        "label": "Store Link"
+      },
+      {
+        "type": "text",
+        "id": "section_new_stores_btn_text_1",
+        "label": "Button Text"
+      },
+      {
+         "type":      "header",
+         "content":   "Store 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "section_new_stores_img_2",
+        "label": "Store Image"
+      },
+      {
+        "type": "text",
+        "id": "section_new_stores_title_2",
+        "label": "Store Title"
+      },
+      {
+        "type": "textarea",
+        "id": "section_new_stores_desc_2",
+        "label": "Store Description"
+      },
+      {
+        "type": "url",
+        "id": "section_new_stores_link_2",
+        "label": "Store Link"
+      },
+      {
+        "type": "text",
+        "id": "section_new_stores_btn_text_2",
+        "label": "Button Text"
       }
     ]
   },

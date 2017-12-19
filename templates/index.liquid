@@ -53,7 +53,31 @@
   </div>
 </div>
 
+<section class="section-new-stores">
+  <div class="wrapper">
+    <h2>{{ settings.section_new_stores_header }}</h2>
+    <div class="grid">
+      {% for i in (1..2) %}
+        {% capture img %}section_new_stores_img_{{i}}{% endcapture %}
+        {% capture title %}section_new_stores_title_{{i}}{% endcapture %}
+        {% capture desc %}section_new_stores_desc_{{i}}{% endcapture %}
+        {% capture link %}section_new_stores_link_{{i}}{% endcapture %}
+        {% capture btn_text %}section_new_stores_btn_text_{{i}}{% endcapture %}
 
+        <div class="grid__item medium-up--one-half">
+          <div class="details">
+            {{ settings[img] | img_url: '350x' | img_tag }}
+            <div class="info">
+              <p class="title">{{ settings[title] }}</p>
+              <span class="desc">{{ settings[desc] }}</span>
+              <a href="{{ settings[link] }}" class="btn">{{ settings[btn_text] }}</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 <div class="contact-us-banner">
   <div class="wrapper">
     <h2>Have products to sell?</h2>

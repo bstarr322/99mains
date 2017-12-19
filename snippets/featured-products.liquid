@@ -1,39 +1,15 @@
-<div class="homepage__featured-wrapper clearfix">
-  <div class="featured__products-title">
-    <div class="wrapper">
-      <h2>{{ 'homepage.sections.featured_products_title' | t }}</h2>
-    </div>
-  </div>
-  
-  <div class="featured__products-wrapper">
-    <div class="wrapper">
-      {% if settings.featured_collection != blank and collections[settings.featured_collection].handle == settings.featured_collection and collections[settings.featured_collection].products_count > 0 %}
-      <div class="featured__products-container clearfix">
-        {% for product in collections[settings.featured_collection].products | limit: 6 %}
-          {% include 'product-featured-loop' %}
-        {% endfor %}
-      </div>
-      {% elsif collections.[settings.featured_collection].handle == 'frontpage' and collections.frontpage.products_count < 1 %}
-      <div>
-        <p>{{ 'homepage.sections.no_frontpage_products_html' | t }}</p>
-      </div>
-      {% elsif settings.featured_collection != blank and collections[settings.featured_collection].handle != 'frontpage' and collections[settings.featured_collection].products_count < 1 %}
-      <div>
-        <p>{{ 'homepage.sections.no_products_html' | t }}</p>
-      </div>
-      {% else %}
-      <div>
-        <p>{{ 'homepage.sections.no_featured' | t }}</p>
-      </div>
-      {% endif %}
+{% if settings.featured_collection != blank and collections[settings.featured_collection].products_count >0 %}
+<div class="homepage__featured-wrapper">
+  <div class="wrapper">
+    <h2>{{ settings.section_featured_products_header }}</h2>
 
-      <div class="featured__product-view clearfix">
-        <a href="/collections/{{ settings.featured_collection }}">
-          See More
-          {% include 'icon-arrow-right' %}
-        </a>
-      </div>
+    <div class="grid--full">
+      {% assign grid_item_width = 'small--one-whole medium-up--one-third large-up--one-sixth' %}
 
+      {% for product in collections[settings.featured_collection].products | limit: 6 %}
+        {% include 'product-grid-item' %}
+      {% endfor %}
     </div>
   </div>
 </div>
+{% endif %}

@@ -59,23 +59,33 @@ $viewportIncrement: 1px;
 
 $small: 480px;
 $medium: 768px;
-$large: 769px;
+$large: 992px;
+$xlarge: 1200px;
 
 $postSmall: $small + $viewportIncrement;
+$postMedium: $medium + $viewportIncrement;
+$postLarge: $large + $viewportIncrement;
+$postXlarge: $xlarge + $viewportIncrement;
+
 $preMedium: $medium - $viewportIncrement;
 $preLarge: $large - $viewportIncrement;
+$preXlarge: $xlarge - $viewportIncrement;
 
 /*================ The following are dependencies of csswizardry grid ================*/
 $breakpoints: (
-  'small' '(max-width: #{$small})',
-  'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
-  'medium-down' '(max-width: #{$medium})',
-  'large' '(min-width: #{$large})',
-  'prelarge' '(min-width: #{$preLarge})'
+  'small' '(max-width: #{$preMedium})',
+  'medium' '(min-width: #{$medium}) and (max-width: #{$preLarge})',
+  'medium-down' '(max-width: #{$preLarge})',
+  'medium-up' '(min-width: #{$medium})',
+  'large' '(min-width: #{$large}) and (max-width: #{$preXlarge})',
+  'large-down' '(max-width: #{$preXlarge})',
+  'large-up' '(min-width: #{$large})',
+  'xlarge' '(min-width: #{$xlarge})'
 );
-$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'prelarge');
-$breakpoint-has-push:  ('small', 'medium', 'medium-down', 'large', 'prelarge');
-$breakpoint-has-pull:  ('medium', 'medium-down', 'large', 'prelarge');
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'medium-up', 'large', 'large-down', 'large-up', 'xlarge');
+$breakpoint-has-push: ('small', 'medium', 'medium-down', 'medium-up', 'large', 'large-down', 'large-up', 'xlarge');
+$breakpoint-has-pull: ('small', 'medium', 'medium-down', 'medium-up', 'large', 'large-down', 'large-up', 'xlarge');
+
 
 /*============================================================================
   #General Variables
@@ -987,7 +997,7 @@ body {
 
 .main-content {
   display: block;
-  background: #FAF9F5;
+  background-color: $colorBody;
   margin-top: 0;
 }
 
@@ -1106,12 +1116,18 @@ h6 {
 .h6 { @extend h6; }
 
 p {
-  font-size: 18px;
+  font-size: 16.1px;
+  font-family: 'Roboto Medium';
   margin: 0 0 ($gutter / 2) 0;
 
   img {
     margin: 0;
   }
+}
+
+span {
+  font-size: 14px;
+  font-family: 'Roboto Regular';
 }
 
 em {
@@ -2762,8 +2778,7 @@ label.error {
       background: #fff;
       border-radius: 3px;
       background-color: #FFF;
-      border: 1px solid $colorBorder;
-      border-bottom-color: #CBCCC9;
+      border: 2px solid $colorBorder;
       
       .featured__single-image-container {
         padding-bottom: 80%;
@@ -3108,9 +3123,10 @@ label.error {
 .footer-block {
   h4 {
     color: $colorFooterText;
-    font-size: 14px;
-    font-weight: 500;
-    border-bottom: 2px solid #222;
+    font-family: 'Roboto Medium';
+    font-size: 17px;
+    border-bottom: 2px solid $colorFooterText;
+    text-transform: uppercase;
     line-height: 1.2em;
     padding: 5px 0;
     margin: 0;
@@ -3127,7 +3143,8 @@ label.error {
       a {
         display: block;
         color: $colorFooterText;
-        font-size: 12px;
+        font-family: 'Roboto Regular';
+        font-size: 17px;
         line-height: 1.2em;
         padding: 6px 0;
       }
@@ -3564,7 +3581,6 @@ label.error {
 }
 .product__single-grid {
   position: relative;
-  float: left;
   padding: 9px;
   
   .product__single-grid-container {
@@ -3572,8 +3588,7 @@ label.error {
     background: #fff;
     border-radius: 3px;
     background-color: #FFF;
-    border: 1px solid $colorBorder;
-    border-bottom-color: #CBCCC9;
+    border: 2px solid $colorBorder;
     
     .grid__image {
       margin-bottom: 0;
@@ -3831,24 +3846,6 @@ label.error {
 .collection-breadcrumb {
 }
 
-@media (min-width: 1221px) {
-  .product__single-grid {
-    width: 25%;
-  }
-}
-
-@media (max-width: 1220px) {
-  .product__single-grid {
-    width: 33.3333%;
-  }
-}
-
-@media (max-width: 992px) {
-  .product__single-grid {
-    width: 50%;
-  }
-}
-
 @media (max-width: 768px) {
   .collection__filter-content {
     width: 100% !important;
@@ -3877,10 +3874,6 @@ label.error {
   .section_polices-content {
     text-align: center;
     margin-left: 0 !important;
-  }
-  
-  .product__single-grid {
-    width: 100%;
   }
 }
 
@@ -6202,3 +6195,74 @@ $lusa-transition-base: all .1s ease-in;
     }
   }
 }
+
+/*==========================================
+=            section-new-stores            =
+==========================================*/
+.section-new-stores {
+  padding: 60px 0;
+
+  .grid {
+    margin-left: -20px;
+
+    .grid__item {
+      padding-left: 20px;
+    }
+  }
+
+  .details {
+    border: 2px solid $colorBorder;
+    padding: 5px;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: initial;
+    }
+
+    @include at-query($min, $preLarge) {
+      @include flexbox();
+      @include align-items(center);
+      margin-bottom: initial;
+    }
+  }
+
+  .info {
+    padding: 20px;
+    text-align: left;
+    @include at-query($min, $preLarge) {
+      max-width: 240px;
+    }
+  }
+
+  img {
+    height: 270px;
+    width: 300px;
+  }
+
+  h2 {
+    font-family: 'Roboto Bold';
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  p.title {
+    font-family: 'Roboto Medium';
+    font-size: 28px;
+    line-height: 1;
+  }
+  .desc {
+    font-family: 'Roboto Regular';
+  }
+
+  .btn {
+    display: block;
+    margin-top: 15px;
+    border-radius: initial;
+    font-family: 'Roboto Medium';
+    font-size: 17px;
+    font-weight: initial;
+  }
+}
+
+
