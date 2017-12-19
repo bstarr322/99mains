@@ -1,9 +1,9 @@
 <!-- Header -->
 <header class="site-header" role="banner">
-  <div class="wrapper">
+  <div class="wrapper first-wrapper">
 
     <div class="grid--full grid--table">
-      <div class="grid__item large--one-quarter medium--one-half site__header-logo">
+      <div class="grid__item large-up--one-twelfth medium--one-half site__header-logo">
         {% comment %}
           Use the uploaded logo from theme settings if enabled.
           Site name gets precedence with H1 tag on homepage, div on other pages.
@@ -16,7 +16,7 @@
 
           {% if settings.logo_use_image %}
             <a href="/" itemprop="url" class="site-header__logo-link">
-              <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+              <img src="{{ 'logo.png' | asset_img_url:'90x' }}" alt="{{ shop.name }}" itemprop="logo">
             </a>
           {% else %}
             <a href="/" itemprop="url">{{ shop.name }}</a>
@@ -28,12 +28,12 @@
           </div>
         {% endif %}
       </div>
-      <div class="grid__item large--one-quarter medium--one-half header__search-wrapper">
+      <div class="grid__item large-up--five-twelfths medium--hide header__search-wrapper">
         <div class="site-header__search">
           {% include 'search-bar' %}
         </div>
       </div>
-      <div class="grid__item large--two-quarters medium--one-half site__header-nav">
+      <div class="grid__item large-up--one-half medium--one-half site__header-nav">
         <div class="site-header__cart site-header__link">
           <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
             {% include 'icon-cart' %}
@@ -41,15 +41,12 @@
           </a>
         </div>
 
-        <div class="site-header__link">
-          <a href="/pages/contact-us">Contact Us</a>
-        </div>
 
         {% comment %}
           If customer accounts are enabled, provide login and create account links
         {% endcomment %}
         {% if shop.customer_accounts_enabled %}
-          <div class="site-header__link">
+          <div class="site-header__link link-account">
             {% if customer %}
               {% if customer.first_name != blank %}
                 {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
@@ -63,7 +60,11 @@
             {% endif %}
           </div>
         {% endif %}
-        
+
+        <div class="site-header__link link-contact-us">
+          <a href="/pages/contact-us">Contact Us</a>
+        </div>
+
         <div class="site-header__link">
           <a href="/pages/sell-with-us">Sell With Us</a>
         </div>

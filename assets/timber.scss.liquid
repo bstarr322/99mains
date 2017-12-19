@@ -155,6 +155,7 @@ $drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
 // Sizing variables
 $siteWidth: 1402px;
 $gutter: 30px;
+$gutterSmall: 20px;
 $gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
 $radius: 3px;
 
@@ -650,14 +651,14 @@ $class-type: unquote(".");
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-left: -$gridGutter;
+  margin-left: -$gutterSmall;
 }
 
 #{$class-type}grid__item {
   box-sizing: border-box;
   float: left;
   min-height: 1px;
-  padding-left: $gridGutter;
+  padding-left: $gutterSmall;
   vertical-align: top;
   @if $mobile-first == true {
     width: 100%;
@@ -2087,10 +2088,10 @@ label.error {
 }
 
 .site-header {
-  padding: ($gutter / 2) 0 0;
-  border-bottom: 1px solid $colorBorder;
-  
-
+  .first-wrapper {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+  }
   .grid--table {
     display: table;
     table-layout: fixed;
@@ -2166,7 +2167,7 @@ label.error {
       height: 22px;
       
       path {
-        fill: $colorHeaderText;
+        fill: $colorHeaderLink;
       }
     }
   }
@@ -2193,6 +2194,15 @@ label.error {
       }
     }
 
+    &.link-contact-us a{
+      border-right: initial;
+    }
+    &.link-account a {
+      border-right: initial;
+      border: 2px solid $colorHeaderLink;
+      background-color: #fff;
+      padding: 8px 20px;
+    }
     a {
       color: $colorHeaderLink;
       border-right: 1px solid $colorHeaderLink;
@@ -2210,8 +2220,6 @@ label.error {
 .site-header__search {
   display: inline-block;
   max-width: 620px;
-  margin-top: $gutter / 2;
-  margin-left: 80px;
   width: 100%;
 }
 
@@ -2915,10 +2923,9 @@ label.error {
     .featured__single-collection-wrapper {
       position: relative;
       background: #fff;
-      border-radius: 3px;
       background-color: #FFF;
-      border: 1px solid $colorBorder;
-      border-bottom-color: #CBCCC9;
+      border: 2px solid $colorBorder;
+      padding: 2px;
       
       .grid__image {
         margin-bottom: 0;
@@ -2933,7 +2940,7 @@ label.error {
     }
     
     .featured__collection-title {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 20px;
       padding: 10px 8px;
       margin-bottom: 0;
@@ -2942,7 +2949,7 @@ label.error {
       text-overflow: ellipsis;
       
       a {
-        color: #222;
+        color: $colorTextBody;
         text-transform: capitalize;
       }
       
@@ -6160,3 +6167,52 @@ $lusa-transition-base: all .1s ease-in;
 }
 
 
+/*==========================================
+=            Section Hero Section            =
+= Left Image & Right collection, button
+==========================================*/
+.home-hero {
+  padding-top: 5px;
+  padding-bottom: 30px;
+  color: #fff;
+
+  .left-img {
+    height: 290px;
+  }
+  .right-banner {
+    background: url("{{'hero-right-bg.png' | asset_url }}") no-repeat center center;
+    background-size: cover;
+    height: 210px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-flow(column);
+
+    .title {
+      font-family: 'Roboto Regular';
+      font-size: 28px;
+    }
+
+    .btn-collection {
+      font-family: 'Roboto Medium';
+      font-size: 16.5px;
+      padding: 10px;
+      width: 240px;
+    }
+  }
+
+  .btn {
+    font-weight: initial;
+    border-radius: initial;
+  }
+
+  .btn-all {
+    font-family: 'Roboto Bold';
+    font-size: 20px;
+    padding: 15px;
+    width: 100%;
+  }
+}
