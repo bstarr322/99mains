@@ -3,7 +3,7 @@
   <div class="wrapper">
     <h2 class="header">{{ settings.section_featured_products_header }}</h2>
 
-    <div class="grid--full">
+    <div class="grid">
       {% assign grid_item_width = 'small--one-whole medium-up--one-third large-up--one-sixth' %}
 
       {% for product in collections[settings.featured_collection].products | limit: 6 %}

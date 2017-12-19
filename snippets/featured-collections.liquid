@@ -24,7 +24,7 @@
 
         {% assign collection_item_width = 'small--one-half medium-up--one-quarter large-up--one-eighth' %}
         
-        <div class="grid--full">
+        <div class="grid">
         {% for link in linklists[lists].links limit: 8 %}
           {%- assign handle = link.url | split: "collections/" | last -%}
           {%- assign collection = collections[handle] -%}
@@ -45,7 +45,7 @@
                   {% endif %}
                 </a>
 
-                <p class="featured__collection-title">
+                <p class="featured__collection-title" data-mh="mh-featured-collection-info">
                   <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
                 </p>
               </div>

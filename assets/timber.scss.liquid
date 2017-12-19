@@ -2881,6 +2881,11 @@ label.error {
 
   height: calc(100vw * 0.25);
 
+  @include at-query($max, $preMedium) {
+    background: #c7ad88;
+    height: 300px;
+  }
+
   h2 {
     font-family: 'Roboto Light';
     font-size: 38px;
@@ -2994,7 +2999,7 @@ label.error {
   
   .featured__single-collection {
     position: relative;
-    padding: 9px;
+    margin-bottom: 20px;
     
     .featured__single-collection-wrapper {
       position: relative;
@@ -3560,7 +3565,7 @@ label.error {
 }
 .product__single-grid {
   position: relative;
-  padding: 9px;
+  margin-bottom: 20px;
   
   .product__single-grid-container {
     position: relative;
@@ -3697,7 +3702,7 @@ label.error {
         
         h3 {
           font-size: 20px;
-          color: #444;
+          color: #fff;
           margin: 0;
         }
       }
@@ -3707,7 +3712,7 @@ label.error {
         
         p {
           font-size: 12px;
-          color: #777;
+          color: #fff;
         }
         
         .payment-icons li {
@@ -3717,7 +3722,7 @@ label.error {
         
         strong {
           display: inline-block;
-          color: #777;
+          color: #fff;
           font-size: 14px;
           margin-bottom: 12px;
         }
@@ -3785,10 +3790,8 @@ label.error {
     }
     
     .item-grid {
-      font-size: 12px;
       font-weight: bold;
       color: #222;
-      padding: 0 6px 6px 6px;
       margin-bottom: 0;
     }
     
@@ -4009,7 +4012,7 @@ label.error {
   
   .related__product-content {
     position: relative;
-    padding-left: 30px;
+    padding-left: 5px;
     padding-right: 30px;
     
     .related__grid-title {
@@ -6214,6 +6217,11 @@ $lusa-transition-base: all .1s ease-in;
   img {
     height: 270px;
     width: 300px;
+
+    @include at-query($max, $preMedium) {
+      width: 100%;
+      object-fit: contain;
+    }
   }
 
   h2 {
@@ -6254,6 +6262,11 @@ $lusa-transition-base: all .1s ease-in;
 
   .left-img {
     height: 290px;
+
+    @include at-query($max, $preMedium) {
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
   }
   .right-banner {
     background: url("{{'hero-right-bg.png' | asset_url }}") no-repeat center center;
