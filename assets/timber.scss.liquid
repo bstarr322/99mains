@@ -2708,21 +2708,97 @@ label.error {
   #Main Content Styles
 ==============================================================================*/
 .site__service-wrapper {
-  background-color: #903526;
-  border-color: rgba(0, 0, 0, 0.1);
-  padding: 30px 0 40px 0;
+  background-color: #c7ad88;
+  padding: $gutter 0;
+  margin-top: 40px;
   
-  
-  h2 {
-    position: relative;
-    color: #fff;
-    font-size: 42px;
-    font-family: "Guardian-EgypTT", serif;
-    font-weight: 300;
-    line-height: 1.95em;
+  .wrapper {
+    @include at-query($min, $medium) {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(space-between);
+    }
+
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 30px;
+  }
+  .main-image {
+    position: absolute;
+    background-color: #ede9ce;
+    border-radius: 50%;
+    font-size: 0;
+
+    @include at-query($max, $preMedium) {
+      position: initial;
+      width: 240px;
+      margin: 0 auto;
+      margin-bottom: $gutterSmall;
+    }
+
+    svg {
+      width: 240px;
+      height: 240px;
+    }
+
+    * {
+      fill: #c7ad88;
+      color: #c7ad88;
+    }
+  }
+
+  .main-text {
+    margin-bottom: $gutter;
+
+    @include at-query($min, $medium) {
+      margin: 0 0 0 250px;
+    }
+
+    h2 {
+      font-family: 'Roboto Bold';
+      text-transform: uppercase;
+      font-size: 55px;
+      margin-bottom: initial;
+      line-height: initial;
+    }
+    p {
+      font-family: 'Roboto Regular';
+      font-size: 23px;
+      line-height: initial;
+      margin-bottom: initial;
+    }
+  }
+
+  .service-item {
+    max-width: 210px;
+    margin: 0 auto;
+
+    @include at-query($max, $preMedium) {
+      margin-bottom: $gutter;
+    }
+
+    .icon {
+      svg {
+        width: 70px;
+        height: 56px;
+      }
+
+      * {
+        fill: #ede9ce;
+        color: #ede9ce;
+      }
+    }
+
+    .title {
+      font-family: 'Roboto Bold';
+      font-size: 22px;
+      margin-bottom: initial;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    span {
+      font-family: 'Roboto Regular';
+      font-size: 15.5px; 
+    }
   }
 }
 
