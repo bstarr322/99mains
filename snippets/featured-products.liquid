@@ -1,7 +1,7 @@
 {% if settings.featured_collection != blank and collections[settings.featured_collection].products_count >0 %}
 <div class="homepage__featured-wrapper">
   <div class="wrapper">
-    <h2>{{ settings.section_featured_products_header }}</h2>
+    <h2 class="header">{{ settings.section_featured_products_header }}</h2>
 
     <div class="grid--full">
       {% assign grid_item_width = 'small--one-whole medium-up--one-third large-up--one-sixth' %}

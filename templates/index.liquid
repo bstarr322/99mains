@@ -15,13 +15,15 @@
   {% include 'featured-newest-products'%}
 {% endif %}
 
-{% if settings.use_featured_collections %}
-  {% include 'featured-collections'%}
-{% endif %}
 
 {% if settings.use_featured_products %}
   {% include 'featured-products' %}
 {% endif %}
+
+{% if settings.use_section_featured_categories %}
+  {% include 'featured-collections'%}
+{% endif %}
+
 
 <div id="insta-feed"></div>
 

@@ -777,7 +777,7 @@
     ]
   },
   {
-    "name": "Home page - featured products",
+    "name": "Home page - Featured Products",
     "settings": [
       {
         "type": "paragraph",
@@ -797,6 +797,30 @@
         "type": "collection",
         "id": "featured_collection",
         "label": "Choose collection"
+      }
+    ]
+  },
+  {
+    "name": "Home page - Featured Categories",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "[Full documentation](http:\/\/docs.milehighthemes.com\/showtime\/#page-home)"
+      },
+      {
+        "type": "text",
+        "id": "section_featured_categories_header",
+        "default": "Shop Categories"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_section_featured_categories",
+        "label": "Enable This Section"
+      },
+      {
+        "type": "link_list",
+        "id": "section_featured_categories_list",
+        "label": "Choose categories list from Nav List"
       }
     ]
   },
