@@ -168,7 +168,7 @@ $zindexDrawer: 10;
 $headerFontStack: "Graphik Webfont", "Arial", "Helvetica", sans-serif;
 $headerFontWeight: 700;
 
-$bodyFontStack: "Graphik Webfont", "Arial", "Helvetica", sans-serif;
+$bodyFontStack: "Roboto Regular", sans-serif;
 $baseFontSize: 14px; // Henceforth known as 1em
 
 @font-face {
@@ -1009,7 +1009,7 @@ body {
 
 .product-main-content {
   max-width: 100%;
-  background-color: #f5f5f1;
+  // background-color: #f5f5f1;
   margin-top: 0;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1908,19 +1908,22 @@ label.error {
 
 #SiteNavSearch {
   position: absolute;
-  top: -4px;
-  right: 75px;
-  width: 300px;
+  top: 0;
+  left: 0;
+  width: calc(100% - 90px);
   height: 40px;
   font-size: 14px;
   padding: 11px 0 10px 0;
   color: #1c1d1d;
-  border: 1px solid $colorBorder;
+  border: 2px solid #e2e2e2;
+  border-right: initial;
+  border-radius: initial;
   transition: opacity 0.15s ease-in,width 0.15s ease-in;
   z-index: 1;
   opacity: 1;
   padding-left: 10px;
   padding-right: 40px;
+
 }
 
 .input-group .btn,
@@ -2149,22 +2152,22 @@ label.error {
     #CartCount {
       position: absolute;
       display: block;
-      height: 14px;
-      width: 14px;
-      top: -3px;
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+      top: -6px;
       right: -4px;
       background-color: $colorHeaderLink;
       border-radius: 100%;
       text-align: center;
-      line-height: 15px;
       font-size: 11px;
       font-weight: bold;
       color: #fff;
     }
     
     svg {
-      width: 22px;
-      height: 22px;
+      width: 25px;
+      height: 25px;
       
       path {
         fill: $colorHeaderLink;
@@ -2221,12 +2224,14 @@ label.error {
   display: inline-block;
   max-width: 620px;
   width: 100%;
-}
+  margin-left: $gutter;
 
-.site-header__search .icon-fallback-text {
-  height: 40px;
-  padding: 8px 25px;
-  margin-top: -4px;
+  .btn {
+    width: 90px;
+    height: 40px;
+    border-radius: initial;
+    text-align: center;
+  }
 }
 
 .search-bar {
@@ -2235,16 +2240,6 @@ label.error {
   @include at-query ($max, $medium) {
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-@media (max-width: 992px) {
-  .site-header__search {
-    margin-left: 30px;
-  }
-  
-  #SiteNavSearch {
-    width: 190px;
   }
 }
 
@@ -2268,11 +2263,9 @@ label.error {
 .nav-bar {
   position: relative;
   background-color: #FFF;
-  border-bottom: 1px solid $colorBorder;
-  border-bottom: 0 solid rgba(0, 0, 0, 0);
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  // -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  // -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),0 0 0 1px rgba(0, 0, 0, 0.05);
+  // box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
   
 }
 
@@ -2768,6 +2761,7 @@ label.error {
   }
 
   .service-item {
+    display: block;
     max-width: 210px;
     margin: 0 auto;
 
@@ -3597,6 +3591,7 @@ label.error {
     }
     
     .storefront {
+      display: block;
       font-size: 14px;
       font-family: 'Roboto Regular';
     }
@@ -3893,22 +3888,26 @@ label.error {
 
 .product__single-container {
   background: #fff;
-  padding: 30px;
+  padding-top: $gutter;
+  padding-bottom: $gutter;
 }
 .product-single {
-  margin: 0 auto;
   padding: 0;
   position: relative;
 }
 
 .product-main__photos {
   float: left;
-  padding: 0 30px 0 0;
 }
 
 .product-main__content {
   float: left;
-  padding-top: 20px;
+  padding-top: $gutterSmall;
+
+  @include at-query($min, $medium) {
+    padding-left: 40px;
+    padding-top: initial;
+  }
 }
 
 .product-main__content .selector-wrapper {
@@ -3919,7 +3918,7 @@ label.error {
 .product-single__title {
   font-size: 30px;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: $gutter;
 }
 
 .product-single__variants {
@@ -4002,17 +4001,13 @@ label.error {
 }
 
 .related__products-by-collection {
-  padding: 10px 0;
+  padding: $gutter * 2 0 $gutter;
   
   .related__product-title h2 {
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
   }
   
   .related__product-content {
     position: relative;
-    padding-left: 5px;
     padding-right: 30px;
     
     .related__grid-title {
@@ -5167,6 +5162,9 @@ $lusa-transition-base: all .1s ease-in;
 .navbar {
   margin: initial;
   min-height: initial;
+  border-top: 2px solid #e2e2e2;
+  border-bottom: 2px solid #e2e2e2;
+  border-radius: initial;
 }
 .navbar .nav>li>a {
   &:hover, 
@@ -5516,7 +5514,7 @@ $lusa-transition-base: all .1s ease-in;
   }
 
   header .mainMenu .navbar-nav > li > a {
-    padding: 0 0.9em;
+    padding: 5px 0.9em;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.04em;
@@ -6256,14 +6254,19 @@ $lusa-transition-base: all .1s ease-in;
 = Left Image & Right collection, button
 ==========================================*/
 .home-hero {
-  padding-top: 5px;
   padding-bottom: 30px;
   color: #fff;
+
+  .bar {
+    height: 4px;
+    border-bottom: 2px solid #e2e2e2;
+    margin-bottom: 3px;
+  }
 
   .left-img {
     height: 290px;
 
-    @include at-query($max, $preMedium) {
+    @include at-query($max, $preLarge) {
       object-fit: cover;
       margin-bottom: 20px;
     }
