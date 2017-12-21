@@ -44,6 +44,7 @@
   <div class="wrapper collection__items-wrapper">
 
     <div class="grid">
+      {% if collection.all_products_count > 0 %}
       {% unless collection.template_suffix contains 'shop2' %}
       <div class="collection__filter-wrapper grid__item large-up--one-fifth medium--one-third">
         <div class="collection__filter-content">
@@ -51,18 +52,21 @@
         </div>
       </div>
       {% endunless %}
+      {% endif %}
       
       <div class="collection__items-grid grid__item large-up--four-fifths medium--two-thirds">
 
         {% comment %}
           Different markup if a collection description exists
         {% endcomment %}
+        {% if collection.all_products_count > 0 %}
         <header class="section-header">
           <h1 class="section-header__title section-header__left">{{ collection.title }}</h1>
           <div class="section-header__right">
             {% include 'collection-sorting' %}
           </div>
         </header>
+        {% endif %}
         
         {% comment %}
           Use class grid-uniform to have evenly sized columns clear

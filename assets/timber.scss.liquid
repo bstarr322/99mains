@@ -1286,7 +1286,7 @@ hr {
 }
 
 .collection-view {
-  display: inline-block;
+  display: none !important; // Hide for now.
   border: 1px solid $colorBorder;
   border-radius: $radius;
   padding: 0 5px;
@@ -6269,7 +6269,8 @@ $lusa-transition-base: all .1s ease-in;
   }
 
   .left-wrapper {
-    background: url("{{'hero-left-bg.png' | asset_img_url: '1000x' }}") no-repeat center center;
+    position: relative;
+    background: url("{{'hero-left-bg.png' | asset_img_url: '1500x' }}") no-repeat center center;
     background-size: cover;
     height: 290px;
 
@@ -6287,6 +6288,41 @@ $lusa-transition-base: all .1s ease-in;
     p {
       color: $colorTextBody;
       font-size: 24px;
+    }
+
+    @include at-query($min, $medium) {
+      .btn {
+        width: 25%;
+      }
+      p {
+        width: 35%;
+      }
+    }
+    @include at-query($max, $preMedium) {
+      height: 360px;
+      @include align-items(center);
+      @include justify-content(flex-end);
+      padding: 30px 10px;
+      background-position: 100% 50%;
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        top: 0;
+      }
+
+      p {
+        color: #fff;
+        z-index: 1;
+      }
+
+      .btn {
+        z-index: 1;
+      }
+
     }
   }
   .right-banner {

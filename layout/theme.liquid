@@ -65,7 +65,13 @@
   <div id="PageContainer" class="drawer-page-content">  
     {% include 'header' %}
 
-    <main class="main-wrapper {% if template contains 'index'%}main-content{% else %} wrapper {% endif %}{% if template contains 'collection' %}collection-lists{% endif %}{% if template contains 'product' %}product-main-content{% endif %}" role="main">
+    {% if template contains 'index' or template contains 'sales-models' %}
+      {% assign wrapper = '' %}
+    {% else %}
+      {% assign wrapper = 'wrapper' %}
+    {% endif %}
+
+    <main class="main-wrapper {{wrapper}} {% if template contains 'index'%}main-content {% endif %}{% if template contains 'collection' %}collection-lists{% endif %}{% if template contains 'product' %}product-main-content{% endif %}" role="main">
 
       {{ content_for_layout }}
 
