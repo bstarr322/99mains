@@ -1915,7 +1915,7 @@ label.error {
   font-size: 14px;
   padding: 11px 0 10px 0;
   color: #1c1d1d;
-  border: 2px solid #e2e2e2;
+  border: 1px solid #e2e2e2;
   border-right: initial;
   border-radius: initial;
   transition: opacity 0.15s ease-in,width 0.15s ease-in;
@@ -2094,16 +2094,27 @@ label.error {
   .first-wrapper {
     padding-top: $gutter;
     padding-bottom: $gutter;
-  }
-  .grid--table {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
 
-    > .grid__item {
-      float: none;
-      display: table-cell;
-      vertical-align: middle;
+    .grid--full {
+      @include at-query($min, $large) {
+        @include flexbox();
+        @include align-items(center);
+
+        .header__search-wrapper {
+          font-size: 0;
+        }
+
+        .site__header-nav {
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(flex-end);
+          font-size: 0;
+
+          .site-header__cart-toggle {
+            font-size: 0;
+          }
+        }
+      }
     }
   }
 
@@ -2190,7 +2201,7 @@ label.error {
   .site-header__link {
     float: right;
 
-    &:first-child {
+    &:last-child {
       a {
         padding-right: 0;
         border-right: initial;
@@ -2202,7 +2213,7 @@ label.error {
     }
     &.link-account a {
       border-right: initial;
-      border: 2px solid $colorHeaderLink;
+      border: 1px solid $colorHeaderLink;
       background-color: #fff;
       padding: 8px 20px;
     }
@@ -2229,7 +2240,7 @@ label.error {
   .btn {
     width: 90px;
     height: 40px;
-    border-radius: initial;
+    border-radius: initial !important;
     text-align: center;
   }
 }
@@ -2240,20 +2251,6 @@ label.error {
   @include at-query ($max, $medium) {
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .site__header-logo {
-    width: 100%;
-  }
-  
-  .header__search-wrapper {
-    display: none !important;
-  }
-  
-  .site__header-nav {
-    display: none !important;
   }
 }
 
@@ -2298,8 +2295,14 @@ label.error {
 .site-nav--mobile {
   @extend .site-nav;
 
-  .text-right & {
-    margin: 0 (-$gutter / 2) 0 0;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  
+  .site-nav__link {
+    padding: 5px 0;
+    span {
+      font-size: 20px;
+    }
   }
 }
 
@@ -2610,7 +2613,7 @@ label.error {
   height: 70px;
   width: 100%;
   background: #fafafa;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
   padding: 0 10px;
 }
 
@@ -2999,7 +3002,7 @@ label.error {
       position: relative;
       background: #fff;
       background-color: #FFF;
-      border: 2px solid $colorBorder;
+      border: 1px solid $colorBorder;
       padding: 2px;
       
       .grid__image {
@@ -3103,7 +3106,7 @@ label.error {
     color: $colorFooterText;
     font-family: 'Roboto Medium';
     font-size: 17px;
-    border-bottom: 2px solid $colorFooterText;
+    border-bottom: 1px solid $colorFooterText;
     text-transform: uppercase;
     line-height: 1.2em;
     padding: 5px 0;
@@ -3565,7 +3568,7 @@ label.error {
     position: relative;
     background: #fff;
     background-color: #FFF;
-    border: 2px solid $colorBorder;
+    border: 1px solid $colorBorder;
     padding: 10px 15px;
 
     .grid__image {
@@ -3951,7 +3954,7 @@ label.error {
 }
 
 .product-single__thumbnails li.is_active img {
-  border: 2px solid #333;
+  border: 1px solid #333;
 }
 
 .product-single__thumbnails img {
@@ -5082,7 +5085,7 @@ $lusa-transition-base: all .1s ease-in;
 }
 
 .product-graphic__swatch input[type="radio"]:checked + label {
-  border: 2px solid $colorPrimary;
+  border: 1px solid $colorPrimary;
 }
 
 .product-form__item--swatch .selected-variant__title {
@@ -5162,8 +5165,8 @@ $lusa-transition-base: all .1s ease-in;
 .navbar {
   margin: initial;
   min-height: initial;
-  border-top: 2px solid #e2e2e2;
-  border-bottom: 2px solid #e2e2e2;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
   border-radius: initial;
 }
 .navbar .nav>li>a {
@@ -5681,7 +5684,7 @@ $lusa-transition-base: all .1s ease-in;
         // padding: initial;
 
         >a {
-          // border-bottom: 2px solid $colorPrimary;
+          // border-bottom: 1px solid $colorPrimary;
           // text-transform: uppercase;
           // font-weight: bold;
           // display: inline-block;
@@ -5878,7 +5881,7 @@ $lusa-transition-base: all .1s ease-in;
 
     .btn-contact-us {
       margin: 0 0 $gutter/2 0;
-      border: 2px solid #fff;
+      border: 1px solid #fff;
       background-color: initial;
     }
 
@@ -6193,7 +6196,7 @@ $lusa-transition-base: all .1s ease-in;
   }
 
   .details {
-    border: 2px solid $colorBorder;
+    border: 1px solid $colorBorder;
     padding: 5px;
     margin-bottom: 20px;
 
@@ -6258,8 +6261,8 @@ $lusa-transition-base: all .1s ease-in;
   color: #fff;
 
   .bar {
-    height: 4px;
-    border-bottom: 2px solid #e2e2e2;
+    height: 3px;
+    border-bottom: 1px solid #e2e2e2;
     margin-bottom: 3px;
   }
 
