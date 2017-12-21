@@ -5,14 +5,17 @@
         <div class="bar"></div>
       </div>
       <div class="grid__item large-up--two-thirds">
-        {{ 'hero-left.png' | asset_url | img_tag, 'left-img', 'left-img' }}
+        <div class="left-wrapper">
+          <p>Supports &amp; Shop Local on</p>
+          <a href="javascript:void(0)" class="btn btn-shop">Shop Now</a>
+        </div>
       </div>
       <div class="grid__item large-up--one-third">
         <div class="right-banner">
           <p class="title">New Holiday Styles</p>
-          <a href="{{ settings.home_hero_right_link }}" class="btn btn-collection">Shop Collection</a>
+          <a href="javascript:void(0)" class="btn btn-shop">Shop Collection</a>
         </div>
-        <a href="{{ settings.home_hero_right_link_all }}" class="btn btn-all">Shop All Holiday Styles</a>
+        <a href="javascript:void(0)" class="btn btn-all">Shop All Holiday Styles</a>
       </div>
     </div>
   </div>

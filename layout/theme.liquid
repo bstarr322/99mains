@@ -65,7 +65,7 @@
   <div id="PageContainer" class="drawer-page-content">  
     {% include 'header' %}
 
-    <main class="main-wrapper {% if template contains 'index'%}main-content{% endif %}{% if template contains 'collection' %}collection-lists{% endif %}{% if template contains 'product' %}product-main-content{% endif %}" role="main">
+    <main class="main-wrapper {% if template contains 'index'%}main-content{% else %} wrapper {% endif %}{% if template contains 'collection' %}collection-lists{% endif %}{% if template contains 'product' %}product-main-content{% endif %}" role="main">
 
       {{ content_for_layout }}
 

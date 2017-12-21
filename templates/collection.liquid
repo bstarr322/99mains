@@ -43,49 +43,51 @@
   {% endcomment %}
   <div class="wrapper collection__items-wrapper">
 
-    {% unless collection.template_suffix contains 'shop2' %}
-    <div class="collection__filter-wrapper">
-      <div class="collection__filter-content">
-        {% include 'filter-menu-shop1' %}
-      </div>
-    </div>
-    {% endunless %}
-    
-    <div class="collection__items-grid">
-
-      {% comment %}
-        Different markup if a collection description exists
-      {% endcomment %}
-      <header class="section-header">
-        <h1 class="section-header__title section-header__left">{{ collection.title }}</h1>
-        <div class="section-header__right">
-          {% include 'collection-sorting' %}
+    <div class="grid">
+      {% unless collection.template_suffix contains 'shop2' %}
+      <div class="collection__filter-wrapper grid__item large-up--one-fifth medium--one-third">
+        <div class="collection__filter-content">
+          {% include 'filter-menu-shop1' %}
         </div>
-      </header>
+      </div>
+      {% endunless %}
       
-      {% comment %}
-        Use class grid-uniform to have evenly sized columns clear
-        each other properly at each breakpoint.
-      {% endcomment %}
-      <div class="product__items-grid clearfix grid">
+      <div class="collection__items-grid grid__item large-up--four-fifths medium--two-thirds">
 
         {% comment %}
-          Loop through our products in the current collection.
-          See the snippet 'product-grid-item' for the layout.
+          Different markup if a collection description exists
         {% endcomment %}
+        <header class="section-header">
+          <h1 class="section-header__title section-header__left">{{ collection.title }}</h1>
+          <div class="section-header__right">
+            {% include 'collection-sorting' %}
+          </div>
+        </header>
+        
+        {% comment %}
+          Use class grid-uniform to have evenly sized columns clear
+          each other properly at each breakpoint.
+        {% endcomment %}
+        <div class="product__items-grid clearfix grid">
 
-        {% for product in collection.products %}
-          {% include 'product-grid-item' %}
-        {% endfor %}
+          {% comment %}
+            Loop through our products in the current collection.
+            See the snippet 'product-grid-item' for the layout.
+          {% endcomment %}
+
+          {% for product in collection.products %}
+            {% include 'product-grid-item' %}
+          {% endfor %}
+
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <div class="pagination">
+            {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+          </div>
+        {% endif %}
 
       </div>
-
-      {% if paginate.pages > 1 %}
-        <div class="pagination">
-          {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
-        </div>
-      {% endif %}
-
     </div>
   </div>
 </div>

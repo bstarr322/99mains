@@ -1000,6 +1000,7 @@ body {
 }
 
 .main-wrapper  {
+  padding-bottom: $gutter * 2;
   h1 {
     margin-top: 30px;
   }
@@ -3115,14 +3116,20 @@ label.error {
 }
 
 .footer-block {
+  @include at-query($max, $preMedium) {
+    margin-bottom: $gutter;
+    text-align: left;
+  }
+
   h4 {
     color: $colorFooterText;
     font-family: 'Roboto Medium';
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: initial;
     border-bottom: 1px solid $colorFooterText;
     text-transform: uppercase;
     line-height: 1.2em;
-    padding: 5px 0;
+    padding-bottom: 15px;
     margin: 0;
     margin-bottom: 15px;
   }
@@ -3138,9 +3145,9 @@ label.error {
         display: block;
         color: $colorFooterText;
         font-family: 'Roboto Regular';
-        font-size: 17px;
-        line-height: 1.2em;
-        padding: 6px 0;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 11px;
       }
       
       a:hover {
@@ -3187,19 +3194,6 @@ label.error {
   }
 }
 
-@media (max-width: 481px) {
-  .footer-block {
-    margin-bottom: 20px;
-  }
-  
-  .footer-block h4 {
-    text-align: left;
-  }
-  
-  .footer-block ul {
-    text-align: left;
-  }
-}
 
 /*============================================================================
   #Product and Collection Grids
@@ -3356,14 +3350,19 @@ label.error {
         z-index: 2;
         margin-top: -145px;
 
+        .grid--full:first-of-type {
+          .text-block {
+            padding-left: $gutter;
+          }
+        }
         .text-block {
-          padding-bottom: 30px;
-          padding-top: 30px;
-          padding-right: 30px;
+          padding-bottom: $gutter;
+          padding-top: $gutter;
+          padding-right: $gutter;
           overflow: hidden;
 
           &.push--large--one-half {
-            padding-left: 30px;
+            padding-left: $gutter;
           }
         }
 
@@ -3379,7 +3378,7 @@ label.error {
 
           .text-block,
           .text-block.push--large--one-half {
-            padding: 15px;
+            padding: 15px !important;
           }
         }
 
@@ -3481,16 +3480,11 @@ label.error {
   
   .collection__filter-wrapper {
     .collection__filter-content {
-      display: block;
-      float: left;
-      width: 200px;
-      padding-right: 18px;
-      padding-top: 9px;
+
     }
   }
   
   .collection__items-grid {
-    margin-left: 200px;
     
     .section-header {
       margin-bottom: 10px;
@@ -3532,8 +3526,7 @@ label.error {
 
 .collection-lists {
   max-width: 100%;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 0;
 }
 
 .collection__items-wrapper {
@@ -3904,8 +3897,6 @@ label.error {
 
 .product__single-container {
   background: #fff;
-  padding-top: $gutter;
-  padding-bottom: $gutter;
 }
 .product-single {
   padding: 0;
@@ -5854,9 +5845,7 @@ $lusa-transition-base: all .1s ease-in;
   }
 
   .btn-contact-us {
-    background-color: #990000;
     padding: 12px 10px;
-    border-radius: 7px;
     color: #fff;
     font-size: 12px;
     text-transform: uppercase;
@@ -6279,12 +6268,25 @@ $lusa-transition-base: all .1s ease-in;
     margin-bottom: 3px;
   }
 
-  .left-img {
+  .left-wrapper {
+    background: url("{{'hero-left-bg.png' | asset_img_url: '1000x' }}") no-repeat center center;
+    background-size: cover;
     height: 290px;
+
+    padding: 60px;
+    @include flexbox();
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include flex-flow(column);
 
     @include at-query($max, $preLarge) {
       object-fit: cover;
       margin-bottom: 20px;
+    }
+
+    p {
+      color: $colorTextBody;
+      font-size: 24px;
     }
   }
   .right-banner {
@@ -6303,13 +6305,6 @@ $lusa-transition-base: all .1s ease-in;
       font-family: 'Roboto Regular';
       font-size: 28px;
     }
-
-    .btn-collection {
-      font-family: 'Roboto Medium';
-      font-size: 16.5px;
-      padding: 10px;
-      width: 240px;
-    }
   }
 
   .btn {
@@ -6317,6 +6312,12 @@ $lusa-transition-base: all .1s ease-in;
     border-radius: initial;
   }
 
+  .btn-shop {
+    font-family: 'Roboto Medium';
+    font-size: 16.5px;
+    padding: 10px;
+    width: 240px;
+  }
   .btn-all {
     font-family: 'Roboto Bold';
     font-size: 20px;
