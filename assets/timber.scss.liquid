@@ -3872,6 +3872,22 @@ label.error {
   font-weight: bold;
 }
 
+.filter-group {
+  .nav-color {
+    @include flexbox();
+    @include flex-flow(wrap);
+    @include justify-content(space-between);
+  }
+
+  .filter-item-color {
+    display: block;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    text-indent: -100050px;
+  }
+}
+
 /*============================================================================
   #Breadcrumbs
 ==============================================================================*/
