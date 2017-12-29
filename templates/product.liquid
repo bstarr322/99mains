@@ -107,6 +107,19 @@
               {% include 'swatch' with 'Graphic' %}
             {% endif %}
 
+            {% if product.vendor contains 'Coach Lance's 5th Annual Rebel Rumble 3 v 3 Tournament 2017' %}
+            <p class="line-item-property__field">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="properties[Name]" maxlength="15" required="true">
+            </p>
+
+            <p class="line-item-property__field">
+              <label for="number">Number</label>
+              <input id="number" type="text" name="properties[Number]" maxlength="2" required="true">
+            </p>
+            {% endif %}
+
+
             <label for="Quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>
             <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
               

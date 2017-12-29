@@ -274,6 +274,8 @@ var ajaxCart = (function(module, $) {
       counterIncrement=+(cart.total_price / 100 - count) / 100;
     }
     
+    if (counterIncrement == 0) return;
+    
     var counter = setInterval(timer, 1); 
 
     function timer() {
@@ -283,6 +285,7 @@ var ajaxCart = (function(module, $) {
       if (((countToFixed >= cart.total_price) && (counterIncrement > 0)) || ((countToFixed <= cart.total_price) && (counterIncrement < 0))) {
         clearInterval(counter);
         $(".ajaxcart__total__price strong").html(Shopify.formatMoney(count*100, settings.moneyFormat));
+        console.log(count);
         return false;
       }
       $(".ajaxcart__total__price strong").html(Shopify.formatMoney(count*100, settings.moneyFormat));
