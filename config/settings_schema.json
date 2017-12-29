@@ -837,8 +837,8 @@
         "default": "Our Favorite New Stores"
       },
       {
-         "type":      "header",
-         "content":   "Store 1"
+        "type": "header",
+        "content": "Store 1"
       },
       {
         "type": "image_picker",
@@ -866,8 +866,8 @@
         "label": "Button Text"
       },
       {
-         "type":      "header",
-         "content":   "Store 2"
+        "type": "header",
+        "content": "Store 2"
       },
       {
         "type": "image_picker",

@@ -62,8 +62,8 @@
       {% if product.compare_at_price_max > product.price %}<p class="saving__price-value">{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}%</p>{% endif %}
       {% endif %}
 
-      <div class="info" data-mh="mh-grid-info">
-        <p class="title">
+      <div class="info">
+        <p class="title"  data-mh="mh-grid-info-title">
           <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
         </p>
 
@@ -71,7 +71,7 @@
           {{ product.vendor }}
         </span>
 
-        <p class="grid__price">
+        <p class="grid__price"  data-mh="mh-grid-info-price">
           {% comment %}
             You can show a leading 'from' or 'up to' by checking 'product.price_varies'
             if your variants have different prices.

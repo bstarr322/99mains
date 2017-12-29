@@ -3885,6 +3885,11 @@ label.error {
     height: 27px;
     border-radius: 50%;
     text-indent: -100050px;
+    
+    a {
+      display: block;
+      height: 100%;
+    }
   }
 }
 
@@ -5530,6 +5535,22 @@ $lusa-transition-base: all .1s ease-in;
   }
 }
 /*=== desktop-menu ===*/
+
+@media (min-width: 1052px) {
+  header .mainMenu .navbar-nav {
+    @include flexbox();
+    @include justify-content(space-between);
+    width: 100%;
+  }
+}
+
+@media (max-width: 1291px) {
+  header .mainMenu .navbar-nav > li > a span {
+    font-size: 12px;
+  }
+}
+
+
 @media (min-width: 769px) {
 
   header .mainMenu .navbar-nav {
@@ -5537,10 +5558,8 @@ $lusa-transition-base: all .1s ease-in;
   }
 
   header .mainMenu .navbar-nav > li > a {
-    padding: 5px 0.9em;
-    font-size: 14px;
+    padding: 5px 7px;
     font-weight: 500;
-    letter-spacing: 0.04em;
     color: $colorTextBody;
     background-color: transparent;
     -webkit-transition: -webkit-transform 0.35s;
