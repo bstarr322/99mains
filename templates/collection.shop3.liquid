@@ -1,4 +1,4 @@
-<!-- /templates/collection.liquid -->
+<!-- /templates/collection.shop3.liquid -->
 {% comment %}
 
   For more information on collection tags:
@@ -9,25 +9,24 @@
 
 {% comment %}
 <!-- Sample Description Template -->
-
   <div class="description">
     <div class="grid--rev">
-      <div class="grid__item large--three-fifths text-block">
+      <div class="grid__item medium-up--three-fifths text-block">
         <h2>Our Story</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.</p>
+        <p>Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. <span>Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. </span></p>
       </div>
-      <div class="grid__item large--two-fifths img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/dean_roasting_large.jpg?v=1509600906" alt="" /></div>
-      
+      <div class="grid__item medium-up--two-fifths img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/photo1_800.png?v=1510255882" alt="" /></div>
     </div>
     <div class="grid">
-      <div class="grid__item large--three-fifths text-block">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p>
+      <div class="grid__item medium-up--three-fifths text-block">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut </p>
+        <ul></ul>
+        <p><span>molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec </span></p>
       </div>
-      <div class="grid__item large--two-fifths img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/becharas_family_sm_large.jpg?v=1509600947" alt="" /></div>
-      
+      <div class="grid__item medium-up--two-fifths img-block"><img src="//cdn.shopify.com/s/files/1/1629/1645/files/photo2_800.png?v=1510257275" alt="" /></div>
     </div>
   </div>
-
 {% endcomment %}
 
 
@@ -50,46 +49,53 @@
     Use .grid--rev so that the collection tags appear below the products on mobile
   {% endcomment %}
   <div class="wrapper collection__items-wrapper">
-    <div class="collection__filter-wrapper">
-      <div class="collection__filter-content">
-        {% include 'filter-menu-shop3' %}
-      </div>
-    </div>
-    
-    <div class="collection__items-grid">
 
-      {% comment %}
-        Different markup if a collection description exists
-      {% endcomment %}
-      <header class="section-header">
-        <div class="section-header__right">
-          {% include 'collection-sorting' %}
+    <div class="grid">
+      {% if collection.all_products_count > 0 %}
+      <div class="collection__filter-wrapper grid__item large-up--one-fifth medium--one-third">
+        <div class="collection__filter-content">
+          {% include 'filter-menu-shop3' %}
         </div>
-      </header>
-      
-      {% comment %}
-        Use class grid-uniform to have evenly sized columns clear
-        each other properly at each breakpoint.
-      {% endcomment %}
-      <div class="product__items-grid clearfix">
-
-        {% comment %}
-          Loop through our products in the current collection.
-          See the snippet 'product-grid-item' for the layout.
-        {% endcomment %}
-
-        {% for product in collection.products %}
-          {% include 'product-grid-item' %}
-        {% endfor %}
-
       </div>
-
-      {% if paginate.pages > 1 %}
-        <div class="pagination">
-          {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
-        </div>
       {% endif %}
 
+      <div class="collection__items-grid grid__item large-up--four-fifths medium--two-thirds">
+
+        {% comment %}
+          Different markup if a collection description exists
+        {% endcomment %}
+        {% if collection.all_products_count > 0 %}
+        <header class="section-header">
+          <div class="section-header__right">
+            {% include 'collection-sorting' %}
+          </div>
+        </header>
+        {% endif %}
+        
+        {% comment %}
+          Use class grid-uniform to have evenly sized columns clear
+          each other properly at each breakpoint.
+        {% endcomment %}
+        <div class="product__items-grid grid">
+
+          {% comment %}
+            Loop through our products in the current collection.
+            See the snippet 'product-grid-item' for the layout.
+          {% endcomment %}
+
+          {% for product in collection.products %}
+            {% include 'product-grid-item' %}
+          {% endfor %}
+
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <div class="pagination">
+            {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+          </div>
+        {% endif %}
+
+      </div>
     </div>
   </div>
 </div>

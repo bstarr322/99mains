@@ -29,13 +29,13 @@
     
     <div class="grid product-single">
       
-      <div class="grid__item large--one-half text-center product-main__photos">
+      <div class="grid__item medium-up--one-half text-center product-main__photos">
         <div class="product-single__photos" id="ProductPhoto">
           {% include 'product-gallery' %}
         </div>
       </div>
 
-      <div class="grid__item large--one-half product-main__content">
+      <div class="grid__item medium-up--one-half product-main__content">
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           <meta itemprop="priceCurrency" content="{{ shop.currency }}">
 
@@ -106,6 +106,19 @@
               {% include 'swatch' with 'Color' %}
               {% include 'swatch' with 'Graphic' %}
             {% endif %}
+
+            {% if product.vendor contains 'Coach Lance's 5th Annual Rebel Rumble 3 v 3 Tournament 2017' %}
+            <p class="line-item-property__field">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="properties[Name]" maxlength="15" required="true">
+            </p>
+
+            <p class="line-item-property__field">
+              <label for="number">Number</label>
+              <input id="number" type="text" name="properties[Number]" maxlength="2" required="true">
+            </p>
+            {% endif %}
+
 
             <label for="Quantity" class="quantity-selector">{{ 'products.product.quantity' | t }}</label>
             <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">

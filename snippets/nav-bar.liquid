@@ -1,31 +1,27 @@
 <!-- Nav Bar -->
 <nav class="nav-bar" role="navigation">
   <div class="wrapper">
-    <div class="medium-down--hide">
+    <div class="small--hide medium--hide">
 
       <!-- begin site-nav -->
       {% include 'main-menu' %}
       <!-- //site-nav -->
     </div>
-    <div class="large--hide medium-down--show">
+    <div class="site-nav--mobile large-up--hide">
       <div class="grid">
         <div class="grid__item one-half">
-          <div class="site-nav--mobile">
-            <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
-              <span class="icon icon-hamburger" aria-hidden="true"></span>
-              <span class="fallback-text">{{ 'layout.navigation.menu' | t }}</span>
-            </button>
-          </div>
+          <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
+            <span class="icon icon-hamburger" aria-hidden="true"></span>
+            <span class="fallback-text">{{ 'layout.navigation.menu' | t }}</span>
+          </button>
         </div>
         <div class="grid__item one-half text-right">
-          <div class="site-nav--mobile">
-            <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
-              <span class="icon-fallback-text">
-                <span class="icon icon-cart" aria-hidden="true"></span>
-                <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
-              </span>
-            </a>
-          </div>
+          <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
+            <span class="icon-fallback-text">
+              <span class="icon icon-cart" aria-hidden="true"></span>
+              <span class="fallback-text">{{ 'layout.cart.title' | t }}</span>
+            </span>
+          </a>
         </div>
       </div>
     </div>

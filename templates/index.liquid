@@ -11,22 +11,53 @@
   {% include 'home-slider' %}
 {% endif %}
 
+
+{% include 'home-hero' %}
+
 {% if settings.use_featured_newest_products %}
   {% include 'featured-newest-products'%}
 {% endif %}
 
-{% if settings.use_featured_collections %}
-  {% include 'featured-collections'%}
-{% endif %}
 
 {% if settings.use_featured_products %}
   {% include 'featured-products' %}
 {% endif %}
 
+{% if settings.use_section_featured_categories %}
+  {% include 'featured-collections'%}
+{% endif %}
+
+
 <div id="insta-feed"></div>
 
-<div class="site__service-wrapper clearfix">
+<div class="site__service-wrapper">
   <div class="wrapper">
+    <div class="main-image">
+      {% include 'icon-shop' %}
+    </div>
+    <div class="main-text">
+      <h2>Shop</h2>
+      <p>with 99mainstreet</p>
+    </div>
+    <div class="service-item">
+      <div class="icon">{% include 'icon-fast' %}</div>
+      <p class="title">Fast</p>
+      <span data-mh="mh-service-item-desc">Every order ships within 24 hours</span>
+    </div>
+
+    <div class="service-item">
+      <div class="icon">{% include 'icon-fun' %}</div>
+      <p class="title">Fun</p>
+      <span data-mh="mh-service-item-desc">Find what you need while supporting local businesses</span>
+    </div>
+
+    <div class="service-item">
+      <div class="icon">{% include 'icon-secure' %}</div>
+      <p class="title">Secure</p>
+      <span data-mh="mh-service-item-desc">100% Safe and Secure Payments</span>
+    </div>
+  </div>
+  <div class="wrapper hide">
     <h2>Shop with 99 Mainstreet</h2>
     <div class="site__service-info clearfix">
       <div class="site__service-content hvr-icon-buzz-out">
@@ -50,5 +81,37 @@
         {% include 'icon-arrow-right' %}
       </a>
     </div>
+  </div>
+</div>
+
+<section class="section-new-stores">
+  <div class="wrapper">
+    <h2>{{ settings.section_new_stores_header }}</h2>
+    <div class="grid">
+      {% for i in (1..2) %}
+        {% capture img %}section_new_stores_img_{{i}}{% endcapture %}
+        {% capture title %}section_new_stores_title_{{i}}{% endcapture %}
+        {% capture desc %}section_new_stores_desc_{{i}}{% endcapture %}
+        {% capture link %}section_new_stores_link_{{i}}{% endcapture %}
+        {% capture btn_text %}section_new_stores_btn_text_{{i}}{% endcapture %}
+
+        <div class="grid__item medium-up--one-half">
+          <div class="details">
+            {{ settings[img] | img_url: '350x' | img_tag }}
+            <div class="info">
+              <p class="title">{{ settings[title] }}</p>
+              <span class="desc">{{ settings[desc] }}</span>
+              <a href="{{ settings[link] }}" class="btn">{{ settings[btn_text] }}</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="contact-us-banner">
+  <div class="wrapper">
+    <h2>Have products to sell?</h2>
+    <a class="btn" href="/pages/joinourmarketplace">Contact Us</a>
   </div>
 </div>
