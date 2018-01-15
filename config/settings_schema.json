@@ -89,6 +89,180 @@
     ]
   },
   {
+    "name": "Custom Swatch Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Custom colors Section"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_1",
+        "label": "Custom Color Name 1"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_1",
+        "label": "Custom Color 1",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_2",
+        "label": "Custom Color Name 2"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_2",
+        "label": "Custom Color 2",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_3",
+        "label": "Custom Color Name 3"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_3",
+        "label": "Custom Color 3",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_4",
+        "label": "Custom Color Name 4"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_4",
+        "label": "Custom Color 4",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_5",
+        "label": "Custom Color Name 5"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_5",
+        "label": "Custom Color 5",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_6",
+        "label": "Custom Color Name 6"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_6",
+        "label": "Custom Color 6",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_7",
+        "label": "Custom Color Name 7"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_7",
+        "label": "Custom Color 7",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_8",
+        "label": "Custom Color Name 8"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_8",
+        "label": "Custom Color 8",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_9",
+        "label": "Custom Color Name 9"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_9",
+        "label": "Custom Color 9",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_10",
+        "label": "Custom Color Name 10"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_10",
+        "label": "Custom Color 10",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_11",
+        "label": "Custom Color Name 11"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_11",
+        "label": "Custom Color 11",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_12",
+        "label": "Custom Color Name 12"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_12",
+        "label": "Custom Color 12",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_13",
+        "label": "Custom Color Name 13"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_13",
+        "label": "Custom Color 13",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_14",
+        "label": "Custom Color Name 14"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_14",
+        "label": "Custom Color 14",
+        "default": "#204a80"
+      },
+      {
+        "type": "text",
+        "id": "custom_color_name_15",
+        "label": "Custom Color Name 15"
+      },
+      {
+        "type": "color",
+        "id": "custom_color_15",
+        "label": "Custom Color 15",
+        "default": "#204a80"
+      }
+    ]
+  },
+  {
     "name": "Header",
     "settings": [
       {
@@ -170,18 +344,11 @@
         "id": "megamenu_list_1_childmenu_1_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -232,18 +399,11 @@
         "id": "megamenu_list_1_childmenu_2_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -294,18 +454,11 @@
         "id": "megamenu_list_1_childmenu_3_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -356,18 +509,11 @@
         "id": "megamenu_list_1_childmenu_4_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }
@@ -418,18 +564,11 @@
         "id": "megamenu_list_1_childmenu_5_grid",
         "label": "Items In Row",
         "options": [
-          // {
-          //   "value": "2",
-          //   "label": "6"
-          // },
-          // {
-          //   "value": "3",
-          //   "label": "4"
-          // },
           {
             "value": "4",
             "label": "3"
-          },{
+          },
+          {
             "value": "6",
             "label": "2"
           }

@@ -78,9 +78,8 @@
         
         {% comment %} Main Menu {% endcomment %}
         {% assign level_2 = linklists[child_list_handle] %}
-        
         <li class="dropdown dropdown-mega-menu{% if submenu_type != "type2" and submenu_type != "type3" %}{% if level_2.links[0].handle contains "two_column" or level_2.links[0].handle contains "three_column" %} dropdown-two-col{% else %} dropdown-one-col{% endif %}{% endif %} {% if select_item %}selected{% endif %}">
-          <a href="{{ link.url }}" class="dropdown-toggle" data-toggle="dropdown"><span class="act-underline">
+          <a href="{{ link.url }}" class="dropdown-toggle" {% unless level_2.empty? %}data-toggle="dropdown" {% endunless %}><span class="act-underline">
             {{ link.title }}</span>
           </a>
           

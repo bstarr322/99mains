@@ -86,9 +86,8 @@ assets/black.png:
 assets/block-h.png:
   development: 2017-11-10T12:39:13-05:00
   production: 2017-10-26T11:56:59-04:00   e14db54f4cc92463b11896129d6457d4
-assets/buddha-megamenu.js.liquid:
-  development: 2017-09-14T12:36:41-04:00
-  production: 2017-09-14T12:36:05-04:00   05c1d4bc2d4e56daacfbedb765e77638
+assets/brochure-img.jpg:
+  development: 2017-12-09T11:44:08-05:00   840efad4c62244fd88405f6ebc841f0d
 assets/cabin-creek.jpg:
   development: 2017-11-10T12:39:13-05:00   da19004f65b3f55869f1fa60038cd3cf
   production: 2017-11-03T11:39:43-04:00
@@ -119,6 +118,8 @@ assets/close-cart.svg:
 assets/concrete-canoe-logo.png:
   development: 2017-11-10T12:39:14-05:00
   production: 2017-10-17T14:19:25-04:00   3e02541ee21841323d96f0c55bbd67ec
+assets/contact-us-banner.png:
+  development: 2017-12-18T10:31:40-05:00   10331ad08ad1d5202b63ea4817103d48
 assets/coyote-silhouette.png:
   development: 2017-11-10T12:39:14-05:00
   production: 2017-10-25T15:32:06-04:00   e48dff5251e3969908d757178d8f27d2
@@ -200,6 +201,8 @@ assets/gold.png:
 assets/great-dog-design-shop.jpg:
   development: 2017-11-10T12:39:20-05:00   c3f664600e7c4cd67f5d6ea875691ce4
   production: 2017-11-06T15:52:20-05:00
+assets/gunsmoke.png:
+  development: 2018-01-15T10:51:19-05:00   3a7d2ed11cdabdbd7ae09315096071ed
 assets/guy-dealer.png:
   development: 2017-11-10T12:39:20-05:00
   production: 2017-11-07T14:22:23-05:00   00856066d2f8cc422d695caf6af6c83d
@@ -212,6 +215,16 @@ assets/heart.svg:
 assets/heather-athletic-maroon.png:
   development: 2017-09-14T12:36:51-04:00
   production: 2017-09-21T04:43:44-04:00   2dd26b539052ab9a0a56d3a410398fac
+assets/heather-black.png:
+  development: 2018-01-15T10:51:17-05:00   95316ba6d102f188c8e4dcd87d373c25
+assets/heather-navy.png:
+  development: 2018-01-15T10:51:22-05:00   a83696ae1963eab86007c9451d009a36
+assets/heather-royal.png:
+  development: 2018-01-15T10:51:16-05:00   147832e164868df8e40e600f98a82c6d
+assets/hero-left-bg.png:
+  development: 2017-12-21T09:32:36-05:00   e7478c8e596b5e45974299d2d39a83c2
+assets/hero-right-bg.png:
+  development: 2017-12-19T11:17:05-05:00   bd0b3491013081c39812261a28495d9b
 assets/home-grown-black.png:
   development: 2017-09-14T12:36:52-04:00
   production: 2017-09-21T04:44:26-04:00   0afffb92d410662275d45b7098cb3b36
@@ -293,6 +306,8 @@ assets/lock.svg:
 assets/logo-Becharas Coffee.png:
   development: 2017-11-10T12:39:25-05:00
   production: 2017-11-08T04:05:17-05:00   0054cb8374bf2bf6d864a895ba5d66f7
+assets/logo-old.png:
+  development: 2017-12-21T03:59:31-05:00   42c3b13b54b60270a9a217841ebbe933
 assets/logo.png:
   development: 2017-10-13T14:54:11-04:00
   production: 2017-10-13T16:10:39-04:00   0da9778f8735e07fd6c4b8ff2665368e
@@ -386,8 +401,6 @@ assets/mens-sand-tshirt-99mainstreet.png:
 assets/mens-smoke-grey-tshirt-99mainstreet.png:
   development: 2017-09-14T12:37:36-04:00
   production: 2017-09-21T05:29:44-04:00   20261539a877b761506c38210e8a0f4e
-assets/mm-init.js:
-  production: 2017-09-14T12:09:52-04:00   489c00e1c529a36360a509a3a30c4f14
 assets/modernizr.min.js:
   development: 2017-09-14T12:37:39-04:00
   production: 2017-09-14T12:09:52-04:00   dc21cffad945a84cbbe770d52b1a0ded
@@ -445,6 +458,46 @@ assets/respond-proxy.html:
 assets/respond.min.js:
   development: 2017-09-14T12:37:43-04:00
   production: 2017-09-14T12:09:55-04:00   a2684e9b8fa50d6d11c56a9ada068528
+assets/roboto-bold.eot:
+  development: 2017-12-18T10:21:06-05:00   4c6f14b80ef09ca7460664d6392d5227
+assets/roboto-bold.svg:
+  development: 2017-12-18T10:21:07-05:00   3e91a6e968629ef35be29479071854cf
+assets/roboto-bold.ttf:
+  development: 2017-12-18T10:21:07-05:00   9c8e35d30cbe785198870beda4ec9044
+assets/roboto-bold.woff:
+  development: 2017-12-18T10:21:06-05:00   8ab4d69ed3698ebf9495c640c0a61338
+assets/roboto-light.eot:
+  development: 2017-12-18T10:20:29-05:00   9785ac657061fbd5a3cbf65e36e487e5
+assets/roboto-light.svg:
+  development: 2017-12-18T10:20:27-05:00   db840b61b53363559031727bf77e6ade
+assets/roboto-light.ttf:
+  development: 2017-12-18T10:20:28-05:00   2bfa9a9fb954ab29ac182b24c11de103
+assets/roboto-light.woff:
+  development: 2017-12-18T10:20:28-05:00   55344f42e5764241df297ef74a69ce9c
+assets/roboto-medium.eot:
+  development: 2017-12-18T10:20:37-05:00   c67866be7810d5c68cf93be74581f5e6
+assets/roboto-medium.svg:
+  development: 2017-12-18T10:20:36-05:00   d4073390159d4b8d85669b6a50ff62b7
+assets/roboto-medium.ttf:
+  development: 2017-12-18T10:20:37-05:00   1264f9a6210ed61fc00ba316a46c71d7
+assets/roboto-medium.woff:
+  development: 2017-12-18T10:20:35-05:00   f853ea94afc16ad7264be8acecc5005c
+assets/roboto-regular.eot:
+  development: 2017-12-18T10:20:44-05:00   ec216e32828314c17a8d53d1c3ae73ed
+assets/roboto-regular.svg:
+  development: 2017-12-18T10:20:45-05:00   bcd48b9db26ff95dbf3fe59450028203
+assets/roboto-regular.ttf:
+  development: 2017-12-18T10:20:46-05:00   758cc7bee4366aff1a1f3d84545bae33
+assets/roboto-regular.woff:
+  development: 2017-12-18T10:20:45-05:00   7eed82dc103e594f89238c6f0e968de7
+assets/roboto-thin.eot:
+  development: 2017-12-18T10:20:51-05:00   252f4956e20d717e0c9e76ea4909874c
+assets/roboto-thin.svg:
+  development: 2017-12-18T10:20:52-05:00   d9627e37a7dbafc8a94c5c2a6c908433
+assets/roboto-thin.ttf:
+  development: 2017-12-18T10:20:53-05:00   a410c60d5f113a03cb0b67bde4838df7
+assets/roboto-thin.woff:
+  development: 2017-12-18T10:20:51-05:00   d3013e1abfeb7f243811003184767c83
 assets/rocks-glass.png:
   development: 2017-09-14T12:37:44-04:00
   production: 2017-09-21T05:44:29-04:00   c94eb5423ba5d6d484a09cb803e842d1
@@ -511,8 +564,6 @@ assets/swatch.css.liquid:
 assets/swiper.min.js:
   development: 2017-09-14T12:37:51-04:00
   production: 2017-09-14T12:12:20-04:00   1c59c2b171d7a162d30fc83ce4ac7fa4
-assets/theme.js.liquid:
-  production: 2017-11-03T08:38:52-04:00   ee70e48086093a84662e5748a7551874
 assets/timber.js.liquid:
   development: 2017-09-14T12:37:51-04:00
   production: 2017-11-10T12:15:54-05:00   1af82d813616dc10e1594c9e76bad478
@@ -525,8 +576,12 @@ assets/timber_bkup.scss.liquid:
 assets/true-navy.png:
   development: 2017-09-14T12:37:51-04:00
   production: 2017-09-14T12:10:02-04:00   9dee13917087ff61aec44adc440bb359
-assets/vendors.js:
-  production: 2017-10-19T10:23:24-04:00   34e4fc16084d7c8584d0475626d9da35
+assets/washed-green.png:
+  development: 2018-01-15T10:51:38-05:00   b8fe02ca82a07fd600e712b77a643e30
+assets/washed-red.png:
+  development: 2018-01-15T10:51:39-05:00   e4c2f3e10835fcce005357c190e8c3ed
+assets/watermelon.png:
+  development: 2018-01-15T10:51:46-05:00   5bb4497ae6f528a93a743324ed45499e
 assets/wine-glass.png:
   development: 2017-09-14T12:37:53-04:00
   production: 2017-09-21T06:04:04-04:00   bbbce6cf534d8e53926ef34f93eb714a
@@ -593,12 +648,6 @@ snippets/ajax-cart-template.liquid:
 snippets/blog-sidebar.liquid:
   development: 2017-09-14T12:38:19-04:00
   production: 2017-09-14T12:10:39-04:00   ae3891e372509ded7074e50b2a97f438
-snippets/buddha-megamenu-before.liquid:
-  production: '2017-09-14T12:10:39-04:00   '
-snippets/buddha-megamenu-wireframe.liquid:
-  production: 2017-09-14T12:36:02-04:00   97a6fb8110b539f474546fa53f066b0d
-snippets/buddha-megamenu.liquid:
-  production: 2017-10-19T14:56:46-04:00   7acd4da4256f1ecce15a2809d343820c
 snippets/collection-sidebar.liquid:
   development: 2017-09-14T12:38:19-04:00
   production: 2017-09-14T12:10:39-04:00   b53274904cf2b47ce2fb4c3e6d632bb3
@@ -647,6 +696,8 @@ snippets/get_linklist_dropdown.liquid:
 snippets/header.liquid:
   development: 2017-11-13T10:16:02-05:00   e18593e74fe02c7ee60ac595241aeae9
   production: 2017-10-30T16:38:31-04:00   d90e26efd3a636786d4fc10c805d1615
+snippets/home-hero.liquid:
+  development: 2018-01-15T10:51:30-05:00   62a8f880eeeb72daf00ddb2ad3678f2d
 snippets/home-slider.liquid:
   development: 2017-09-14T12:38:20-04:00
   production: 2017-09-14T12:22:15-04:00   b3976912cc8b563623580579a8d4b056
@@ -659,12 +710,18 @@ snippets/icon-cart.liquid:
 snippets/icon-fast-shipping.liquid:
   development: 2017-11-10T12:39:45-05:00
   production: 2017-11-08T03:23:43-05:00   d42def859797cf7311e8a3161705004a
+snippets/icon-fast.liquid:
+  development: 2017-12-19T12:03:18-05:00   ff196c5a86ddf12e9a4969b3061924d9
+snippets/icon-fun.liquid:
+  development: 2017-12-19T12:02:48-05:00   d8ad9afdd5b65388828106c3a72d9eca
 snippets/icon-heart.liquid:
   development: 2017-11-10T12:39:45-05:00
   production: 2017-11-08T03:16:12-05:00   28d7334c04dc38dbf4ddce26f8b5ab33
 snippets/icon-secure.liquid:
   development: 2017-11-10T12:39:46-05:00
   production: 2017-11-08T03:16:29-05:00   6f8eeec2cd289f547c292a59d4758938
+snippets/icon-shop.liquid:
+  development: 2017-12-19T12:02:38-05:00   d0e191dfca53a6a2efda29f506f7812a
 snippets/main-menu-mobile.liquid:
   development: 2017-11-10T12:39:46-05:00
   production: 2017-11-09T06:08:43-05:00   fc973f7ab790dc10960cfe4ca31524a2
@@ -767,12 +824,18 @@ templates/index.liquid:
 templates/page.brochure1.liquid:
   development: 2017-11-21T10:35:06-05:00   64b9855f9355f31aff53265aca3aeaf3
   production: 2017-12-02T09:54:49-05:00
+templates/page.brochure2.liquid:
+  development: 2018-01-15T10:51:46-05:00   8107f8c4ff1f532ebb453aa5d135ccd6
+templates/page.brochure3.liquid:
+  development: 2018-01-15T10:51:50-05:00   506657fd81dbcbfd885be5af2e8ab3ef
 templates/page.sales-models.liquid:
   development: 2017-11-27T13:42:03-05:00   82428207f21b10847e2899003e3ab550
   production: 2017-12-04T17:59:03-05:00
 templates/page.shop-by-brands.liquid:
   development: 2017-11-10T12:39:46-05:00
   production: 2017-10-18T04:57:59-04:00   8a574ab3cede129f7f6e1ab59c01559f
+templates/product.customizable.liquid:
+  development: 2018-01-15T10:51:43-05:00   5a5c1c548b7adbd846292ab17febff4c
 templates/product.liquid:
   development: 2017-10-18T05:09:41-04:00
   production: 2017-10-23T18:19:53-04:00   218c4d146b530e8acdd13bed13b2daea
