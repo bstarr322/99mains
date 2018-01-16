@@ -65,7 +65,7 @@
   <div id="PageContainer" class="drawer-page-content">  
     {% include 'header' %}
 
-    {% if template contains 'index' or template contains 'sales-models' %}
+    {% if template contains 'index' or template contains 'sales-models' or  template contains 'product'  %}
       {% assign wrapper = '' %}
     {% else %}
       {% assign wrapper = 'wrapper' %}

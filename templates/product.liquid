@@ -10,16 +10,40 @@
 {% endcomment %}
 
 {% assign current_variant = product.selected_or_first_available_variant %}
+{% assign vendor_handle = product.vendor | handleize %}
+{% assign vendor_collection = collections[vendor_handle] %}
+
+{% assign vendor_url = vendor_collection.url %}
+{% assign vendor_image = vendor_collection.image %}
+{% capture vendor_logo %}vendor-{{ vendor_handle }}.png{% endcapture %}
 
 <div itemscope itemtype="http://schema.org/Product">
 
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
-  
-  <div class="wrapper">
-    {% include 'breadcrumb' %}
+
+  <div class="product_store_preview-section">
+    <div class="wrapper">
+      <div class="grid">
+        <div class="grid__item large-down--one-whole one-half vendor-title-part">
+          <a href="{% if vendor_url != blank %}{{ vendor_url }}{% else %}/collections/vendors?q={{ vendor_handle | escape }}{% endif %}" title="View all {{ product.vendor }} products" style="background-image: url({{ vendor_image | img_url:'medium' }});" class="vendor-logo"></a>
+          <div>
+            <h2>{{ product.vendor }}</h2>
+            <a href="{% if vendor_url != blank %}{{ vendor_url }}{% else %}/collections/vendors?q={{ vendor_handle | escape }}{% endif %}" class="btn">Visit this store</a>
+          </div>
+        </div>
+        <div class="grid__item large-down--hide one-half vendor-preview-part">
+          {% for vendor_p in vendor_collection.products limit: 4 %}
+            <div class="preview-item"><a href="{{ vendor_p.url | within: collection }}">
+              <img src="{{ vendor_p.featured_image.src | img_url: '88x88' }}" alt="{{ vendor_p.featured_image.alt | escape }}" class="product-card__image" width="88" height="88">
+            </a></div>
+          {% endfor %}
+          <div class="preview-item vendor-total"><a href="{% if vendor_url != blank %}{{ vendor_url }}{% else %}/collections/vendors?q={{ vendor_handle | escape }}{% endif %}"><h3>{{ vendor_collection.all_products_count }}</h3><span>items</span></a></div>
+        </div>
+      </div>
+    </div>
   </div>
-  
+
   <div class="wrapper product__single-container">
     <input type="hidden" name="page-data" value="{{pages['howell-public-schools'].content}}">
     {% comment %}
@@ -45,10 +69,6 @@
           We will use the collection's featured image as Vendor logo.
           {% endcomment %}
 
-          {% assign vendor_handle = product.vendor | handleize %}
-          {% assign vendor_url = collections[vendor_handle].url %}
-          {% assign vendor_image = collections[vendor_handle].image %}
-          {% capture vendor_logo %}vendor-{{ vendor_handle }}.png{% endcapture %}
           <p  class="product-single__vendor product-single__vendor--{{ product.vendor | handleize }}" data-vendor = {{product.vendor}}>
             <a href="{% if vendor_url != blank %}{{ vendor_url }}{% else %}/collections/vendors?q={{ vendor_handle | escape }}{% endif %}"
                data-toggle="tooltip" data-placement="left"
@@ -182,6 +202,78 @@
   </div>
 </div>
 
+<div class="product_store_desc-section">
+  <div class="wrapper">
+    <div class="grid">
+      <div class="grid__item small--one-whole one-half text-center">
+        {% assign has_settings = false %}
+        {% for i in (1..50) %}
+          {% capture id %}store-collection-{{i}}{% endcapture %}
+          {% capture store_txt_id %}store-collection-txt-{{i}}{% endcapture %}
+          {% capture store_img_id %}store-collection-img-{{i}}{% endcapture %}
+
+          {% assign store_handle = settings[id] %}
+          {% assign store_txt = settings[store_txt_id] %}
+          {% assign store_img = settings[store_img_id] %}
+          {% assign store_collection = collections[store_handle] %}
+
+          {% if store_handle != blank and store_handle == vendor_handle and store_img %}
+            {% assign has_settings = true %}
+            {{ store_img | img_url: '400x400' | img_tag }}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% unless has_settings %}
+          {% if vendor_collection.image %}
+            {{ vendor_collection.image | img_url: '400x400' | img_tag }}
+          {% else %}
+
+          {% endif %}
+        {% endunless %}
+
+      </div>
+      <div class="grid__item small--one-whole one-half text-center">
+        <h2 class="header">{{ product.vendor }}</h2>
+        {% assign has_settings = false %}
+        {% for i in (1..50) %}
+          {% capture id %}store-collection-{{i}}{% endcapture %}
+          {% capture store_txt_id %}store-collection-txt-{{i}}{% endcapture %}
+          {% capture store_img_id %}store-collection-img-{{i}}{% endcapture %}
+
+          {% assign store_handle = settings[id] %}
+          {% assign store_txt = settings[store_txt_id] %}
+          {% assign store_img = settings[store_img_id] %}
+
+          {% assign store_collection = collections[store_handle] %}
+
+          {% if store_handle != blank and store_handle == vendor_handle and store_txt %}
+            {% assign has_settings = true %}
+            <p class="desc">
+            {{ store_txt }}
+            </p>
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% unless has_settings %}
+          {% if vendor_collection.description %}
+            <div class="desc">
+              {{ vendor_collection.description }}
+            </div>
+          {% else %}
+            <p class="desc">
+              These aren’t new ways of doing business. This is how it’s supposed to be done. These are the building blocks of excellence. Back in 1914 when the late George and Nicholas Becharas founded the company, these values were the foundation for the Becharas Brothers Coffee Co. and continue unchanged to this day.
+            </p>
+          {% endif %}
+        {% endunless %}
+
+        
+        <a href="{% if vendor_url != blank %}{{ vendor_url }}{% else %}/collections/vendors?q={{ vendor_handle | escape }}{% endif %}" class="btn btn-browse-shop">Browse Shop</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% comment %}
   To take advantage of a callback on the select dropdown, add option_selection.js

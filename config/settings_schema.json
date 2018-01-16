@@ -960,6 +960,767 @@
     ]
   },
   {
+    "name": "Product Page - Store Section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_product_store_section",
+        "label": "Enable Product Store Section",
+        "default": true
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-1",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-1",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-1",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-2",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-2",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-2",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-3",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-3",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-3",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-4",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-4",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-4",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-5",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-5",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-5",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-6",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-6",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-6",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-7",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-7",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-7",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-8",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-8",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-8",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-9",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-9",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-9",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-10",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-10",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-10",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-11",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-11",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-11",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-12",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-12",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-12",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-13",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-13",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-13",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-14",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-14",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-14",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-15",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-15",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-15",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-16",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-16",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-16",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-17",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-17",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-17",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-18",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-18",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-18",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-19",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-19",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-19",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-20",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-20",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-20",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-21",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-21",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-21",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-22",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-22",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-22",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-23",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-23",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-23",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-24",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-24",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-24",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-25",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-25",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-25",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-26",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-26",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-26",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-27",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-27",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-27",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-28",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-28",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-28",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-29",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-29",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-29",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-30",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-30",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-30",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-31",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-31",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-31",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-32",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-32",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-32",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-33",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-33",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-33",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-34",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-34",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-34",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-35",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-35",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-35",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-36",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-36",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-36",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-37",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-37",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-37",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-38",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-38",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-38",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-39",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-39",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-39",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-40",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-40",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-40",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-41",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-41",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-41",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-42",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-42",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-42",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-43",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-43",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-43",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-44",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-44",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-44",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-45",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-45",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-45",
+        "label": "Store Collection Description"
+      },
+            {
+        "type": "collection",
+        "id": "store-collection-46",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-46",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-46",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-47",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-47",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-47",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-48",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-48",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-48",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-49",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-49",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-49",
+        "label": "Store Collection Description"
+      },
+      {
+        "type": "collection",
+        "id": "store-collection-50",
+        "label": "Store Collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "store-collection-img-50",
+        "label": "Store Collection Image"
+      },
+      {
+        "type": "textarea",
+        "id": "store-collection-txt-50",
+        "label": "Store Collection Description"
+      }
+    ]
+  },
+  {
     "name": "Collection Page",
     "settings": [
       {

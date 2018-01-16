@@ -4078,6 +4078,108 @@ label.error {
   }
 }
 
+// Product Store Preview Section on top
+.product_store_preview-section {
+  background-color: #f2f2f2;
+  margin-bottom: $gutter;
+
+  .wrapper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .vendor-title-part {
+    @include flexbox();
+
+    .vendor-logo {
+      display: block;
+      transition: all .1s ease-in;
+      width: 100px;
+      height: 90px;
+      text-indent: -9999in;
+      background-repeat: no-repeat;
+      -webkit-background-size: contain;
+      background-size: contain;
+      margin-right: 10px;
+
+      &:hover,
+      &:focus {
+        opacity: .7;
+      }
+    }
+
+    .btn {
+      background-color: #fff;
+      border: 1px solid $colorBorder;
+      border-radius: 3px;
+      color: $colorTextBody;
+    }
+  }
+
+  .vendor-preview-part {
+    // width: 100%;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(flex-end);
+
+    .preview-item {
+      width: 90px;
+      height: 90px;
+      border: 1px solid $colorBorder;
+      background-color: #fff;
+      margin-right: $gutter/2;
+
+      &:last-of-type {
+        margin-right: initial;
+      }
+
+      &.vendor-total a {
+        width: 100%;
+        height: 100%;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-flow(column);
+        h3 {
+          margin: initial;
+        }
+      }
+    }
+  }
+}
+
+// Product Store Description Section under product image
+.product_store_desc-section {
+  background-color: #f2f2f2;
+
+  .grid {
+    @include at-query($min, $medium) {
+      @include flexbox();
+      @include align-items(center);
+    }
+  }
+
+  .grid__item:last-of-type {
+    padding-top: $gutter*3/2;
+    padding-bottom: $gutter*3/2;
+  }
+  h2 {
+    color: $colorBorder;
+  }
+  .desc {
+    margin-bottom: $gutter * 3/2;
+  }
+  .btn-browse-shop {
+    color: $colorBorder;
+    background-color: #fff;
+    border-color: $colorBorder;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+}
+
 /*============================================================================
   #Notes and Form Feedback
 ==============================================================================*/

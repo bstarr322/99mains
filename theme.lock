@@ -484,9 +484,9 @@ assets/swiper.min.js:
 assets/teal.png:
   development: 2018-01-15T11:02:21-05:00   934ffcd19b12e0b96a6704aa6ac912ad
 assets/timber.js.liquid:
-  development: 2018-01-15T11:02:22-05:00   0d843eabe91c5a7da4cea1eab50a4099
+  development: 2018-01-15T11:23:41-05:00   97f7435e876995c3cb4f29d76a44c66a
 assets/timber.scss.liquid:
-  development: 2018-01-15T11:02:22-05:00   38f5a14b7f5eeed3a7d9eba9c35a70eb
+  development: 2018-01-15T22:09:06-05:00   8d0e52a5eef2e11794a006e42e51945f
 assets/timber_bkup.scss.liquid:
   development: 2018-01-15T11:02:22-05:00   5b61055142807684af865597fd274e5e
 assets/true-navy.png:
@@ -566,9 +566,9 @@ assets/wow-pink.png:
 config/settings_data.json:
   development: 2018-01-15T11:01:05-05:00   ad638c91dfeb7842ccddf8b913810f16
 config/settings_schema.json:
-  development: 2018-01-15T11:02:42-05:00   58e38524d21e763e3a942d4c344ee0f4
+  development: 2018-01-15T12:26:32-05:00   791890732273ee24db84ab06bd23b625
 layout/theme.liquid:
-  development: 2018-01-15T11:02:39-05:00   fda143071c85c90da7f2fd947b0a25b3
+  development: 2018-01-15T13:07:11-05:00   97bda44b8db89f822fba857ecdbb98ac
 locales/de.json:
   development: 2018-01-15T11:02:39-05:00   585899bd4424d43afa93b72083a5aa0e
 locales/en.default.json:
@@ -666,7 +666,7 @@ snippets/product-gallery.liquid:
 snippets/product-grid-item.liquid:
   development: 2018-01-15T11:02:40-05:00   95893857880e13bdfedbc6e587c48233
 snippets/related-products-by-collection.liquid:
-  development: 2018-01-15T11:02:40-05:00   2fae22d19a6dc3726b917f13e1c68577
+  development: 2018-01-15T11:18:01-05:00   5443a2e1b925f31262c88aab8570849c
 snippets/related-products-by-type.liquid:
   development: 2018-01-15T11:02:40-05:00   5aca7991ceb9707d2aaf7986057f91b1
 snippets/respond.liquid:
@@ -744,6 +744,6 @@ templates/page.shop-by-brands.liquid:
 templates/product.customizable.liquid:
   development: 2018-01-15T11:02:42-05:00   5a5c1c548b7adbd846292ab17febff4c
 templates/product.liquid:
-  development: 2018-01-15T11:02:42-05:00   e6944923b82d9a2bd486a6e1c8a5faf9
+  development: 2018-01-15T22:07:40-05:00   bb495663a4f59017dde1920cb5123fbe
 templates/search.liquid:
   development: 2018-01-15T11:02:42-05:00   4661237f0118ca57a4bad496e6bfc0aa
