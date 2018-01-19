@@ -6407,15 +6407,15 @@ $lusa-transition-base: all .1s ease-in;
 
   .left-wrapper {
     position: relative;
-    background: url("{{'hero-left-bg.png' | asset_img_url: '1500x' }}") no-repeat center center;
+    
     background-size: cover;
     height: 290px;
 
-    padding: 60px;
-    @include flexbox();
-    @include align-items(flex-start);
-    @include justify-content(center);
-    @include flex-flow(column);
+    padding: 76px 60px;
+    // @include flexbox();
+    // @include align-items(flex-start);
+    // @include justify-content(center);
+    // @include flex-flow(column);
 
     @include at-query($max, $preLarge) {
       object-fit: cover;
@@ -6425,6 +6425,12 @@ $lusa-transition-base: all .1s ease-in;
     p {
       color: $colorTextBody;
       font-size: 24px;
+      display: block;
+      position: relative;
+    }
+    .btn {
+      display: block;
+      position: relative;
     }
 
     @include at-query($min, $medium) {
@@ -6437,10 +6443,11 @@ $lusa-transition-base: all .1s ease-in;
     }
     @include at-query($max, $preMedium) {
       height: 360px;
-      @include align-items(center);
-      @include justify-content(flex-end);
-      padding: 30px 10px;
-      background-position: 100% 50%;
+      // @include align-items(center);
+      // @include justify-content(flex-end);
+      padding: 200px 10px 0;
+      background-position: 100% 50% !important;
+      text-align: center;
 
       &:before {
         position: absolute;
@@ -6449,6 +6456,7 @@ $lusa-transition-base: all .1s ease-in;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
         top: 0;
+        left: 0;
       }
 
       p {
@@ -6458,21 +6466,22 @@ $lusa-transition-base: all .1s ease-in;
 
       .btn {
         z-index: 1;
+        margin: 0 auto;
       }
 
     }
   }
   .right-banner {
-    background: url("{{'hero-right-bg.png' | asset_url }}") no-repeat center center;
+    padding: 50px 0;
     background-size: cover;
     height: 210px;
     margin-bottom: 20px;
     text-align: center;
     
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
-    @include flex-flow(column);
+    // @include flexbox();
+    // @include align-items(center);
+    // @include justify-content(center);
+    // @include flex-flow(column);
 
     .title {
       font-family: 'Roboto Regular';

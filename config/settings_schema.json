@@ -650,6 +650,64 @@
     ]
   },
   {
+    "name": "Home page - Hero Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Left Side"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_left_img"
+      },
+      {
+        "type": "url",
+        "id": "hero_left_url"
+      },
+      {
+        "type": "text",
+        "id": "hero_left_text",
+        "label": "Left Text"
+      },
+      {
+        "type": "text",
+        "id": "hero_left_btn_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "header",
+        "content": "Rigt Side"
+      },
+      {
+        "type": "image_picker",
+        "id": "hero_right_top_img"
+      },
+      {
+        "type": "text",
+        "id": "hero_right_top_text",
+        "label": "Right Text"
+      },
+      {
+        "type": "url",
+        "id": "hero_right_top_url"
+      },
+      {
+        "type": "text",
+        "id": "hero_right_top_btn_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "hero_right_bottom_url"
+      },
+      {
+        "type": "text",
+        "id": "hero_right_bottom_btn_text",
+        "label": "Button Text"
+      }
+    ]
+  },
+  {
     "name": "Home page - slideshow",
     "settings": [
       {

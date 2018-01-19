@@ -188,7 +188,7 @@ assets/heather-royal.png:
 assets/hero-left-bg.png:
   development: 2018-01-15T11:01:37-05:00   e7478c8e596b5e45974299d2d39a83c2
 assets/hero-right-bg.png:
-  development: 2018-01-15T11:01:38-05:00   bd0b3491013081c39812261a28495d9b
+  development: 2018-01-19T09:41:46-05:00   1f6ff851393a0c89f952eca5f9a734ca
 assets/home-flexslider.css.liquid:
   development: 2018-01-15T11:01:38-05:00   76370a0ae3fa8309bffa1a2da54dea44
 assets/home-grown-black.png:
@@ -486,7 +486,7 @@ assets/teal.png:
 assets/timber.js.liquid:
   development: 2018-01-15T11:23:41-05:00   97f7435e876995c3cb4f29d76a44c66a
 assets/timber.scss.liquid:
-  development: 2018-01-15T22:09:06-05:00   8d0e52a5eef2e11794a006e42e51945f
+  development: 2018-01-19T10:49:03-05:00   d29de62833f1508a0439e17b20aed863
 assets/timber_bkup.scss.liquid:
   development: 2018-01-15T11:02:22-05:00   5b61055142807684af865597fd274e5e
 assets/true-navy.png:
@@ -566,7 +566,7 @@ assets/wow-pink.png:
 config/settings_data.json:
   development: 2018-01-15T11:01:05-05:00   ad638c91dfeb7842ccddf8b913810f16
 config/settings_schema.json:
-  development: 2018-01-15T12:26:32-05:00   791890732273ee24db84ab06bd23b625
+  development: 2018-01-19T09:36:32-05:00   6ca5a6669fb0163e817bfabd4dd2cdb2
 layout/theme.liquid:
   development: 2018-01-15T13:07:11-05:00   97bda44b8db89f822fba857ecdbb98ac
 locales/de.json:
@@ -624,7 +624,7 @@ snippets/get_linklist_dropdown.liquid:
 snippets/header.liquid:
   development: 2018-01-15T11:02:40-05:00   df00c518176c9f731786e1e7f7fbb737
 snippets/home-hero.liquid:
-  development: 2018-01-15T11:02:40-05:00   62a8f880eeeb72daf00ddb2ad3678f2d
+  development: 2018-01-19T09:43:06-05:00   d7a6715386bfa50eadd8ced88ba6d1fd
 snippets/home-slider.liquid:
   development: 2018-01-15T11:02:40-05:00   b3976912cc8b563623580579a8d4b056
 snippets/icon-arrow-right.liquid:
@@ -744,6 +744,6 @@ templates/page.shop-by-brands.liquid:
 templates/product.customizable.liquid:
   development: 2018-01-15T11:02:42-05:00   5a5c1c548b7adbd846292ab17febff4c
 templates/product.liquid:
-  development: 2018-01-15T22:07:40-05:00   bb495663a4f59017dde1920cb5123fbe
+  development: 2018-01-16T18:55:12-05:00   7a05f935c1987bb85582da9f50f26c60
 templates/search.liquid:
   development: 2018-01-15T11:02:42-05:00   4661237f0118ca57a4bad496e6bfc0aa
