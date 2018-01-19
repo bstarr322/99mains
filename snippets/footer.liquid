@@ -1,6 +1,9 @@
 <!-- Footer -->
 <footer class="site-footer small--text-center" role="contentinfo">
   <div class="wrapper">
+
+    {% comment %}
+    No need for now.
     <div class="grid footer__logo-wrapper">
       <div class="grid__item one-whole footer_logo">
         <a href="/" itemprop="url">
@@ -8,8 +11,10 @@
         </a>
       </div>
     </div>
+    {% endcomment %}
+
     <div class="grid site__footer-nav">
-      <div class="grid__item large--one-quarter medium--one-half footer-block">
+      <div class="grid__item medium-up--one-quarter small--one-half footer-block">
         <h4>{{ settings.footer_1_heading }}</h4>
         {% if settings.footer_linklist_1 != '' %}
           <ul>
@@ -23,7 +28,7 @@
           </div>
         {% endif %}
       </div>
-      <div class="grid__item large--one-quarter medium--one-half footer-block">
+      <div class="grid__item medium-up--one-quarter small--one-half footer-block">
         <h4>{{ settings.footer_2_heading }}</h4>
         {% if settings.footer_linklist_2 != '' %}
           <ul>
@@ -37,7 +42,7 @@
           </div>
         {% endif %}
       </div>
-      <div class="grid__item large--one-quarter medium--one-half footer-block">
+      <div class="grid__item medium-up--one-quarter small--one-half footer-block">
         <h4>{{ settings.footer_3_heading }}</h4>
         {% if settings.footer_linklist_3 != '' %}
           <ul>
@@ -51,16 +56,19 @@
           </div>
         {% endif %}
       </div>
-      <div class="grid__item large--one-quarter medium--one-half footer-block">
+      <div class="grid__item medium-up--one-quarter small--one-half footer-block">
         <h4>Follow</h4>
         {% include 'social-profiles' %}
       </div>
     </div>
+
+    {% comment %}
     <div class="grid site__footer-bottom">
       <p class="footer__shop-copyright">
         Copyright &copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }}
       </p>
     </div>
+    {% endcomment %}
   </div>
 </footer>
 <!-- /Footer -->

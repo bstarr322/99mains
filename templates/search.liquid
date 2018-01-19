@@ -24,9 +24,9 @@
   If you do, the pagination of results will be broken.
 {% endcomment %}
 {% paginate search.results by 10 %}
-
+<div class="wrapper">
   <div class="grid template-search">
-    <div class="grid__item large--two-thirds push--large--one-sixth">
+    <div class="grid__item large-up--two-thirds push--large-up--one-sixth">
 
       {% if search.performed %}
         {% if search.results_count == 0 %}
@@ -65,7 +65,7 @@
             {% if grid_results == false %}
               <!-- begin list search results-->
               <div class="grid__item">
-                <div class="grid large--display-table">
+                <div class="grid">
 
                   {% comment %}
                     We will use collection.list.liquid 's Layout, so we will use same layout of it.
@@ -76,16 +76,16 @@
                     {% comment %}
                       We have a featured_image, so it's likely a product
                     {% endcomment %}
-                    <div class="grid__item large--one-fifth large--display-table-cell medium--one-third">
+                    <div class="grid__item large-up--one-fifth medium--one-third">
                       <a href="{{ item.url }}" title="{{ item.title | escape }}">
                         {{ item.featured_image.src | img_url: 'medium' | img_tag: item.featured_image.alt }}
                       </a>
                     </div>
                   {% endif %}
 
-                  <div class="grid__item large--four-fifths large--display-table-cell medium--two-thirds">
+                  <div class="grid__item large-up--four-fifths medium--two-thirds">
                     <div class="grid">
-                      <div class="grid__item large--three-quarters medium--two-thirds">
+                      <div class="grid__item large-up--three-quarters medium--two-thirds">
                         <p class="item-title">{{ item.title }}</p>
                         {% if item.content %}
                         <div class="rte item-description">
@@ -95,7 +95,7 @@
                       </div>
 
                       {% if item.price %}
-                        <div class="grid__item large--one-quarter medium--one-third item-price">
+                        <div class="grid__item large-up--one-quarter medium--one-third item-price">
                           <p>
                             {% comment %}
                               You can show a leading 'from' or 'up to' by checking 'product.price_varies'
@@ -135,7 +135,7 @@
               <!-- //list search results-->
             {% else %}
               <!-- begin grid search results-->
-              <div class="grid__item search-result large--one-third medium--one-third">
+              <div class="grid__item search-result large-up--one-third medium--one-third">
                 {% if item.featured_image %}
                   <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
                     {{ item.featured_image.src | img_url: 'medium' | img_tag: item.featured_image.alt }}
@@ -190,7 +190,7 @@
 
     </div>
   </div>
-
+</div>
 {% endpaginate %}
 
 {% else %}

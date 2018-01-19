@@ -1,6 +1,6 @@
 <div class="featured_collection-wrapper clearfix">
   <div class="wrapper">
-    <h2>{{ 'homepage.sections.featured_title' | t }}</h2>
+    <h2 class="header">{{ settings.section_featured_categories_header }}</h2>
 
     <div class="featured__collection-container clearfix">
 
@@ -16,15 +16,20 @@
       
       {% assign index = 1 %}
       {% assign isEmpty = true %}
+
+      {% assign lists = settings.section_featured_categories_list %}
       
-      {% if linklists.list-collections.links.size > 0 %}          
+      {% if linklists[lists].links.size > 0 %}          
         {% assign isEmpty = false %}
-        {% assign collection_item_width = 'large--one-fifth medium--one-third' %}
+
+        {% assign collection_item_width = 'small--one-half medium-up--one-quarter large-up--one-eighth' %}
         
-        {% for link in linklists.list-collections.links %}
+        <div class="grid">
+        {% for link in linklists[lists].links limit: 8 %}
           {%- assign handle = link.url | split: "collections/" | last -%}
           {%- assign collection = collections[handle] -%}
 
+          <div class="grid__item {{ collection_item_width }}">
             <div class="featured__single-collection">
               <div class="featured__single-collection-wrapper">
                 {% comment %}
@@ -40,14 +45,16 @@
                   {% endif %}
                 </a>
 
-                <p class="featured__collection-title">
+                <p class="featured__collection-title" data-mh="mh-featured-collection-info">
                   <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
                 </p>
               </div>
             </div>
+          </div>
           {% assign index = index | plus: 1 %}
         {% endfor %}
-      
+        </div>
+
       {% else %}
         
         {% comment %}

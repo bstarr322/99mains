@@ -1,3 +1,14 @@
+<style type="text/css">
+  .home-hero .left-wrapper {
+    background: url("{{ settings.hero_left_img | img_url: '1500x' }}") no-repeat center center;
+    background-size: cover;
+  }
+  .home-hero .right-banner {
+    background: url("{{ settings.hero_right_top_img | img_url: '500x' }}") no-repeat center center;
+    background-size: cover;
+  }
+</style>
+<!-- Section - Home hero -->
 <section class="home-hero">
   <div class="wrapper">
     <div class="grid">
@@ -6,17 +17,18 @@
       </div>
       <div class="grid__item large-up--two-thirds">
         <div class="left-wrapper">
-          <p>Support &amp; Shop Local</p>
-          <a href="/collections/apparel-accessories" class="btn btn-shop">Shop Now</a>
+          <p>{{ settings.hero_left_text | default: 'Support &amp; Shop Small Business' }}</p>
+          <a href="{{ settings.hero_left_url }}" class="btn btn-shop">{{ settings.hero_left_btn_text | default: 'Shop Now' }}</a>
         </div>
       </div>
       <div class="grid__item large-up--one-third">
         <div class="right-banner">
-          <p class="title">New Holiday Styles</p>
-          <a href="/collections/apparel-accessories" class="btn btn-shop">Shop Collection</a>
+          <p class="title">{{ settings.hero_right_top_text | default: 'Do You Euchre?' }}</p>
+          <a href="{{ settings.hero_right_top_url }}" class="btn btn-shop">{{ settings.hero_right_top_btn_text | default: 'Shop Collection' }}</a>
         </div>
-        <a href="/collections/apparel-accessories" class="btn btn-all">Shop All Holiday Styles</a>
+        <a href="{{ settings.hero_right_bottom_url }}" class="btn btn-all">{{ settings.hero_right_bottom_btn_text | default: 'Shop All Holiday Styles' }}</a>
       </div>
     </div>
   </div>
 </section>
+<!-- /Section - Home hero -->

@@ -33,32 +33,35 @@
               <p class="h1 section-header__left">{{ collection_title }}</p>
             </div>
 
-            <div class="collection__list-grid clearfix">
-              <div class="product__single-grid">
-                <div class="product__single-grid-container">
-                  {% comment %}
-                    Use capture to put the collection title in a variable that is used in liquid filters
-                  {% endcomment %}
-                  {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+            <div class="collection__list-grid grid">
+              <div class="grid__item large-up--one-quarter medium--one-half">
+                <div class="product__single-grid">
+                  <div class="product__single-grid-container">
+                    {% comment %}
+                      Use capture to put the collection title in a variable that is used in liquid filters
+                    {% endcomment %}
+                    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
-                  <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="grid__image">
-                    {% if collection.image %}
-                      <div class="product__single-grid-image list__collections-single-image" style="background-image: url({{ collection.image.src | img_url: 'large' }})"></div>
-                    {% else %}
-                      <div class="product__single-grid-image list__collections-single-image" style="background-image: url({{ collection.products.first.featured_image | img_url: 'large' }})"></div>
-                    {% endif %}
-                  </a>
-
-                  <p class="h6">
-                    <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
-                  </p>
-                  <p class="item-grid">
-                    {{ collection.all_products_count }} Items
-                  </p>
+                    <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="grid__image">
+                      {% if collection.image %}
+                        <div class="product__single-grid-image list__collections-single-image" style="background-image: url({{ collection.image.src | img_url: 'large' }})"></div>
+                      {% else %}
+                        <div class="product__single-grid-image list__collections-single-image" style="background-image: url({{ collection.products.first.featured_image | img_url: 'large' }})"></div>
+                      {% endif %}
+                    </a>
+                    <div data-mh="mh-grid-info">
+                      <p class="h6">
+                        <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a>
+                      </p>
+                      <p class="item-grid">
+                        {{ collection.all_products_count }} Items
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               {% for product in collection.products limit:3 %}
-                {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
+                {% assign grid_item_width = 'large-up--one-quarter medium--one-half' %}
                 {% include 'product-grid-item' %}
               {% endfor %}
             </div>
