@@ -654,6 +654,16 @@
     "settings": [
       {
         "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "hero_text_color",
+        "label": "Hero Text Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
         "content": "Left Side"
       },
       {
