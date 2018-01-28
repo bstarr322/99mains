@@ -654,6 +654,16 @@
     "settings": [
       {
         "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "hero_text_color",
+        "label": "Hero Text Color",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
         "content": "Left Side"
       },
       {
@@ -1026,7 +1036,7 @@
         "label": "Enable Product Store Section",
         "default": true
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-1",
         "label": "Store Collection"
@@ -1071,7 +1081,7 @@
         "id": "store-collection-txt-3",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-4",
         "label": "Store Collection"
@@ -1116,7 +1126,7 @@
         "id": "store-collection-txt-6",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-7",
         "label": "Store Collection"
@@ -1161,7 +1171,7 @@
         "id": "store-collection-txt-9",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-10",
         "label": "Store Collection"
@@ -1206,7 +1216,7 @@
         "id": "store-collection-txt-12",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-13",
         "label": "Store Collection"
@@ -1251,7 +1261,7 @@
         "id": "store-collection-txt-15",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-16",
         "label": "Store Collection"
@@ -1296,7 +1306,7 @@
         "id": "store-collection-txt-18",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-19",
         "label": "Store Collection"
@@ -1341,7 +1351,7 @@
         "id": "store-collection-txt-21",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-22",
         "label": "Store Collection"
@@ -1386,7 +1396,7 @@
         "id": "store-collection-txt-24",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-25",
         "label": "Store Collection"
@@ -1431,7 +1441,7 @@
         "id": "store-collection-txt-27",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-28",
         "label": "Store Collection"
@@ -1476,7 +1486,7 @@
         "id": "store-collection-txt-30",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-31",
         "label": "Store Collection"
@@ -1521,7 +1531,7 @@
         "id": "store-collection-txt-33",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-34",
         "label": "Store Collection"
@@ -1566,7 +1576,7 @@
         "id": "store-collection-txt-36",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-37",
         "label": "Store Collection"
@@ -1611,7 +1621,7 @@
         "id": "store-collection-txt-39",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-40",
         "label": "Store Collection"
@@ -1656,7 +1666,7 @@
         "id": "store-collection-txt-42",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-43",
         "label": "Store Collection"
@@ -1701,7 +1711,7 @@
         "id": "store-collection-txt-45",
         "label": "Store Collection Description"
       },
-            {
+      {
         "type": "collection",
         "id": "store-collection-46",
         "label": "Store Collection"
@@ -1819,13 +1829,25 @@
     "settings": [
       {
         "type": "text",
-        "id": "social_twitter_link",
+        "id": "twitter_link",
         "label": "Twitter URL",
         "info": "https:\/\/twitter.com\/shopify"
       },
       {
         "type": "text",
-        "id": "social_facebook_link",
+        "id": "instagram_link",
+        "label": "Instagram URL",
+        "info": "https:\/\/instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "pinterest_link",
+        "label": "Pinterest URL",
+        "info": "https:\/\/pinterest.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "facebook_link",
         "label": "Facebook URL",
         "info": "https:\/\/www.facebook.com\/shopify"
       }
