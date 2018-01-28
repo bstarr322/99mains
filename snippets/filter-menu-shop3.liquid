@@ -24,15 +24,17 @@
         <li class="has-sub-filter">
           {% if link.title contains collection.title %}
             {% assign item_title = link.title | stripe | split: collection.title %}
-            {{ item_title[1] | link_to_tag : 'gifts' }}
+            {% assign sub_link = item_title[1] | handleize %}
+            {{ item_title[1] | link_to_tag : sub_link }}
           {% else %}
+            {% assign sub_link = link.title | handleize %}
             {{ link.title | link_to_tag : link.title }}
           {% endif %}
 
           <ul class="">
             {% for childlink in linklists[child_list_handle].links %}
               <li class="">
-                {{ childlink.title | link_to_tag: childlink.title }}
+                <a href="{{ collection.url }}/{% if sub_link %}{{ sub_link }}+{% endif %}{{ childlink.title | handleize }}" title="Show products matching tag {{ childlink.title }}">{{ childlink.title }}</a>
               </li>
             {% endfor %}
           </ul>
@@ -60,25 +62,25 @@
       <a href="{{ collection.url | append: '/gifts' }}" title="Show products matching tag gifts">Gifts</a>
       <ul class="">
         <li class="">
-          <a href="{{ collection.url | append: '/for-her' }}" title="Show products matching tag For Her">For Her</a>
+          <a href="{{ collection.url | append: '/gifts+for-her' }}" title="Show products matching tag For Her">For Her</a>
         </li>
         <li class="">
-          <a href="{{ collection.url | append: '/for-him' }}" title="Show products matching tag For Him">For Him</a>
+          <a href="{{ collection.url | append: '/gifts+for-him' }}" title="Show products matching tag For Him">For Him</a>
         </li>
         <li class="">
-          <a href="{{ collection.url | append: '/for-kids' }}" title="Show products matching tag For Kids">For Kids</a>
+          <a href="{{ collection.url | append: '/gifts+for-kids' }}" title="Show products matching tag For Kids">For Kids</a>
         </li>
         <li class="">
-          <a href="{{ collection.url | append: '/under-20' }}" title="Show products matching tag Under $20">Under $20</a>
+          <a href="{{ collection.url | append: '/gifts+under-20' }}" title="Show products matching tag Under $20">Under $20</a>
         </li>
         <li class="">
-          <a href="{{ collection.url | append: '/20-50' }}" title="Show products matching tag $20 - $50">$20 - $50</a>
+          <a href="{{ collection.url | append: '/gifts+20-50' }}" title="Show products matching tag $20 - $50">$20 - $50</a>
         </li>
         <li class="">
-          <a href="{{ collection.url | append: '/50-100' }}" title="Show products matching tag $50 - $100">$50 - $100</a>
+          <a href="{{ collection.url | append: '/gifts+50-100' }}" title="Show products matching tag $50 - $100">$50 - $100</a>
         </li>
         <li class="">
-          <a href="{{ collection.url | append: '/100-and-up' }}" title="Show products matching tag $100 and up">$100 and up</a>
+          <a href="{{ collection.url | append: '/gifts+100-and-up' }}" title="Show products matching tag $100 and up">$100 and up</a>
         </li>
       </ul>
     </li>
